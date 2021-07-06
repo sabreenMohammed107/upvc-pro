@@ -2,102 +2,67 @@
 
 return [
   /*----header*/
-  'login' => 'Login',
-  'shahbander' => 'Alshahbandar',
-  'search' => 'Search',
-  'searchhere' => 'Search Here',
-  'login' => 'Login',
-  'Logout' => 'Logout',
+  
+  'address' => 'Address',
+  'phone' => 'Phone',
+  'email' => 'Email',
   'en' => 'English',
   'ar' => 'عربى',
-  'welcom' => 'Welcome',
-  'guest' => 'guest',
-  'slogan' => 'Nine Tenth of Livelihood Comes From Trade',
+  
   /*---end----*/
 
 
   /*--Menu--*/
-
+  'menu'=>'Menu',
   'home' => 'Home',
-  'aboutChamber' => 'About Chamber',
-  
-  'aboutDirector' => "Chairman's Address",
-  'bords' => 'Board of Directors',
-  'history' => 'Chamber History',
-  'messageVision' => 'Messages and vision',
-  'dept' => 'Chamber departments',
-  'cocialResponsibility' => 'Social responsibility',
-
-  'mediacenter' => 'Media Center',
-  'chamberNews' => 'Chamber News',
-  'chamberAlbum' => 'Chamber Albums',
-  'announce' => 'Announcements',
-
-  'retailAcademy' => 'Retail Academy',
-'aboutAcademy'=>'About Academy',
-'courses'=>'Courses and training programs',
-'training'=>'Training services',
-'jobs'=>'Job Service',
-
-
-
-
-  'chamberServices' => 'Services',
-  'excellence'=>'Center of Excellence',
-  'healthCare'=>'Health care',
-  'lifeInsurance'=>'Life insurance',
-  'commerExtention'=>'Trade Guidance',
-  'tradersClub'=>'Capital Traders Club',
-  'conferenceRoom'=>'Conference Room',
-  'arbitration'=>'Conciliation and Arbitration',
-
-  'division' => 'Business Divisions',
-  'devisionPages'=>'Sectors ',
-  'ScheduleDevision'=>'Schedule',
-
-  'conferences' => 'Events ',
-
-  'opportunities' => 'Commercial Opportunities',
-
-  'export'=>'Export opportunities',
-  'import'=>'Import opportunities',
-  'investment'=>'Investment opportunities',
-  'tenderAuction'=>'Tenders and auctions',
-
-  'electronicService' => 'Electronic services',
-  'online-payment'=>'Online-Payment',
-  'qr-code'=>'QR code Service',
-  'blockchain'=>'blockchain Service',
-
-  'woman' => 'Women& Trade Committee',
-  'aboutCommittee'=>'About Committee',
-  'committeeActivities'=>'Committee activities',
-
-  'encyclo' => 'Encyclopedia',
-  'contact' => 'Contact',
-
+  'about_us' => 'About Us ',
+  'products'=>'Products',
+  'partenters'=>'Our Partenters',
+  'gallery' => 'Gallery',
+  'blog' => 'Blog',
+  'contact_us' => 'Contact Us',
 
 /*---End Menu--*/
 /*--footer ---*/
-'address'=>'Address',
-'phone'=>'Phone',
-'mobile'=>'Mobile',
-'email'=>'Email',
-'fax'=>'Fax',
-'follow'=>'Follow Us',
-'copyright'=>'',
-'emailList'=>'Email List',
-'send'=>'Send',
-'sponsor'=>'Sponsor',
-'events'=>'Events',
-'faq'=>'FAQ',
-'relatedwebsites'=>'Related Websites',
+'links'=>'Links',
+'about'=>'About',
+'news_letter'=>'News Letter',
+'site_map'=>'Site Map',
+'Subscribe'=>'Subscribe',
+'enter_email'=>'Enter Your Email',
+'dawnload_catalog'=>'Dawnload Catalog',
+'dawnload_profile'=>'Dawnload Profile',
+'tade_mark'=>'Copyright ©',
+'copy_right'=>'All rights reserved To Senior Steps',
+'windows'=>'Windows',
+'noise_reduction'=>'Noise Reduction',
+'energy_solution'=>'Energy Solution',
+'advantages'=>'Advantages',
+'footer_text'=>'Everything we do is about you. From the raw material that comes from Europe and North America to the technology and designs that exactly match your needs.',
 
-'chamber'=>'Cairo Chamber Of Commerce',
-'password'=>'Password',
-'confirmPassword'=>'Confirm Password',
-'registerLogin'=>'Register',
-
-
-
+/*---End footer ---------*/
+/*-----Home page -----------------*/
+'feedback'=>'Feedback',
+'customer_feedback'=>'CUSTOMER FEEDBACK',
+'materials'=>'Materials',
+'best_materials'=>'Best Materials',
+/*-----contact page -----------------*/
+'contact_text'=>'We aim to reach you anytime & everywhere.. Your satisfaction is our mission. For any inquiries or complaints please contact us:',
+'central_office'=>'Central Office',
+'open_hour'=>'Opening Hours',
+'open'=>'Open',
+'close'=>'Closed',
+'location'=>'Location',
+'sunday'=>'Sunday',
+'monday'=>'Monday',
+'tuesday'=>'Tuesday',
+'wednesday'=>'Wednesday',
+'thursday'=>'Thursday',
+'friday'=>'Friday',
+'saturday'=>'Saturday',
+'name'=>'Name',
+'message'=>'Message',
+'subject'=>'Subject',
+'send_msg'=>'Send Message',
+'controller_message'=>'Message Send Successfully',
 ];

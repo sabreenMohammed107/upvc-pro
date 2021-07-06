@@ -2,94 +2,69 @@
 
 return [
     /*----header*/
-    'login' => 'تسجيل الدخول',
-    'shahbander' => 'مجلة الشهبندر',
-    'search' => 'بحث',
-    'searchhere' => 'إبحث هنا',
+    
+    'address' => 'العنوان',
+    'phone' => 'التليفون',
+    'email' => 'البريد الإلكترونى',
     'login' => 'تسجيل دخول',
-    'Logout' => 'خروج',
     'en' => 'English ',
     'ar' => 'عربي',
-    'welcom' => 'مرحبا بك',
-    'guest' => 'زائر',
-    'slogan' => 'تسعة اعشار الرزق فى التجارة',
+   
     /*---end----*/
     /*--Menu--*/
+    'menu'=>'القائمة',
     'home' => 'الرئيسية',
-    'aboutChamber' => 'عن الغرفة',
-    'aboutDirector' => 'كلمة رئيس الغرفة',
-    'bords' => 'الغرفة',
-    'history' => 'تاريخ غرفة تجارة القاهرة',
-    'messageVision' => 'الرسالة والرؤية',
-    'dept' => 'ادارت الغرفة',
-    'cocialResponsibility' => 'المسئولية المجتمعية',
-
-    'mediacenter' => 'المركز الإعلامي',
-    'chamberNews' => 'أخبار الغرفة',
-    'chamberAlbum' => '(عدسة الغرفة ( أليوم الصور والفيديو',
-    'announce' => 'تنويهات وإعلانات',
-
-    'retailAcademy' => 'أكاديمية التجزئة',
-    'aboutAcademy' => 'عن الأكاديمية',
-    'courses' => 'الدورات وبرامج التدريب',
-    'training' => 'خدمات التدريب',
-    'jobs'=>'خدمات التوظيف',
-
-    'chamberServices' => 'خدمات الغرفة',
-    'excellence'=>'مركز التميز',
-    'healthCare'=>' الرعاية الصحية للتجار',
-    'lifeInsurance'=>'التأمين على حياة التجار وممتلكاتهم',
-    'commerExtention'=>'الإرشاد التجارى',
-    'tradersClub'=>'نادي تجار العاصمة',
-    'conferenceRoom'=>'قاعة مؤتمرات غرفة القاهرة',
-    'arbitration'=>'التوفيق والتحكيم التجارى',
-
-    'division' => 'الشعب التجارية',
-    'devisionPages'=>'صفحات الشعب',
-    'ScheduleDevision'=>'جدول مواعيد إجتماعات الشعب',
-
-    'conferences' => 'مؤتمرات ومعارض',
-
-    'opportunities' => 'فرص تجارية',
-    'export'=>'الفرص التصديرية',
-    'import'=>'الفرص الاستيرادية',
-    'investment'=>'فرص استثمارية',
-    'tenderAuction'=>'مناقصات ومزايدات',
-
-    'electronicService' => 'خدمات إلكترونية',
-    'online-payment'=>'السداد الإلكترونى',
-    'qr-code'=>'QR code خدمة',
-    'blockchain'=>'blockchain خدمة',
-   
-
-    'woman' => 'لجنة المرأة والتجار',
-    'aboutCommittee'=>'عن اللجنة',
-    'committeeActivities'=>'نشاطات اللجنة',
-    'encyclo' => 'أدلة هامة',
-    'contact' => 'تواصل معنا',
-
-
-
+    'about_us' => 'عنا ',
+    'products'=>'المنتجات',
+    'partenters'=>'شركاء النجاح',
+    'gallery' => 'الصور والفديوهات',
+    'blog' => 'المدونة',
+    'contact_us' => 'تواصل معنا',
+    
 /*---End Menu--*/
 
 
 /*--footer ---*/
-'address'=>'العنوان',
-'phone'=>'تليفون',
-'mobile'=>'محمول',
-'email'=>'بريد إلكترونى',
-'fax'=>'فاكس',
-'follow'=>'تابعنا',
-'copyright'=>'',
-'emailList'=>'القائمة البريدية',
-'send'=>'إرسال',
-'sponsor'=>'الرعاه',
-'events'=>'فاعليات',
-'faq'=>'أسئلة شائعة',
-'relatedwebsites'=>'روابط ذات صلة',
-'coursesfooter'=>'دورات',
-'chamber'=>'الغرفة التجارية للقاهرة',
-'password'=>'كلمة السر ',
-'confirmPassword'=>'تأكيد كلمه السر',
-'registerLogin'=>' عضو جديد',
+'links'=>'الروابط',
+'about'=>'عن',
+'news_letter'=>'رسالة خبرية',
+'site_map'=>'خريطه الموقع',
+'Subscribe'=>'الإشتراك',
+'enter_email'=>'ادخل ايميلك',
+'dawnload_catalog'=>'تجميل الكاتلوج',
+'dawnload_profile'=>'تحميل ملف الشركه',
+'tade_mark'=>'علامة تجارية ©',
+'copy_right'=>'جميع الحقوق محفوظة لشركة سنيور ستبس ',
+'windows'=>'شبابيك',
+'noise_reduction'=>'تقليل الضوضاء',
+'energy_solution'=>'حلول الطاقه',
+'advantages'=>'مميزات',
+'footer_text'=>'كل ما نقوم به يتعلق بك. من المواد الخام التي تأتي من أوروبا وأمريكا الشمالية إلى التكنولوجيا والتصميمات التي تتناسب تمامًا مع احتياجاتك.',
+
+
+/*---End footer ---------*/
+/*-----Home page -----------------*/
+'feedback'=>'تعليقات',
+'customer_feedback'=>'تعليقات العملاء',
+'materials'=>'الخامات',
+'best_materials'=>'أفضل الخامات',
+/*-----contact page -----------------*/
+'contact_text'=>'نهدف إلى الوصول إليك في أي وقت وفي كل مكان .. رضاك ​​هو مهمتنا. لأية استفسارات أو شكاوى يرجى التواصل معنا:',
+'central_office'=>'المكتب الرئيسى',
+'open_hour'=>'ساعات العمل',
+'open'=>'مفتوح',
+'close'=>'مغلق',
+'location'=>'الموقع',
+'sunday'=>'الأحد',
+'monday'=>'الإثنين',
+'tuesday'=>'الثلاثاء',
+'wednesday'=>'الأربعاء',
+'thursday'=>'الخميس',
+'friday'=>'الجمعه',
+'saturday'=>'السبت',
+'name'=>'الإسم',
+'message'=>'رسالة',
+'subject'=>'الموضوع',
+'send_msg'=>'إرسال الرسالة',
+'controller_message'=>'تم إرسال طلبك بنجاح',
 ];
