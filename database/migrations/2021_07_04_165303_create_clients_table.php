@@ -13,13 +13,15 @@ class CreateClientsTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
-            $table->integer('website_url')->nullable();
+            $table->string('website_url')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
+            
         });
     }
 

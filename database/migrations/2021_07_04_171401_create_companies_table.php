@@ -19,7 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->text('ar_address')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();
-            $table->string('map_location')->nullable();
+            $table->text('map_location')->nullable();
             $table->string('email')->nullable();
             $table->string('whatsapp')->nullable();
             $table->text('header_en_address')->nullable();

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+
 	Route::get('/', function () {
     return view('welcome');
 });
@@ -26,4 +27,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('test',function(){
 		return View::make('test');
 	});
+	
+
 });
+
