@@ -67,4 +67,8 @@ return [
 'subject'=>'الموضوع',
 'send_msg'=>'إرسال الرسالة',
 'controller_message'=>'تم إرسال طلبك بنجاح',
+/*-----Gallery page -----------------*/
+'gallery_title'=>'مدونة الصور',
+'our_vedios'=>'الفديوهات',
+
 ];

@@ -15,6 +15,7 @@ class CreateVedioGalleriesTable extends Migration
     {
         Schema::create('vedio_galleries', function (Blueprint $table) {
             $table->id();
+            $table->string('vedio_img')->nullable();
             $table->string('vedio')->nullable();
             $table->integer('order')->nullable();
             $table->tinyInteger('active')->default(1);
