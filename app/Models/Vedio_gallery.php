@@ -11,5 +11,6 @@ class Vedio_gallery extends Model
         'image',
         'order',
         'active',
+        
     ];
 }

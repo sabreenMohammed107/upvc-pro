@@ -3,7 +3,7 @@
     <input type="hidden" id="partId" value="{{$partener->id}}">
 			  	<div class="col-md-3 course ">
 				<div class="product">
-					<div class="img product-img part-img" style="background-image: url({{asset('uploads/partener')}}/{{$partener->logo }});"></div>
+					<div class="img product-img part-img" style="background-image: url({{asset('uploads/parteners')}}/{{$partener->logo }});"></div>
 					
 				</div>
 				<div class="p-4 text-center">

@@ -27,6 +27,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	//parteners
 	Route::get('/parteners', 'Web\PartenerController@index')->name('parteners');
 	Route::get('fetch_partener_data', 'Web\PartenerController@fetch_data');
+	//gallery
+	Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
 
 
 	

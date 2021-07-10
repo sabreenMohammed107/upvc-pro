@@ -65,4 +65,7 @@ return [
 'subject'=>'Subject',
 'send_msg'=>'Send Message',
 'controller_message'=>'Message Send Successfully',
+/*-----Gallery page -----------------*/
+'gallery_title'=>'Gallery',
+'our_vedios'=>'Our Video',
 ];

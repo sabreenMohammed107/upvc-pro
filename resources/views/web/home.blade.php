@@ -2,7 +2,7 @@
 @section('content')
 <section class="home-slider owl-carousel">
 @foreach($homeSliders as $slider)
-  		<div class="slider-item  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}" style="background-image:url({{asset('uploads/slider')}}/{{$slider->image }});max-height:470px">
+  		<div class="slider-item  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}" style="background-image:url({{asset('uploads/home-sliders')}}/{{$slider->image }});max-height:470px">
   			<div class="container">
   				<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
   					<div class="col-md-5 ftco-animate">
