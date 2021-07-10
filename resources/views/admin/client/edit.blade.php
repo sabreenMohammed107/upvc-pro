@@ -68,7 +68,7 @@
                                 </div>
 
                                 <div class="form-group  col-md-4">
-                                    <img src="{{ asset('uploads/logo/'.$client->logo) }}" style="width: 135px;height:80px">
+                                    <img src="{{ asset('uploads/clients/'.$client->logo) }}" style="width: 135px;height:80px">
                                 </div>
 
                                 <div class="form-group col-md-12">

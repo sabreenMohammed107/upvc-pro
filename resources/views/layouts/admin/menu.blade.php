@@ -57,6 +57,36 @@
               <a  href="/AdminContact" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Contact Msg</span></a>
           </li>
           @endif
+          @if (Auth::user()->hasPermission('users-read'))
+            <li class="active">
+              <a  href="/AdminHomeSlider" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Home Slider</span></a>
+          </li>
+          @endif
+          @if (Auth::user()->hasPermission('users-read'))
+            <li class="active">
+              <a  href="/AdminHomeVedio" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Home Vedio</span></a>
+          </li>
+          @endif
+          @if (Auth::user()->hasPermission('users-read'))
+            <li class="active">
+              <a  href="/AdminImageGallery" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Image Gallery</span></a>
+          </li>
+          @endif
+          @if (Auth::user()->hasPermission('users-read'))
+            <li class="active">
+              <a  href="/AdminVedioGallery" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Vedio Gallery</span></a>
+          </li>
+          @endif
+          @if (Auth::user()->hasPermission('users-read'))
+            <li class="active">
+              <a  href="/AdminFeedback" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Feedback</span></a>
+          </li>
+          @endif
+          @if (Auth::user()->hasPermission('users-read'))
+          <li class="active">
+            <a  href="/AdminMaterial" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Material</span></a>
+        </li>
+        @endif
               </ul>
           </nav>
       </div>

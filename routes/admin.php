@@ -40,7 +40,22 @@ Route::group(
        //-------------------------Client Screen
         Route::resource('/AdminClient', ClientController::class);
         //-------------------------Company Screen
-        Route::resource('/AdminCompany', ClientController::class);
+        Route::resource('/AdminCompany', CompanyController::class);
+        //-------------------------Contact Screen
+        Route::resource('/AdminContact', Contact_messageController::class);
+        //-------------------------Home Slider Screen
+        Route::resource('/AdminHomeSlider', Home_sliderController::class);
+         //-------------------------Home Slider Screen
+         Route::resource('/AdminHomeVedio', Home_vedioController::class);
+          //-------------------------Image Gallery Screen
+          Route::resource('/AdminImageGallery', Image_galleryController::class);
+          //-------------------------Vedio Gallery Screen
+          Route::resource('/AdminVedioGallery', Vedio_galleryController::class);
+          //-------------------------Feedback Screen
+          Route::resource('/AdminFeedback', FeedbackController::class);
+           //-------------------------Material Screen
+           Route::resource('/AdminMaterial', MaterialController::class);
+
 
     }); /** End  **/
 

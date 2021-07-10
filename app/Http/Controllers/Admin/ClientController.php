@@ -51,13 +51,19 @@ class ClientController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/logo/' . $request->logo->hashName()));
+                ->save(public_path('uploads/clients/' . $request->logo->hashName()));
 
             $request_data['logo'] = $request->logo->hashName();
 
             
         }//end of if
 
+        // if($request->active){
+        //     $client->active=1;
+        // }else{
+        //     $client->active=0;
+        // }
+        
         $client = Client::create($request_data);
         session()->flash('success', 'Client Added Succsessfuly');
         return redirect('/AdminClient');
@@ -101,7 +107,7 @@ class ClientController extends Controller
         if($request->hasFile('logo'))
         {
             //delete old
-$fileName=public_path('uploads/logo/'.$client->logo);
+$fileName=public_path('uploads/clients/'.$client->logo);
 File::delete($fileName);
            $fileDoc=$request->file('logo');
            $client->logo= $this->UplaodFile($fileDoc);
@@ -127,7 +133,7 @@ File::delete($fileName);
         $client =Client::find($id);
 
         if ($client->logo != 'default.png') {
-            $fileName=public_path('uploads/logo/'.$client->logo);
+            $fileName=public_path('uploads/clients/'.$client->logo);
             File::delete($fileName);
         }//end of if
 
@@ -150,7 +156,7 @@ File::delete($fileName);
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/logo');
+		$uploadPath = public_path('uploads/clients');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

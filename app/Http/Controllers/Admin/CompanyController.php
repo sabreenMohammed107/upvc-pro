@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CompanyController extends Controller
 {
@@ -61,6 +62,8 @@ class CompanyController extends Controller
     public function edit(Company $company)
     {
         //
+        $company = Company::where('id', 1)->first();
+         return view("admin.company.edit")->with("company",$company);
     }
 
     /**
@@ -70,9 +73,32 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request, $id)
     {
         //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'en_address'=> 'required',
+            'ar_address'=> 'required',
+            'phone'=> 'required',
+            'mobile'=> 'required',
+            'map_location'=> 'required',
+            'email'=> 'required',
+            'whatsapp'=> 'required',
+            'header_en_address'=> 'required',
+            'header_ar_address'=> 'required',
+            'header_phone'=> 'required',
+            'header_mobile'=> 'required',
+            'facebook_url'=> 'required',
+            'linkedin_url'=> 'required',
+           'instgram_url'=> 'required',
+        ]);
+        
+
+        $company = Company::where('id', 1)->first();
+        $company->update($request->all());
+        session()->flash('success', 'Company Data Updated Succsessfuly');
+        return redirect('/AdminCompany');
     }
 
     /**

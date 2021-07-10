@@ -17,7 +17,7 @@ class CreateMaterialsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('logo')->nullable();
-            $table->integer('website_url')->nullable();
+            $table->string('website_url')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
