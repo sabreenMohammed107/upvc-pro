@@ -8,8 +8,9 @@ class Vedio_gallery extends Model
 {
     protected $fillable = [
         'vedio',
-        'vedio_img',
+        'image',
         'order',
         'active',
+        
     ];
 }

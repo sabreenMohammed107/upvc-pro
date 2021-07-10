@@ -1,8 +1,76 @@
 <?php
 
+// Auth Routes
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+     {
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    Auth::routes();
+	Route::get('/home', 'HomeController@index')->name('home');
+   
+// Route::get('/Admin', function(){
+//     return redirect ("login");
+// });
+// Route::get('/', function(){
+//     return redirect ("index");//add index webpage 
+// });
+// Route::get('/home', function(){
+//     return redirect ("login");
+// });
+Route::get('/logout', function(){
+    return redirect ("login");
+});
+    
+     });/** End group**/
+
+
 
 Route::namespace('Admin')->group(function () {
+//this route with auth
+
+Route::group(
+    [
+            'prefix' => LaravelLocalization::setLocale(),
+            'middleware' => [ 'auth' ]
+    ], function(){ 
+    
+     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    
+        //-------------------------User Screen
+        Route::resource('/AdminUser', UserController::class);
+       //-------------------------Client Screen
+        Route::resource('/AdminClient', ClientController::class);
+        //-------------------------Company Screen
+        Route::resource('/AdminCompany', CompanyController::class);
+        //-------------------------Contact Screen
+        Route::resource('/AdminContact', Contact_messageController::class);
+        //-------------------------Home Slider Screen
+        Route::resource('/AdminHomeSlider', Home_sliderController::class);
+         //-------------------------Home Slider Screen
+         Route::resource('/AdminHomeVedio', Home_vedioController::class);
+          //-------------------------Image Gallery Screen
+          Route::resource('/AdminImageGallery', Image_galleryController::class);
+          //-------------------------Vedio Gallery Screen
+          Route::resource('/AdminVedioGallery', Vedio_galleryController::class);
+          //-------------------------Feedback Screen
+          Route::resource('/AdminFeedback', FeedbackController::class);
+           //-------------------------Material Screen
+           Route::resource('/AdminMaterial', MaterialController::class);
+
+
+    }); /** End  **/
+
+    
+    //this route without auth
+     Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+     {
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+    
+     
+
+     });/** End group**/
+
+    
     
    
 
-});
+});/** End  Route**/

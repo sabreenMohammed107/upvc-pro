@@ -17,6 +17,7 @@ class CreateVedioGalleriesTable extends Migration
             $table->id();
             $table->string('vedio_img')->nullable();
             $table->string('vedio')->nullable();
+            $table->string('image')->nullable();
             $table->integer('order')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
