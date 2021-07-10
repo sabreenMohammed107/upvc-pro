@@ -68,4 +68,11 @@ return [
 /*-----Gallery page -----------------*/
 'gallery_title'=>'Gallery',
 'our_vedios'=>'Our Video',
+/*-----About page -----------------*/
+'about_premier'=>'About Us',
+'story'=>'Story',
+'mission'=>'Our Mission',
+'vision'=>'Our Vision',
+'why_us'=>'Why Us',
+
 ];

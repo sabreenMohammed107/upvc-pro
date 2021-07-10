@@ -29,6 +29,7 @@ class CreateCompaniesTable extends Migration
             $table->string('facebook_url')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->string('instgram_url')->nullable();
+
             $table->timestamps();
         });
     }

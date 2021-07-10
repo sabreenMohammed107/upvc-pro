@@ -26,7 +26,7 @@
   						<h2 class="ftco-heading-2">{{ __('links.site_map') }}</h2>
   						<ul class="list-unstyled">
   							<li><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.home') }}</a></li>
-  							<li><a href="about.html"><span class="ion-ios-arrow-round-forward mr-2"></span>  {{ __('links.about_us') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/about_us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>  {{ __('links.about_us') }}</a></li>
   							<li><a href="product.html"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.products') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.gallery') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.contact_us') }}</a></li>
@@ -55,8 +55,8 @@
   								</div>
   							</div>
   						</form>
-  						<a href="{{ asset('webassets/img/Premier Catalog .pdf')}}" class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
-  						<a href="#" class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_profile') }}</a>
+  						<a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
+  						<a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_profile') }}</a>
   					</div>
   				</div>
   			</div>

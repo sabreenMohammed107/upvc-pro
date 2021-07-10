@@ -17,7 +17,7 @@
 						  @else
 						  {{$slider->ar_text}}
 						  @endif</p>
-  						<p class="pl-2"><a href="contact.html" class="btn btn-primary">تواصل معنا</a></p>
+  						<p class="pl-2"><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}" class="btn btn-primary">{{ __('links.contact_us') }}</a></p>
   					</div>
   				</div>
   			</div>
@@ -34,15 +34,18 @@
   						<div class="layer-1" style="">
   							<div class="layer-2" style=""></div>
   						</div>
-  						<img class="img-layer" src="./img/2.jpg" alt="">
+  						<img class="img-layer" src="{{asset('uploads/companies')}}/{{$company->about_image }}" alt="">
   					</div>
   				</div>
-  				<div class="col-md-8 py-5 pr-md-4 ftco-animate text-right">
-  					<h2 class="mb-4">عن بريمير</h2>
+  				<div class="col-md-8 py-5 pr-md-4 ftco-animate {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+  					<h2 class="mb-4">{{ __('links.about_us') }}</h2>
   					<p>
-					  	هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في النص بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم عدة مرات بما تتطلبه الحاجة
-					</p>
-  					<p><a href="/img/Premier Catalog .pdf" download class="btn btn2 btn-primary">تحميل الكتالوج</a></p>
+					  @if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$company->about_en_company}}
+						  @else
+						  {{$company->about_ar_company}}
+						  @endif					</p>
+  					<p><a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a></p>
   				</div>
   			</div>
   		</div>
@@ -255,7 +258,7 @@
   	<section class="ftco-section ftco-counter ftco-no-pt img" id="section-counter" style="background-color:#8FCDA0" data-stellar-background-ratio="0.5">
   		<div class="mb-5">
   			<div class="row justify-content-center mb-5 pb-2 d-flex pl-3">
-  				<div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5  mt-5 text-right">
+  				<div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5  mt-5 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
   					<h3 class="mb-4 text-white">لوريم إيبسوم هو ببساطة نص شكلي ؟ </h3>
 				  	<p>
 			  	هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في النص بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم عدة مرات بما تتطلبه الحاجة
