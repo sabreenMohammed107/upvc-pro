@@ -46,6 +46,7 @@ return [
 'customer_feedback'=>'CUSTOMER FEEDBACK',
 'materials'=>'Materials',
 'best_materials'=>'Best Materials',
+'show_more'=>'Show More',
 /*-----contact page -----------------*/
 'contact_text'=>'We aim to reach you anytime & everywhere.. Your satisfaction is our mission. For any inquiries or complaints please contact us:',
 'central_office'=>'Central Office',
@@ -74,5 +75,8 @@ return [
 'mission'=>'Our Mission',
 'vision'=>'Our Vision',
 'why_us'=>'Why Us',
+/*-----------------blogs-----------------*/
+'popular_blog'=>'Popular Blogs',
+'tags'=>'Tages',
 
 ];

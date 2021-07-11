@@ -104,7 +104,7 @@
   					<li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/about_us') }}" class="nav-link">{{ __('links.about_us') }}</a></li>
   					<li class="nav-item nav-hvr"><a href="product.html" class="nav-link">{{ __('links.products') }}</a></li>
   					<li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}" class="nav-link">{{ __('links.gallery') }}</a></li>
-  					<li class="nav-item nav-hvr"><a href="blog.html" class="nav-link hvr">{{ __('links.blog') }}</a></li>
+  					<li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/blogs') }}" class="nav-link hvr">{{ __('links.blog') }}</a></li>
   					<li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/parteners') }}" class="nav-link">{{ __('links.partenters') }}</a></li>
   					<li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}" class="nav-link">{{ __('links.contact_us') }}</a></li>
   				</ul>

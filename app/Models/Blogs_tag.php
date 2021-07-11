@@ -10,6 +10,7 @@ class Blogs_tag extends Model
     
     protected $fillable = [
         'blog_id',
-        'tag',
+        'en_tag',
+        'ar_tag',
     ];
 }

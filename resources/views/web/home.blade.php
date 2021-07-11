@@ -180,75 +180,73 @@
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
 		  		<div class="col-md-8 text-center heading-section ftco-animate">
-		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">لماذا بريميير</h1>
-		  			<h3>المميزات الرئيسية</h3>
+		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h1>
+		  			<h3>{{ __('links.why_us') }}</h3>
 		  		</div>
 		  	</div>
   			<div class="row d-flex dir-rtl">
   				<div class="col-md-4 wrap-about py-5 pr-md-4 ftco-animate">
 					  <div class="row mt-5">
+
+					  @foreach($whyRows as $index=>$whyRow)
+					  @if($index <= 2)
   						<div class="col-lg-12">
   							<div class="services-2 d-flex">
-  								<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>1</span></div>
+  								<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>{{$index+1}}</span></div>
   								<div class="text pr-3">
-									<a href="#"><h3 class="hvr-wobble-skew">لوريم إيبسوم</h3></a>
+									<a href="#"><h3 class="hvr-wobble-skew">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$whyRow->en_title}}
+						  @else
+						  {{$whyRow->ar_title}}
+						  @endif </h3></a>
 								  	<p>
-								  		نالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم
-								  	</p>
+									  @if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$whyRow->en_subTitle}}
+						  @else
+						  {{$whyRow->ar_subTitle}}
+						  @endif 
+														  	</p>
   								</div>
   							</div>
   						</div>
-  						<div class="col-lg-12">
-						  	<div class="services-2 d-flex">
-						  		<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>2</span></div>
-						  		<div class="text pr-3">
-						  			<a href="#"><h3 class="hvr-wobble-skew">لوريم إيبسوم</h3></a>
-						  			<p>
-									نالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم
-								</p>
-						  		</div>
-						  	</div>
-  						</div>
-  						<div class="col-lg-12">
-						  	<div class="services-2 d-flex">
-						  		<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>3</span></div>
-						  		<div class="text pr-3">
-						  			<a href="#"><h3 class="hvr-wobble-skew">لوريم إيبسوم</h3></a>
-						  			<p>
-									نالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم
-								</p>
-						  		</div>
-						  	</div>
-  						</div>
+						   @else
+						  @break
+						  @endif
+  					@endforeach
   					</div>
   				</div>
 			  	<div class="col-md-4 wrap-about d-flex align-items-stretch">
-			  		<div class="img mt-5 pt-4"><img src="img/11.png" /></div>
+			  		<div class="img mt-5 pt-4"><img src="{{ asset('webassets/img/11.png')}}" /></div>
 			  	</div>
 			  	<div class="col-md-4 wrap-about py-5 pr-md-4 ftco-animate">
 			  		<div class="row mt-5">
-			  			<div class="col-lg-12">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>4</span></div>
-							<div class="text pr-3">
-								<a href="#"><h3 class="hvr-wobble-skew">لوريم إيبسوم</h3></a>
-								<p>
-									نالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم
-								</p>
-							</div>
-						</div>
-			  			</div>
-			  			<div class="col-lg-12">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>5</span></div>
-							<div class="text pr-3">
-								<a href="#"><h3 class="hvr-wobble-skew">لوريم إيبسوم</h3></a>
-								<p>
-									نالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم
-								</p>
-							</div>
-						</div>
-			  			</div>
+						  
+						
+					  @foreach($whyRows as $index=>$whyRow)
+					  @if($index >= 3)
+  						<div class="col-lg-12">
+  							<div class="services-2 d-flex">
+  								<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>{{$index+1}}</span></div>
+  								<div class="text pr-3">
+									<a href="#"><h3 class="hvr-wobble-skew">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$whyRow->en_title}}
+						  @else
+						  {{$whyRow->ar_title}}
+						  @endif </h3></a>
+								  	<p>
+									  @if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$whyRow->en_subTitle}}
+						  @else
+						  {{$whyRow->ar_subTitle}}
+						  @endif 
+														  	</p>
+  								</div>
+  							</div>
+  						</div>
+						  @else
+						  @continue
+						  @endif
+  					@endforeach
 			  		</div>
 			  	</div>
   			</div>
@@ -317,67 +315,76 @@
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
 		  		<div class="col-md-8 text-center heading-section ftco-animate">
-		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">المدونة</h1>
-		  			<h3>المدونة</h3>
+		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.blog') }}</h1>
+		  			<h3>{{ __('links.blog') }}</h3>
 		  		</div>
 		  	</div>
   			<div class="row dir-rtl">
   				<div class="col-lg-6 ftco-animate">
 				  	<div class="product" style="height:368px;">
 				  		<div>
-				  			<img src="img/14.jpg" alt="" class="img-fluid" style="height:368px;">
+				  			<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid" style="height:368px;">
 				  		</div>
 				  		<div class="mt-n5 pr-3 text">
-				  			<h4 class="text-white">لوريم إيبسوم هو ببساطة نص شكلي</h4>
-				  			<p class="text-white">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية</p>
+				  			<h4 class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$blog->en_title ?? ''}}
+						  @else
+						  {{$blog->ar_title ?? ''}}
+						  @endif</h4>
+				  			<p class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$blog->en_text ?? ''}}
+						  @else
+						  {{$blog->ar_text ?? ''}}
+						  @endif</p>
 				  		</div>
 				  		<div class="product-overlay hvr-sweep-to-bottom">
 				  			<div class="product-overlay-text">
-				  				<h3>لوريم إيبسوم هو ببساطة نص شكلي</h3>
+				  				<h3>@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$blog->en_title ?? ''}}
+						  @else
+						  {{$blog->ar_title ?? ''}}
+						  @endif</h3>
 				  				<p>
-						  	هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية
-				  				</p>
-				  				<p><a href="blog-single.html" class="btn btn-primary2"><span class="ion-ios-play"></span> رؤية المزيد</a></p>
+								  @if( LaravelLocalization::getCurrentLocale() === "en")
+                          {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  @else
+						  {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  @endif				  				</p>
+				  				<p><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}" class="btn btn-primary2"><span class="ion-ios-play"></span>{{ __('links.show_more') }}</a></p>
 				  			</div>
 				  		</div>
 				  	</div>
   				</div> <!-- .col-md-6 -->
   				<div class="col-lg-6 sidebar ftco-animate">
   					<div class="sidebar-box ftco-animate">
+						  @foreach($blogs as $blog)
   						<div class="block-21 mb-4 d-flex">
 						  	<div class="product" style="max-height:171px;">
 						  		<a>
-						  			<img src="img/15.png" class="img-article" />
+						  			<img src="{{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}}" class="img-article" />
 						  		</a>
 						  		<div class="product-overlay hvr-sweep-to-bottom">
 						  			<div class="product-overlay-text">
 						  				<p></p>
-						  				<a href="blog-single2.html" class="btn btn-primary2">رؤية المزيد</a>
+						  				<a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}" class="btn btn-primary2">{{ __('links.show_more') }}</a>
 						  			</div>
 						  		</div>
 						  	</div>
-						  	<div class="text pt-2">
-						  		<h3 class="heading pr-3"><a href="#">لوريم إيبسوم هو ببساطة نص شكلي</a></h3>
-						  		<p class="pr-3">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما</p>
+						  	<div class="text pt-2 pl-2">
+						  		<h3 class="heading pr-3"><a href="#">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$blog->en_title ?? ''}}
+						  @else
+						  {{$blog->ar_title ?? ''}}
+						  @endif</a></h3>
+						  		<p class="pr-3">@if( LaravelLocalization::getCurrentLocale() === "en")
+                          {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  @else
+						  {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  @endif</p>
 						  	</div>
   						</div>
-  						<div class="block-21 mb-4 d-flex">
-						  	<div class="product" style="max-height:171px;">
-						  		<a>
-						  			<img src="img/16.png" class="img-article"/>
-						  		</a>
-				  	<div class="product-overlay hvr-sweep-to-bottom">
-				  		<div class="product-overlay-text">
-				  			<p></p>
-				  			<a href="blog-single3.html" class="btn btn-primary2">رؤية المزيد</a>
-				  		</div>
-				  	</div>
-						  	</div>
-  							<div class="text pt-2">
-  								<h3 class="heading pr-3"><a href="#">لوريم إيبسوم هو ببساطة نص شكلي</a></h3>
-							  	<p class="pr-3">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما</p>
-  							</div>
-  						</div>
+						  @endforeach
+  					
   					</div>
   				</div><!-- END COL -->
   			</div>
