@@ -31,7 +31,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
 	//about_us
 	Route::get('/about_us', 'Web\AboutUsController@index')->name('about_us');
-
-	
+//blogs
+Route::get('/blogs', 'Web\BlogController@index')->name('blogs');
+Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');	
 });
 

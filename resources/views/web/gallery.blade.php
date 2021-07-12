@@ -44,7 +44,7 @@
 	  			<div class="row justify-content-center pb-2 d-flex dir-rtl">
                       @foreach($vedios as $vedio)
 	  				<div class="col-md-4 align-items-stretch d-flex ftco-animate p-4">
-	  					<div class="img img-video d-flex align-items-center height-2" style="background-image: url({{asset('uploads/galleries')}}/{{$vedio->vedio_img }})">
+	  					<div class="img img-video d-flex align-items-center height-2" style="background-image: url({{asset('uploads/galleries')}}/{{$vedio->image }})">
 	  						<div class="video justify-content-center">
 	  							<a href="{{asset('uploads/galleries')}}/{{$vedio->vedio }}" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
 	  								<span class="ion-ios-play"></span>
