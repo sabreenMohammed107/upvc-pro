@@ -15,8 +15,8 @@ class CreateWhyCompaniesTable extends Migration
     {
         Schema::create('why_companies', function (Blueprint $table) {
             $table->id();
-            $table->string('en_title')->nullable();
-            $table->string('ar_title')->nullable();
+            $table->text('en_title')->nullable();
+            $table->text('ar_title')->nullable();
             $table->text('en_subTitle')->nullable();
             $table->text('ar_subTitle')->nullable();
 

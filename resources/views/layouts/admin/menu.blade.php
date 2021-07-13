@@ -87,6 +87,26 @@
             <a  href="/AdminMaterial" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Material</span></a>
         </li>
         @endif
+        @if (Auth::user()->hasPermission('users-read'))
+        <li class="active">
+          <a  href="/AdminNewsLetter" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">News Letter</span></a>
+      </li>
+      @endif 
+      @if (Auth::user()->hasPermission('users-read'))
+        <li class="active">
+          <a  href="/AdminSupplier" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Suppliers</span></a>
+      </li>
+      @endif
+      @if (Auth::user()->hasPermission('users-read'))
+        <li class="active">
+          <a  href="/AdminUpvcNumber" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Upvc Number</span></a>
+      </li>
+      @endif
+      @if (Auth::user()->hasPermission('users-read'))
+      <li class="active">
+        <a  href="/AdminWhyCompany" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Why Company</span></a>
+    </li>
+    @endif
               </ul>
           </nav>
       </div>

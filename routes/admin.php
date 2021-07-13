@@ -55,6 +55,16 @@ Route::group(
           Route::resource('/AdminFeedback', FeedbackController::class);
            //-------------------------Material Screen
            Route::resource('/AdminMaterial', MaterialController::class);
+           //-------------------------Material Screen
+           Route::resource('/AdminMaterial', MaterialController::class);
+           //-------------------------NewsLetter Screen
+           Route::resource('/AdminNewsLetter', News_letterController::class);
+           //-------------------------Supplier Screen
+           Route::resource('/AdminSupplier', SupplierController::class);
+           //-------------------------Supplier Screen
+           Route::resource('/AdminUpvcNumber', Upvc_numberController::class);
+           //-------------------------Why Company Screen
+           Route::resource('/AdminWhyCompany', Why_companyController::class);
 
 
     }); /** End  **/
