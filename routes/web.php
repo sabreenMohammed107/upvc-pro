@@ -34,5 +34,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 //blogs
 Route::get('/blogs', 'Web\BlogController@index')->name('blogs');
 Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');	
+//product
+Route::get('/products', 'Web\ProductController@index')->name('products');
+Route::get('/single-product/{id}', 'Web\ProductController@singleProduct');	
 });
 

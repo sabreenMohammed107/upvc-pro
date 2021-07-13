@@ -82,5 +82,17 @@ return [
 /*-----------------blogs-----------------*/
 'popular_blog'=>'أشهر المدونات',
 'tags'=>'علامات التواصل',
+/*-------------------Products-----------------------*/
+'advanced_performance'=>'الأداء المتطور لبريمير',
+'information' =>'أهم المعلومات',
+'total_thickness'=>'السمك الكلي',
+'chambers'=>'السماكة',
+'glass'=>'الزجاج',
+'description'=>'المواصفات',
+'key_features'=>'المميزات',
+'product_details'=>'تفاصيل المنتجات',
+'profile_information'=>'معلومات البروفايل',
+'other_product'=>'منتجات ذات صلة',
+'catalogue_pdf'=>'كاتلوج بريمير 2021',
 
 ];
