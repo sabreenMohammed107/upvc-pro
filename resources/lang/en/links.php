@@ -78,5 +78,17 @@ return [
 /*-----------------blogs-----------------*/
 'popular_blog'=>'Popular Blogs',
 'tags'=>'Tages',
+/*-------------------Products-----------------------*/
+'advanced_performance'=>'Advanced Performance',
+'information'=>'Information',
+'total_thickness'=>'Total thickness',
+'chambers'=>'Chambers',
+'glass'=>'Glass',
+'description'=>'Description',
+'key_features'=>'Key Features',
+'product_details'=>'Product Details',
+'profile_information'=>'Profile Information',
+'other_product'=>'Other Product',
+'catalogue_pdf'=>'2021 uPVC Window Catalogue.pdf'
 
 ];
