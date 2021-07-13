@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     //main settings
+    // protected $dates = ['blog_date'];
     
     protected $fillable = [
         'blog_date',

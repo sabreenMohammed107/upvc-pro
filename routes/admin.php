@@ -65,7 +65,8 @@ Route::group(
            Route::resource('/AdminUpvcNumber', Upvc_numberController::class);
            //-------------------------Why Company Screen
            Route::resource('/AdminWhyCompany', Why_companyController::class);
-
+           //-------------------------Blog Screen
+           Route::resource('/AdminBlog', BlogController::class);           
 
     }); /** End  **/
 

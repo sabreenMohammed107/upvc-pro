@@ -101,10 +101,15 @@
         <li class="active">
           <a  href="/AdminUpvcNumber" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Upvc Number</span></a>
       </li>
-      @endif
+      @endif 
       @if (Auth::user()->hasPermission('users-read'))
       <li class="active">
         <a  href="/AdminWhyCompany" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Why Company</span></a>
+    </li>
+    @endif
+    @if (Auth::user()->hasPermission('users-read'))
+      <li class="active">
+        <a  href="/AdminBlog" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Blog</span></a>
     </li>
     @endif
               </ul>

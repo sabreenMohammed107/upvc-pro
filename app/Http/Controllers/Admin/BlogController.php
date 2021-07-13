@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Home_slider;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Image;
 use File;
 
-class Home_sliderController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,8 @@ class Home_sliderController extends Controller
      */
     public function index()
     {
-        //
-        $home_slider = Home_slider::all();
-        return view("admin.home_slider.index")->with("home_slider",$home_slider);
+        $blog = Blog::all();
+        return view("admin.blog.index")->with("blog",$blog);
     }
 
     /**
@@ -31,7 +30,7 @@ class Home_sliderController extends Controller
      */
     public function create()
     {
-        return view("admin.home_slider.create");
+        return view("admin.blog.create");
     }
 
     /**
@@ -49,22 +48,31 @@ class Home_sliderController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/home_slider/' . $request->image	->hashName()));
+                ->save(public_path('uploads/blogs/' . $request->image	->hashName()));
             $request_data['image'] = $request->image->hashName();
         }
 
-        $home_slider = Home_slider::create($request_data);
-        session()->flash('success', 'Home Slider Added Succsessfuly');
-        return redirect('/AdminHomeSlider');
+        if ($request->thumbnail	) {
+            Image::make($request->thumbnail	)
+                ->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save(public_path('uploads/blogs/' . $request->thumbnail	->hashName()));
+            $request_data['thumbnail'] = $request->thumbnail->hashName();
+        }
+
+        $blog = Blog::create($request_data);
+        session()->flash('success', 'Blog Data Added Succsessfuly');
+        return redirect('/AdminBlog');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Home_slider $home_slider)
+    public function show(Blog $blog)
     {
         //
     }
@@ -72,64 +80,78 @@ class Home_sliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
-        $home_slider = Home_slider::find($id);
-         return view("admin.home_slider.edit")->with("home_slider",$home_slider);
+        $blog = Blog::find($id);
+        return view("admin.blog.edit")->with("blog",$blog);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $home_slider = Home_slider::find($id);
+        $blog = Blog::find($id);
 
         if($request->hasFile('image'))
         {
             //delete old
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
+            $fileName=public_path('uploads/blogs/'.$blog->image);
             File::delete($fileName);
            $fileDoc=$request->file('image');
-           $home_slider->image= $this->UplaodFile($fileDoc);
+           $blog->image= $this->UplaodFile($fileDoc);
         }
+
+        if($request->hasFile('thumbnail'))
+        {
+            //delete old
+            $fileName=public_path('uploads/blogs/'.$blog->thumbnail);
+            File::delete($fileName);
+           $fileDoc=$request->file('thumbnail');
+           $blog->thumbnail= $this->UplaodFile($fileDoc);
+        }
+
         if($request->active){
-            $home_slider->active=1;
+            $blog->active=1;
         }else{
-            $home_slider->active=0;
+            $blog->active=0;
         }
-        $home_slider->update($request->except(['image']));
-        session()->flash('success', 'Home Slider Data Updated Succsessfuly');
-        return redirect('/AdminHomeSlider');
+        $blog->update($request->except(['image','thumbnail']));
+        session()->flash('success', 'Blog Data Updated Succsessfuly');
+        return redirect('/AdminBlog');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $home_slider = Home_slider::find($id);
+        $blog = Blog::find($id);
 
-        if ($home_slider->image != 'default.png') {
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
+        if ($blog->image != 'default.png') {
+            $fileName=public_path('uploads/blogs/'.$blog->image);
             File::delete($fileName);
         }//end of if
 
-        $home_slider->delete();
-        session()->flash('success', 'Home Slider Data Deleted Successfully');
-        return redirect('/AdminHomeSlider');
+        if ($blog->image != 'default.png') {
+            $fileName=public_path('uploads/blogs/'.$blog->thumbnail);
+            File::delete($fileName);
+        }//end of if
+
+        $blog->delete();
+        session()->flash('success', 'Blog Data Deleted Successfully');
+        return redirect('/AdminBlog');
     }
     public function UplaodFile($file_request)
 	{
@@ -145,7 +167,7 @@ class Home_sliderController extends Controller
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/home_slider');
+		$uploadPath = public_path('uploads/blogs');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);
