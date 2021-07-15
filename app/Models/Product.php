@@ -19,8 +19,9 @@ class Product extends Model
         'product_details_img',
         'product_profile_img',
     ];
-    public function category()
+    public function Category()
     {
-        return $this->hasMany('App\Models\Product_category','category_id');
+        // return $this->hasMany('App\Models\Product_category','category_id');
+        return $this->belongsTo(Product_category::class,'category_id');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Blogs_tag;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +21,8 @@ class BlogController extends Controller
     public function index()
     {
         $blog = Blog::all();
-        return view("admin.blog.index")->with("blog",$blog);
+        $tags = Blogs_tag::all();
+        return view("admin.blog.index", ["blog"=>$blog ,"tags"=>$tags]); 
     }
 
     /**
@@ -60,8 +62,11 @@ class BlogController extends Controller
                 ->save(public_path('uploads/blogs/' . $request->thumbnail	->hashName()));
             $request_data['thumbnail'] = $request->thumbnail->hashName();
         }
-
         $blog = Blog::create($request_data);
+        // $tag = [$request->tag];
+        // $blog->Tags()->sync($tag);
+
+
         session()->flash('success', 'Blog Data Added Succsessfuly');
         return redirect('/AdminBlog');
     }
@@ -72,9 +77,10 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show($id)
     {
-        //
+        $blog = Blog::find($id);
+        return view("admin.blog.blog_tags")->with("blog",$blog);
     }
 
     /**

@@ -18,7 +18,7 @@
                                     <a href="#">Home</a> <span class="bread-slash">/</span>
                                 </li>
                                 <li>
-                                    <span class="bread-blod">Blogs</span>
+                                    <span class="bread-blod">Products</span>
                                 </li>
                             </ul>
                         </div>
@@ -38,12 +38,12 @@
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd" @if (app()->getLocale()=='ar') style="direction: rtl" @endif>
-                            <h1>Blogs List</h1>
+                            <h1>Product List</h1>
                             <div>
                                 @if (Auth::user()->hasPermission('users-create'))
-                                <a href="/AdminBlog/create" class="btn btn-primary">Add New</a>
+                                <a href="/AdminProduct/create" class="btn btn-primary">Add New Product</a>
                                 @else
-                                <a href="" class="btn btn-primary" disabled>Add New</a>
+                                <a href="" class="btn btn-primary" disabled>Add New Product</a>
                                 @endif
                             </div>
                             <br/>
@@ -64,47 +64,34 @@
                                     <tr>
                                         <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">ID</th>
-                                        <th> Blog Date </th>
-                                        <th> en_title </th>
-                                        <th>ar_title</th>
-                                <th>en_text</th>
-                                <th>ar_text	</th>
-                                <th>image </th>
-                                <th>thumbnail</th>
-                                <th>order</th>
-                                <th>Active </th>
-                                <th>Blog Tags </th>
-                                <th>Action</th>
+                                        <th>  En Name </th>
+                                        <th> Ar Name </th>
+                                        <th>Category </th>
+                                        <th>Master Img</th>
+                                        <th>Details Img	</th>
+                                        <th>Profile Img</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($blog as $index=>$blog)
+                                    @foreach ($product as $index=>$product)
                                         <tr>
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
-                                            <td>{{ $blog->blog_date }}</td>
-                                            <td>{{ $blog->en_title }}</td>
-                                            <td>{{ $blog->ar_title }}</td>
-                                            <td>{{ $blog->en_text }}</td>
-                                            <td>{{ $blog->ar_text }}</td>
-                                            <td><img src="{{ asset('uploads/blogs/'.$blog->image) }}" style="width: 200px;height:100px"></td>
-                                            <td><img src="{{ asset('uploads/blogs/'.$blog->thumbnail) }}" style="width: 200px;height:100px"></td>
-                                            <td>{{ $blog->order }}</td>
-                                            <td>{{ $blog->active }}</td>
-                                            <td>
-                                            @foreach ($blog->Tags as $tag)
-                                            <label style="display: block">{{$tag->tag}}</label>
-                                            @endforeach</td>
-                                            
-                                            {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
+                                            <td>{{ $product->en_name }}</td>
+                                            <td>{{ $product->ar_name }}</td>
+                                            <td>{{ $product->Category->en_name }}</td>
+                                            <td><img src="{{ asset('uploads/products/'.$product->master_image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{ asset('uploads/products/'.$product->product_details_img) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{ asset('uploads/products/'.$product->product_profile_img) }}" style="width: 200px;height:100px"></td>
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
-                                                    <a href="/AdminBlog/{{$blog->id}}/edit" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
+                                                    <a href="/AdminProduct/{{$product->id}}/edit" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
                                                 @else
                                                     <a href="" class="btn btn-warning mb-1" disabled><i class="fa fa-edit"></i> Edit </a>
                                                @endif
                                                 @if (Auth::user()->hasPermission('users-delete'))
-                                                    <form action="{{ route('AdminBlog.destroy',$blog->id) }}" method="post" style="display: inline-block">
+                                                    <form action="{{ route('AdminProduct.destroy',$product->id) }}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger delete mb-1"><i class="fa fa-trash"></i> Delete </button>
@@ -112,50 +99,8 @@
                                                 @else
                                                     <button class="btn btn-danger disabled mb-1"><i class="fa fa-trash"></i> Delete </button>
                                                 @endif
-                                                @if (Auth::user()->hasPermission('users-update'))
-                                                    <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-tag{{$blog->id}}"><i class="fa fa-edit"></i> Add Tag  </a>
-                                                @else
-                                                    <a href="" class="btn btn-primary mb-1" disabled><i class="fa fa-edit"></i> Add Tag </a>
-                                               @endif
                                             </td>
                                         </tr>
-                                    <!--Add Tags-->
-<div id="add-tag{{$blog->id}}" class="modal modal-edu-general fullwidth-popup-InformationproModal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header header-color-modal bg-color-2">
-                <h4 class="modal-title">Add Blog Tag</h4>
-                <div class="modal-close-area modal-close-df">
-                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-                </div>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('AdminBlogTag.store') }}" method="POST">
-
-                    {{ csrf_field() }}
-                    @method('POST')
-
-                    <div class="form-group col-md-12" style="display: none">
-                        <input type="text" class="form-control" value="{{$blog->id}}" name="blog_id">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label>Blog Tag</label>
-                        <input type="text" class="form-control" name="tag">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer info-md">
-            </div>
-        </div>
-    </div>
-</div>
-<!--/Add Tags-->
                                     @endforeach
                                     </tbody>
         

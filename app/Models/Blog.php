@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     //main settings
-    // protected $dates = ['blog_date'];
     
     protected $fillable = [
         'blog_date',
@@ -20,4 +19,11 @@ class Blog extends Model
         'order',
         'active',
     ];
+    protected $guarded = ['id'];
+
+    public function Tags()
+    {
+        return $this->hasMany(Blogs_tag::class);
+    }
+
 }

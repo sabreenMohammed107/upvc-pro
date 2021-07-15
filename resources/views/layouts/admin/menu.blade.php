@@ -112,6 +112,16 @@
         <a  href="/AdminBlog" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Blog</span></a>
     </li>
     @endif
+    @if (Auth::user()->hasPermission('users-read'))
+      <li class="active">
+        <a  href="/AdminProduct" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Product</span></a>
+    </li>
+    @endif
+    @if (Auth::user()->hasPermission('users-read'))
+      <li class="active">
+        <a  href="/AdminCompanyPerformance" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Company Performance</span></a>
+    </li>
+    @endif
               </ul>
           </nav>
       </div>

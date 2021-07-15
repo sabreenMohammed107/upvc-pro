@@ -66,7 +66,13 @@ Route::group(
            //-------------------------Why Company Screen
            Route::resource('/AdminWhyCompany', Why_companyController::class);
            //-------------------------Blog Screen
-           Route::resource('/AdminBlog', BlogController::class);           
+           Route::resource('/AdminBlog', BlogController::class); 
+           //-------------------------BlogTag Screen
+           Route::resource('/AdminBlogTag', Blogs_tagController::class);
+           //-------------------------Product Screen
+           Route::resource('/AdminProduct', ProductController::class);    
+            //-------------------------Company Performance Screen
+           Route::resource('/AdminCompanyPerformance', Company_performanceController::class);    
 
     }); /** End  **/
 

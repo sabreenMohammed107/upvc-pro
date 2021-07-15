@@ -34,7 +34,7 @@
                                     <a href="#">Home</a> <span class="bread-slash">/</span>
                                 </li>
                                 <li>
-                                    <span class="bread-blod">Blogs</span>
+                                    <span class="bread-blod">Products</span>
                                 </li>
                             </ul>
                         </div>
@@ -56,80 +56,98 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area"@if (app()->getLocale()=='ar') style="direction: rtl" @endif>
-                            <h3>Add New Blog</h3>
+                            <h3>Add New Product</h3>
                             <br />
                             @include('partials._errors')
-                            <form action="{{ route('AdminBlog.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('AdminProduct.store') }}" method="POST" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
                                  @method('POST')
 
-                                 <div class="form-group col-md-12">
-                                    <label><input type="checkbox"  id="active" name="active"  value="1"  checked /> Is Active </label>
-                                    <span class="text-danger d-block" id="active-error"></span>
+                                <div class="form-group col-md-6">
+                                    <label>Product Category</label>
+                                    <div class="form-select-list">
+                                        <select class="form-control custom-select-value" name="account">
+                                            <option value="">Select Category ...</option>
+                                            @foreach ($category as $cat)
+                                            <option value="{{$cat->id}}">{{$cat->en_name}}</option>
+                                            @endforeach 
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12"></div>
+                                <div class="form-group col-md-6">
+                                    <label>En Name</label>
+                                    <input type="text" class="form-control" name="en_name">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Blog Date</label>
-                                    <input type="date" class="form-control" name="blog_date" >
+                                    <label>Ar Name	</label>
+                                    <input type="text" class="form-control" name="ar_name">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Order</label>
-                                    <input type="number" class="form-control" name="order" >
+                                    <label>En Description	</label>
+                                    <input type="text" class="form-control" name="en_description">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>En Title</label>
-                                    <input type="text" class="form-control" id="en_title" name="en_title">
+                                    <label>Ar Description</label>
+                                    <input type="text" class="form-control" name="ar_description">
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Ar Title	</label>
-                                    <input type="text" class="form-control" id="ar_title" name="ar_title">
-                                </div>
-
-                                
-
-                                <div class="form-group col-md-6">
-                                    <label>En Text	</label>
-                                    <textarea id="message" name="en_text" ></textarea>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label>Ar Text</label>
-                                    <textarea id="message" name="ar_text" > </textarea>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label>Image</label>
+                                    <label>Master Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
                                             <div class="file-button">
                                                 Browse
-                                                <input type="file" onchange="document.getElementById('append-small-btn').value = this.value;" name="image" >
+                                                <input type="file" onchange="document.getElementById('append-small-btn1').value = this.value;" name="master_image" >
                                             </div>
-                                            <input type="text" id="append-small-btn"  name="image"  >
+                                            <input type="text" id="append-small-btn1"  name="master_image"  >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Thumbnail</label>
+                                    <label>Details Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
                                             <div class="file-button">
                                                 Browse
-                                                <input type="file" onchange="document.getElementById('append-small-btn2').value = this.value;" name="thumbnail" >
+                                                <input type="file" onchange="document.getElementById('append-small-btn2').value = this.value;" name="product_details_img" >
                                             </div>
-                                            <input type="text" id="append-small-btn2"  name="thumbnail"  >
+                                            <input type="text" id="append-small-btn2"  name="product_details_img"  >
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Tags</label>
-                                    <input type="text" class="form-control" id="tag" name="tag" >
+                                    <label>Profile Image</label>
+                                    <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                        <div class="input append-small-btn">
+                                            <div class="file-button">
+                                                Browse
+                                                <input type="file" onchange="document.getElementById('append-small-btn3').value = this.value;" name="product_profile_img" >
+                                            </div>
+                                            <input type="text" id="append-small-btn3"  name="product_profile_img"  >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Thickness</label>
+                                    <input type="text" class="form-control" name="thickness" >
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Chambers</label>
+                                    <input type="text" class="form-control" name="chambers" >
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Glass</label>
+                                    <input type="text" class="form-control"name="glass" >
                                 </div>
 
                                 <div class="form-group col-md-12">
