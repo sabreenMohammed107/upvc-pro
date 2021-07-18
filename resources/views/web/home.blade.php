@@ -26,6 +26,22 @@
 
 
   	</section>
+	  @if(Session::has('flash_success'))
+                <div class="col-lg-12">
+                    <div class="alert alert-success alert-block {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong ><i class="fa fa-check-circle"></i> {!! session('flash_success') !!}</strong>
+                    </div>
+                </div>
+            @endif
+            @if(Session::has('flash_danger'))
+                <div class="col-lg-12">
+                    <div class="alert alert-danger alert-block {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong ><i class="fa fa-info-circle"></i> {!! session('flash_danger') !!}</strong>
+                    </div>
+                </div>
+            @endif
   	<section class="ftco-section pt-4 ftc-no-pb mb-4">
   		<div class="container">
   			<div class="row">
@@ -54,70 +70,42 @@
   		<div class="container">
   			<div class="row justify-content-center mb-4 pb-2">
   				<div class="col-md-8 text-center heading-section ftco-animate">
-  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">المنتجات</h1>
-				  	<h3 >المنتجات</h3>
+  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.products') }}</h1>
+				  	<h3 >{{ __('links.products') }}</h3>
   				</div>
   			</div>
-  			<div class="row dir-rtl">
-			  	<div class="col-md-4 course ftco-animate">
+  			<div class="row  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'dir-rtl' : ''}}">
+			  @foreach($products as $product)
+			  <div class="col-md-4 course ftco-animate">
 			  		<div class="product">
-			  			<div class="img product-img" style="background-image: url(img/3667ed0d-5274-4223-beb5-13a2175075f1.jpg);"></div>
+			  			<div class="img product-img" style="background-image: url('{{asset('uploads/products')}}/{{$product->master_image ?? ''}}');"></div>
 			  			<div class="text pt-4">
 			  				<div class="row">
-			  					<div class="col-md-8"><h3>لوريم إيبسوم</h3></div>
-			  					<div class="col-md-4"><p>إقرأ المزيد</p></div>
+			  					<div class="col-md-8"><h3> @if( LaravelLocalization::getCurrentLocale() === "en")
+						 {{$product->category->en_name ?? ''}}
+								  @else
+{{$product->category->ar_name ?? ''}}						  @endif</h3></div>
+			  					<div class="col-md-4"><p>{{ __('links.show_more') }}</p></div>
 			  				</div>
 			  			</div>
 			  			<div class="product-overlay hvr-sweep-to-bottom">
 			  				<div class="product-overlay-text">
-			  					<h3>الشبابيك المنزلقة</h3>
+			  					<h3> @if( LaravelLocalization::getCurrentLocale() === "en")
+								  {{$product->category->en_name ?? ''}}
+								  @else
+								  {{$product->category->ar_name ?? ''}}							  @endif</h3>
 			  					<p>
-								هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم</p>
-							    <p><a href="#" class="btn btn-primary2">إقرأ المزيد</a></p>
+								  @if( LaravelLocalization::getCurrentLocale() === "en")
+						 {{$product->en_description}}
+								  @else
+{{$product->ar_description}}						  @endif</p>
+							    <p><a href="#" class="btn btn-primary2">{{ __('links.show_more') }}</a></p>
 			  				</div>
 			  			</div>
 			  		</div>
 			  	</div>
-			  	<div class="col-md-4 course ftco-animate">
-			  		<div class="product">
-					<div class="img product-img" style="background-image: url(img/4.jpg);"></div>
-					<div class="text pt-4">
-						<div class="row">
-							<div class="col-md-8"><h3>لوريم إيبسوم</h3></div>
-							<div class="col-md-4"><p>إقرأ المزيد</p></div>
-						</div>
-					</div>
-					<div class="product-overlay hvr-sweep-to-bottom">
-						<div class="product-overlay-text">
-							<h3>الشبابيك المنزلقة</h3>
-							<p>
-								هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم
-							</p>
-							<p><a href="#" class="btn btn-primary2">إقرأ المزيد</a></p>
-						</div>
-					</div>
-					  </div>
-			  	</div>
-			  	<div class="col-md-4 course ftco-animate">
-			  		<div class="product">
-			  			<div class="img product-img" style="background-image: url(img/5.jpg);"></div>
-					<div class="text pt-4">
-						<div class="row">
-							<div class="col-md-8"><h3>لوريم إيبسوم</h3></div>
-							<div class="col-md-4"><p>إقرأ المزيد</p></div>
-						</div>
-					</div>
-					<div class="product-overlay hvr-sweep-to-bottom">
-						<div class="product-overlay-text">
-							<h3>الشبابيك المنزلقة</h3>
-							<p>
-								هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم
-							</p>
-							<p><a href="#" class="btn btn-primary2">إقرأ المزيد</a></p>
-						</div>
-					</div>
-			  		</div>
-			  	</div>
+			
+			  @endforeach
   			</div>
   		</div>
   	</section>
@@ -152,24 +140,22 @@
   		<div class="container">
   			<div class="row dir-rtl">
 			  	<div class="col-md-8 py-5 pr-md-4 ftco-animate">
-				<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">مجموعة الألوان</h1>
-			  		<h2 class="mb-4">مجموعة الألوان</h2>
+				<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.color_collection') }}</h1>
+			  		<h2 class="mb-4">{{ __('links.color_collection') }}</h2>
 			  		<p>
-					هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة
-					 </p>
-			  		<p>
-					هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية
-					 </p>
+					  {{ __('links.color_text') }}
+													 </p>
+			  		
 				<div>
-					<img class="pt-4" src="./img/7.png" alt="">
-					<img class="pt-4" src="./img/8.png" alt="">
-					<img class="pt-4" src="./img/9.png" alt="">
-					<img class="pt-4" src="./img/10.png" alt="">
+					<img class="pt-4" src="{{ asset('webassets/img/7.png')}}" alt="">
+					<img class="pt-4" src="{{ asset('webassets/img/8.png')}}" alt="">
+					<img class="pt-4" src="{{ asset('webassets/img/9.png')}}" alt="">
+					<img class="pt-4" src="{{ asset('webassets/img/10.png')}}" alt="">
 				</div>
 			  	</div>
   				<div class="col-md-4">
   					<div>
-  						<img class="pt-4 mt-4" src="./img/6.png" alt="">
+  						<img class="pt-4 mt-4" src="{{ asset('webassets/img/6.png')}}" alt="">
   					</div>
   				</div>
   			</div>
@@ -193,7 +179,7 @@
   						<div class="col-lg-12">
   							<div class="services-2 d-flex">
   								<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>{{$index+1}}</span></div>
-  								<div class="text pr-3">
+  								<div class="text px-3">
 									<a href="#"><h3 class="hvr-wobble-skew">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$whyRow->en_title}}
 						  @else
@@ -227,7 +213,7 @@
   						<div class="col-lg-12">
   							<div class="services-2 d-flex">
   								<div class="icon mt-2 d-flex justify-content-center align-items-center"><a href="#" class=""></a><span>{{$index+1}}</span></div>
-  								<div class="text pr-3">
+  								<div class="text px-3">
 									<a href="#"><h3 class="hvr-wobble-skew">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$whyRow->en_title}}
 						  @else
@@ -257,21 +243,23 @@
   		<div class="mb-5">
   			<div class="row justify-content-center mb-5 pb-2 d-flex pl-3">
   				<div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5  mt-5 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-  					<h3 class="mb-4 text-white">لوريم إيبسوم هو ببساطة نص شكلي ؟ </h3>
+  					<h3 class="mb-4 text-white"> @if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$homeVedio->en_title}}
+						  @else
+						  {{$homeVedio->ar_title}}
+						  @endif </h3>
 				  	<p>
-			  	هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى هذة النصوص إن كنت تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في النص بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم عدة مرات بما تتطلبه الحاجة
-				  	</p>
-				  	<p>
-			  	عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في النص بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم عدة مرات بما تتطلبه الحاجة
-				  	</p>
-				  	<p>
-				  		عليك أن تتحقق أولاً أن ليس هناك أي كلمات أو عبارات محرجة أو غير لائقة مخبأة في النص بينما تعمل جميع مولّدات نصوص لوريم إيبسوم على الإنترنت على إعادة تكرار مقاطع من نص لوريم إيبسوم عدة مرات بما تتطلبه الحاجة
-				  	</p>
+					  @if( LaravelLocalization::getCurrentLocale() === "en")
+						  {{$homeVedio->en_text}}
+						  @else
+						  {{$homeVedio->ar_text}}
+						  @endif 				  	</p>
+				  
   				</div>
 			  	<div class="col-md-6 align-items-stretch d-flex">
-			  		<div class="img img-video d-flex align-items-center" style="background-image: url(img/13.png);width:700px;height:400px">
+			  		<div class="img img-video d-flex align-items-center" style="background-image: url('{{asset('uploads/home_vedios')}}/{{$homeVedio->image ?? ''}}');width:700px;height:400px">
 			  			<div class="video justify-content-center">
-			  				<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+			  				<a href="{{$homeVedio->vedio}}" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
 			  					<span class="ion-ios-play"></span>
 			  				</a>
 			  			</div>
@@ -349,9 +337,12 @@
                           {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
 						  @else
 						  {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
-						  @endif				  				</p>
-				  				<p><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}" class="btn btn-primary2"><span class="ion-ios-play"></span>{{ __('links.show_more') }}</a></p>
-				  			</div>
+						  @endif
+										  				</p>
+														  @if($blog)
+				  				<p><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id ) }}" class="btn btn-primary2"><span class="ion-ios-play"></span>{{ __('links.show_more') }}</a></p>
+				  			@endif
+							</div>
 				  		</div>
 				  	</div>
   				</div> <!-- .col-md-6 -->

@@ -47,11 +47,12 @@
   				<div class="col-md-6 col-lg-4">
   					<div class="ftco-footer-widget">
   						<h2 class="ftco-heading-2"> {{ __('links.news_letter') }}</h2>
-  						<form action="#" class="subscribe-form">
+						  <form id="formLetter" action="{{ LaravelLocalization::localizeUrl('/send-letter') }}" method="post">
+							@csrf
   							<div class="input-group">
-  								<input type="text" class="form-control" placeholder=" {{ __('links.enter_email') }}" aria-label="Input group example" aria-describedby="btnGroupAddon" style="background:rgba(255, 255, 255, 0.1) !important;border:white">
+  								<input type="text" class="form-control" name="email" placeholder=" {{ __('links.enter_email') }}" aria-label="Input group example" aria-describedby="btnGroupAddon" style="background:rgba(255, 255, 255, 0.1) !important;border:white">
   								<div class="input-group-prepend">
-  									<div class="input-group-text bg-white" id="btnGroupAddon"><a href="#" class="color-black"> {{ __('links.Subscribe') }}</a></div>
+  									<div class="input-group-text bg-white" id="btnGroupAddon"><a href="#" class="color-black" onclick="event.preventDefault(); document.getElementById('formLetter').submit();" > {{ __('links.Subscribe') }}</a></div>
   								</div>
   							</div>
   						</form>

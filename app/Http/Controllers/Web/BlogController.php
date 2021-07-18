@@ -20,7 +20,7 @@ class BlogController extends Controller
 
 
     public function singleBlog($id){
-        $blog=Blog::where('active', 1)->first();
+        $blog=Blog::where('id', $id)->first();
         $tags=Blogs_tag::where('blog_id',$id)->get();
         $blogs=Blog::where('active', 1)->orderBy('order', 'asc')->get();
         return view('web.single-blog',compact('blog','tags','blogs'));

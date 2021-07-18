@@ -17,6 +17,7 @@ class CreateHomeVediosTable extends Migration
             $table->id();
             $table->string('en_title')->nullable();
             $table->string('ar_title')->nullable();
+            $table->string('image')->nullable();
             $table->string('vedio')->nullable();
             $table->text('en_text')->nullable();
             $table->text('ar_text')->nullable();
