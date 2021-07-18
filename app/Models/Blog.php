@@ -19,4 +19,11 @@ class Blog extends Model
         'order',
         'active',
     ];
+    protected $guarded = ['id'];
+
+    public function Tags()
+    {
+        return $this->hasMany(Blogs_tag::class);
+    }
+
 }

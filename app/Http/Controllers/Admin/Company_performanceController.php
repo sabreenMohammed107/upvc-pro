@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Home_slider;
+use App\Models\Company_performance;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Image;
 use File;
 
-class Home_sliderController extends Controller
+class Company_performanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +19,8 @@ class Home_sliderController extends Controller
      */
     public function index()
     {
-        //
-        $home_slider = Home_slider::all();
-        return view("admin.home_slider.index")->with("home_slider",$home_slider);
+        $company_performance = Company_performance::all();
+        return view("admin.company_performance.index")->with("company_performance",$company_performance);
     }
 
     /**
@@ -31,7 +30,7 @@ class Home_sliderController extends Controller
      */
     public function create()
     {
-        return view("admin.home_slider.create");
+        return view("admin.company_performance.create");
     }
 
     /**
@@ -49,22 +48,22 @@ class Home_sliderController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/home_slider/' . $request->image	->hashName()));
+                ->save(public_path('uploads/company_performances/' . $request->image	->hashName()));
             $request_data['image'] = $request->image->hashName();
         }
 
-        $home_slider = Home_slider::create($request_data);
-        session()->flash('success', 'Home Slider Added Succsessfuly');
-        return redirect('/AdminHomeSlider');
+        $company_performance = Company_performance::create($request_data);
+        session()->flash('success', 'Company Performance Added Succsessfuly');
+        return redirect('/AdminCompanyPerformance');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
-    public function show(Home_slider $home_slider)
+    public function show(Company_performance $company_performance)
     {
         //
     }
@@ -72,64 +71,58 @@ class Home_sliderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
-        $home_slider = Home_slider::find($id);
-         return view("admin.home_slider.edit")->with("home_slider",$home_slider);
+        $company_performance = Company_performance::find($id);
+         return view("admin.company_performance.edit")->with("company_performance",$company_performance);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $home_slider = Home_slider::find($id);
+        $company_performance = Company_performance::find($id);
 
         if($request->hasFile('image'))
         {
             //delete old
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
-            File::delete($fileName);
+           $fileName=public_path('uploads/company_performances/'.$company_performance->image);
+           File::delete($fileName);
            $fileDoc=$request->file('image');
-           $home_slider->image= $this->UplaodFile($fileDoc);
+           $company_performance->image= $this->UplaodFile($fileDoc);
         }
-        if($request->active){
-            $home_slider->active=1;
-        }else{
-            $home_slider->active=0;
-        }
-        $home_slider->update($request->except(['image']));
-        session()->flash('success', 'Home Slider Data Updated Succsessfuly');
-        return redirect('/AdminHomeSlider');
+        $company_performance->update($request->except(['image']));
+        session()->flash('success', 'Company Performance Data Updated Succsessfuly');
+        return redirect('/AdminCompanyPerformance');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Home_slider  $home_slider
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $home_slider = Home_slider::find($id);
+        $company_performance = Company_performance::find($id);
 
-        if ($home_slider->image != 'default.png') {
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
+        if ($company_performance->image != 'default.png') {
+            $fileName=public_path('uploads/company_performances/'.$company_performance->image);
             File::delete($fileName);
         }//end of if
 
-        $home_slider->delete();
-        session()->flash('success', 'Home Slider Data Deleted Successfully');
-        return redirect('/AdminHomeSlider');
+        $company_performance->delete();
+        session()->flash('success', 'Company Performance Data Deleted Successfully');
+        return redirect('/AdminCompanyPerformance');
     }
     public function UplaodFile($file_request)
 	{
@@ -145,7 +138,7 @@ class Home_sliderController extends Controller
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/home_slider');
+		$uploadPath = public_path('uploads/company_performances');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

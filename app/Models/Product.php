@@ -19,7 +19,7 @@ class Product extends Model
         'product_details_img',
         'product_profile_img',
     ];
-    public function category()
+    public function Category()
     {
         return $this->belongsTo('App\Models\Product_category','category_id');
     }

@@ -53,7 +53,7 @@ class FeedbackController extends Controller
         }
 
         $feedback = Feedback::create($request_data);
-        session()->flash('success', 'Home Slider Added Succsessfuly');
+        session()->flash('success', 'Feedback Added Succsessfuly');
         return redirect('/AdminFeedback');
     }
 
@@ -106,7 +106,7 @@ File::delete($fileName);
             $feedback->active=0;
         }
         $feedback->update($request->except(['image']));
-        session()->flash('success', 'Home Slider Data Updated Succsessfuly');
+        session()->flash('success', 'Feedback Data Updated Succsessfuly');
         return redirect('/AdminFeedback');
     }
 
@@ -127,7 +127,7 @@ File::delete($fileName);
         }//end of if
 
         $feedback->delete();
-        session()->flash('success', 'Home Slider Data Deleted Successfully');
+        session()->flash('success', 'Feedback Data Deleted Successfully');
         return redirect('/AdminFeedback');
     }
     public function UplaodFile($file_request)
