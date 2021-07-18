@@ -118,6 +118,11 @@
     </li>
     @endif
     @if (Auth::user()->hasPermission('users-read'))
+    <li class="active">
+      <a  href="/AdminProductCategory" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Product Category</span></a>
+  </li>
+  @endif
+    @if (Auth::user()->hasPermission('users-read'))
       <li class="active">
         <a  href="/AdminCompanyPerformance" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Company Performance</span></a>
     </li>

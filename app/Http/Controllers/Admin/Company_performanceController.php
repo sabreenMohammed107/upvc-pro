@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Feedback;
+use App\Models\Company_performance;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Image;
 use File;
 
-class FeedbackController extends Controller
+class Company_performanceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +19,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedback = Feedback::all();
-        return view("admin.feedback.index")->with("feedback",$feedback);
+        $company_performance = Company_performance::all();
+        return view("admin.company_performance.index")->with("company_performance",$company_performance);
     }
 
     /**
@@ -30,7 +30,7 @@ class FeedbackController extends Controller
      */
     public function create()
     {
-        return view("admin.feedback.create");
+        return view("admin.company_performance.create");
     }
 
     /**
@@ -48,22 +48,22 @@ class FeedbackController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/feedback/' . $request->image	->hashName()));
+                ->save(public_path('uploads/company_performances/' . $request->image	->hashName()));
             $request_data['image'] = $request->image->hashName();
         }
 
-        $feedback = Feedback::create($request_data);
-        session()->flash('success', 'Feedback Added Succsessfuly');
-        return redirect('/AdminFeedback');
+        $company_performance = Company_performance::create($request_data);
+        session()->flash('success', 'Company Performance Added Succsessfuly');
+        return redirect('/AdminCompanyPerformance');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
-    public function show(Feedback $feedback)
+    public function show(Company_performance $company_performance)
     {
         //
     }
@@ -71,64 +71,58 @@ class FeedbackController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
-        $feedback = Feedback::find($id);
-         return view("admin.feedback.edit")->with("feedback",$feedback);
+        $company_performance = Company_performance::find($id);
+         return view("admin.company_performance.edit")->with("company_performance",$company_performance);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Feedback  $feedback
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $feedback = Feedback::find($id);
+        $company_performance = Company_performance::find($id);
 
         if($request->hasFile('image'))
         {
             //delete old
-$fileName=public_path('uploads/feedback/'.$feedback->image);
-File::delete($fileName);
+           $fileName=public_path('uploads/company_performances/'.$company_performance->image);
+           File::delete($fileName);
            $fileDoc=$request->file('image');
-           $feedback->image= $this->UplaodFile($fileDoc);
+           $company_performance->image= $this->UplaodFile($fileDoc);
         }
-        if($request->active){
-            $feedback->active=1;
-        }else{
-            $feedback->active=0;
-        }
-        $feedback->update($request->except(['image']));
-        session()->flash('success', 'Feedback Data Updated Succsessfuly');
-        return redirect('/AdminFeedback');
+        $company_performance->update($request->except(['image']));
+        session()->flash('success', 'Company Performance Data Updated Succsessfuly');
+        return redirect('/AdminCompanyPerformance');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Feedback  $feedback
+     * @param  \App\Models\Company_performance  $company_performance
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $feedback = Feedback::find($id);
+        $company_performance = Company_performance::find($id);
 
-        if ($feedback->image != 'default.png') {
-            $fileName=public_path('uploads/feedback/'.$feedback->image);
+        if ($company_performance->image != 'default.png') {
+            $fileName=public_path('uploads/company_performances/'.$company_performance->image);
             File::delete($fileName);
         }//end of if
 
-        $feedback->delete();
-        session()->flash('success', 'Feedback Data Deleted Successfully');
-        return redirect('/AdminFeedback');
+        $company_performance->delete();
+        session()->flash('success', 'Company Performance Data Deleted Successfully');
+        return redirect('/AdminCompanyPerformance');
     }
     public function UplaodFile($file_request)
 	{
@@ -144,7 +138,7 @@ File::delete($fileName);
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/feedback');
+		$uploadPath = public_path('uploads/company_performances');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

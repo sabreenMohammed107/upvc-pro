@@ -71,6 +71,8 @@ Route::group(
            Route::resource('/AdminBlogTag', Blogs_tagController::class);
            //-------------------------Product Screen
            Route::resource('/AdminProduct', ProductController::class);    
+           //-------------------------Product Category Screen
+           Route::resource('/AdminProductCategory', Product_categoryController::class); 
             //-------------------------Company Performance Screen
            Route::resource('/AdminCompanyPerformance', Company_performanceController::class);    
 

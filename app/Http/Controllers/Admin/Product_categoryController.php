@@ -15,7 +15,8 @@ class Product_categoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Product_category::all();
+        return view("admin.product_category.index")->with("category",$category);
     }
 
     /**
@@ -36,7 +37,11 @@ class Product_categoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request_data = $request->all();
+        
+        $category = Product_category::create($request_data);
+        session()->flash('success', 'Category Data Added Succsessfuly');
+        return redirect('/AdminProductCategory');
     }
 
     /**
@@ -68,9 +73,13 @@ class Product_categoryController extends Controller
      * @param  \App\Models\Product_category  $product_category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product_category $product_category)
+    public function update(Request $request, $id)
     {
-        //
+        $category =Product_category::find($id);
+
+        $category->update($request->all());
+        session()->flash('success', 'Category Data Updated Succsessfuly');
+        return redirect('/AdminProductCategory');
     }
 
     /**
@@ -79,8 +88,12 @@ class Product_categoryController extends Controller
      * @param  \App\Models\Product_category  $product_category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product_category $product_category)
+    public function destroy($id)
     {
-        //
+        $category = Product_category::find($id);
+
+        $category->delete();
+        session()->flash('success', 'Category Data Deleted Successfully');
+        return redirect('/AdminProductCategory');
     }
 }
