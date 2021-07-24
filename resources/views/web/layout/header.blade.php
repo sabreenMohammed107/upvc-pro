@@ -59,7 +59,7 @@
   		<div class="container mobile-hide" style="z-index:1 !important">
   			<div class="row no-gutters d-flex align-items-center align-items-stretch dir-rtl">
   				<div class="col-md-4 d-flex align-items-center py-2">
-  					<a class="navbar-brand" href="index.html"><img src="{{ asset('webassets/img/logo.jpg')}}" alt=""></a>
+  					<a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img src="{{ asset('webassets/img/logo.jpg')}}" alt=""></a>
   				</div>
   				<div class="col-lg-8 d-block">
   					<div class="row d-flex">
