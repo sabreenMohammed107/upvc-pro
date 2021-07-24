@@ -46,7 +46,7 @@
   		<div class="container mobile-show" style="z-index:1 !important">
   			<div class="row">
   				<div class="col-lg-4 col-sm-4 col-4 d-flex align-items-center" ">
-  					<a class="navbar-brand" href="index.html"><img src="{{ asset('webassets/img/logo.jpg')}}" alt=""></a>
+  					<a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img src="{{ asset('webassets/img/logo.jpg')}}" alt=""></a>
   				</div>
   				<div class="col-lg-8 col-sm-8 col-8 d-flex justify-content-md-end">
   					<ul class="mobile-info">

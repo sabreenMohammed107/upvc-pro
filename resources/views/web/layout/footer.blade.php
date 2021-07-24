@@ -27,7 +27,7 @@
   						<ul class="list-unstyled">
   							<li><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.home') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/about_us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>  {{ __('links.about_us') }}</a></li>
-  							<li><a href="product.html"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.products') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/products') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.products') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.gallery') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.contact_us') }}</a></li>
   						</ul>
