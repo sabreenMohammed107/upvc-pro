@@ -24,7 +24,7 @@
 	  								<div class="swiper-wrapper">
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
-	  										<a href="#">
+	  										<a >
 	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>
@@ -38,7 +38,7 @@
 	  								<div class="swiper-wrapper">
                                       @foreach($images as $img)
                                       <div class="swiper-slide">
-	  										<a href="#">
+	  										<a >
 	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>
@@ -207,9 +207,9 @@
                             @foreach($others as $other)
 							<div class="col-md-6 col-lg-2 ftco-animate ">
 								<div class="blog-entry ">
-									<a href="# " class="block-20 d-flex align-items-end related-img " style="background-image: url( '{{asset('uploads/products')}}/{{$other->master_image ?? ''}}'); "></a>
+									<a  class="block-20 d-flex align-items-end related-img " style="background-image: url( '{{asset('uploads/products')}}/{{$other->master_image ?? ''}}'); "></a>
 									<div class="text bg-white p-4 ">
-										<h3 class="heading text-center "><a href="# " class="text-center font-18 "> @if( LaravelLocalization::getCurrentLocale() === "en")
+										<h3 class="heading text-center "><a  class="text-center font-18 "> @if( LaravelLocalization::getCurrentLocale() === "en")
 						 {{$other->en_name}}
 								  @else
 {{$other->ar_name}}						  @endif</a></h3>

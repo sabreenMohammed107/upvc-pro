@@ -95,7 +95,6 @@
                                             @foreach ($blog->Tags as $tag)
                                             <label style="display: block">{{$tag->tag}}</label>
                                             @endforeach</td>
-                                            
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
@@ -119,43 +118,43 @@
                                                @endif
                                             </td>
                                         </tr>
-                                    <!--Add Tags-->
-<div id="add-tag{{$blog->id}}" class="modal modal-edu-general fullwidth-popup-InformationproModal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header header-color-modal bg-color-2">
-                <h4 class="modal-title">Add Blog Tag</h4>
-                <div class="modal-close-area modal-close-df">
-                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-                </div>
-            </div>
-            <div class="modal-body">
-                <form action="{{ route('AdminBlogTag.store') }}" method="POST">
-
-                    {{ csrf_field() }}
-                    @method('POST')
-
-                    <div class="form-group col-md-12" style="display: none">
-                        <input type="text" class="form-control" value="{{$blog->id}}" name="blog_id">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <label>Blog Tag</label>
-                        <input type="text" class="form-control" name="tag">
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer info-md">
-            </div>
-        </div>
-    </div>
-</div>
-<!--/Add Tags-->
+                                        <!--Add Tags-->
+                                        <div id="add-tag{{$blog->id}}" class="modal modal-edu-general fullwidth-popup-InformationproModal fade" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header header-color-modal bg-color-2">
+                                                        <h4 class="modal-title">Add Blog Tag</h4>
+                                                        <div class="modal-close-area modal-close-df">
+                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ route('AdminBlogTag.store') }}" method="POST">
+                                        
+                                                            {{ csrf_field() }}
+                                                            @method('POST')
+                                        
+                                                            <div class="form-group col-md-12" style="display: none">
+                                                                <input type="text" class="form-control" value="{{$blog->id}}" name="blog_id">
+                                                            </div>
+                                        
+                                                            <div class="form-group col-md-12">
+                                                                <label>Blog Tag</label>
+                                                                <input type="text" class="form-control" name="tag">
+                                                            </div>
+                                        
+                                                            <div class="form-group col-md-12">
+                                                                <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
+                                                            </div>
+                                        
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer info-md">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/Add Tags-->
                                     @endforeach
                                     </tbody>
         

@@ -37,11 +37,11 @@
                       </ul>
                   </li> --}}
             
-                  @if (Auth::user()->hasPermission('users-read'))
+                  {{-- @if (Auth::user()->hasPermission('users-read'))
                   <li class="active">
                     <a  href="/AdminUser" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Users</span></a>
                 </li>
-                @endif
+                @endif --}}
                 @if (Auth::user()->hasPermission('users-read'))
                 <li class="active">
                   <a  href="/AdminClient" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Clients</span></a>
@@ -124,7 +124,7 @@
   @endif
     @if (Auth::user()->hasPermission('users-read'))
       <li class="active">
-        <a  href="/AdminCompanyPerformance" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Company Performance</span></a>
+        <a  href="/AdminCompanyPerformance" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Co. Performance</span></a>
     </li>
     @endif
               </ul>

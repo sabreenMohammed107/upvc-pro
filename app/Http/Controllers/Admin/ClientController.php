@@ -44,26 +44,33 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         //
+        // $request_data = $request->all();
+
+        // if ($request->logo) {
+        //     Image::make($request->logo)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/clients/' . $request->logo->hashName()));
+
+        //     $request_data['logo'] = $request->logo->hashName();
+            
+        // }
+        // $client = Client::create($request_data);
+        // session()->flash('success', 'Client Added Succsessfuly');
+        // return redirect('/AdminClient');
+
         $request_data = $request->all();
 
         if ($request->logo) {
-            Image::make($request->logo)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/clients/' . $request->logo->hashName()));
-
-            $request_data['logo'] = $request->logo->hashName();
+           
+                $logo=$request->file('logo');
+  
+                $request_data['logo']  = $this->UplaodFile($logo);
+           
 
             
-        }//end of if
-
-        // if($request->active){
-        //     $client->active=1;
-        // }else{
-        //     $client->active=0;
-        // }
-        
+        }
         $client = Client::create($request_data);
         session()->flash('success', 'Client Added Succsessfuly');
         return redirect('/AdminClient');

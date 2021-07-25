@@ -77,7 +77,6 @@ class CompanyController extends Controller
     {
         //
         $validatedData = $request->validate([
-            'name' => 'required',
             'en_address'=> 'required',
             'ar_address'=> 'required',
             'phone'=> 'required',
@@ -88,7 +87,7 @@ class CompanyController extends Controller
             'header_en_address'=> 'required',
             'header_ar_address'=> 'required',
             'header_phone'=> 'required',
-            'header_mobile'=> 'required',
+            // 'header_mobile'=> 'required',
             'facebook_url'=> 'required',
             'linkedin_url'=> 'required',
            'instgram_url'=> 'required',
