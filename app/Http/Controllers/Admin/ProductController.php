@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Product_category;
+
+use App\Models\Product_img;
+use App\Models\Product_key_feature;
 use Illuminate\Http\Request;
+
+use Illuminate\Database\QueryException;
 
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image as Image;
@@ -112,6 +117,7 @@ class ProductController extends Controller
      */
     public function update(Request $request,$id)
     {
+        try {
         $product = Product::find($id);
 
         if($request->hasFile('master_image'))
@@ -145,6 +151,13 @@ class ProductController extends Controller
         session()->flash('success', 'Product Data Updated Succsessfuly');
         return redirect('/AdminProduct');
 
+    } catch (QueryException $q) {
+
+        session()->flash('success', 'Product Data Not Deleted Successfully Related with Blog tags');
+        return redirect('/AdminProduct');
+
+    }
+
     }
 
     /**
@@ -156,6 +169,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+
+        $product->Product_img()->delete();
+        $product->Product_key_feature()->delete();
 
         if ($product->master_image != 'default.png') {
             $fileName=public_path('uploads/products/'.$product->master_image);

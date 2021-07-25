@@ -8,6 +8,7 @@ use App\Models\Blogs_tag;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\QueryException;
 use Intervention\Image\Facades\Image as Image;
 use File;
 
@@ -142,8 +143,14 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $blog = Blog::find($id);
+
+        try {
+            $blog = Blog::find($id);
+            $blog->Tags()->delete();
+            // $tags=Blogs_tag::where('blog_id',$id)->get();
+            // foreach ($tags as $tag){
+            // $tag->delete();
+            // }
 
         if ($blog->image != 'default.png') {
             $fileName=public_path('uploads/blogs/'.$blog->image);
@@ -158,6 +165,14 @@ class BlogController extends Controller
         $blog->delete();
         session()->flash('success', 'Blog Data Deleted Successfully');
         return redirect('/AdminBlog');
+
+        } catch (QueryException $q) {
+
+            session()->flash('success', 'Blog Data Not Deleted Successfully Related with Blog tags');
+            return redirect('/AdminBlog');
+
+        }
+        
     }
     public function UplaodFile($file_request)
 	{
