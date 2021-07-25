@@ -81,7 +81,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'why_us'=>'Why Us',
 /*-----------------blogs-----------------*/
 'popular_blog'=>'Popular Blogs',
-'tags'=>'Tages',
+'tags'=>'Key Words',
 /*-------------------Products-----------------------*/
 'advanced_performance'=>'Advanced Performance',
 'information'=>'Information',
