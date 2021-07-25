@@ -12,7 +12,22 @@
 	  		</div>
 
 	  	</section>
-
+		  @if(Session::has('flash_success'))
+                <div class="col-lg-12">
+                    <div class="alert alert-success alert-block {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong ><i class="fa fa-check-circle"></i> {!! session('flash_success') !!}</strong>
+                    </div>
+                </div>
+            @endif
+            @if(Session::has('flash_danger'))
+                <div class="col-lg-12">
+                    <div class="alert alert-danger alert-block {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong ><i class="fa fa-info-circle"></i> {!! session('flash_danger') !!}</strong>
+                    </div>
+                </div>
+            @endif
           <section class="ftco-section">
 			<div class="container">
 				<div class="row {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'dir-rtl' : ''}}">
@@ -25,9 +40,9 @@
 
 $blogId = $blog->id;
 if( LaravelLocalization::getCurrentLocale() === "en"){
-    $url = 'http://127.0.0.1:8000/en/single-blog/'. $blogId;
+    $url = 'http://premierupvc.senior-consultingco.com/en/single-blog/'. $blogId;
 }else{
-    $url = 'http://127.0.0.1:8000/ar/single-blog/'. $blogId;
+    $url = 'http://premierupvc.senior-consultingco.com/ar/single-blog/'. $blogId;
 }
 						 
 
