@@ -49,7 +49,7 @@ class Home_sliderController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/home_slider/' . $request->image	->hashName()));
+                ->save(public_path('uploads/home_sliders/' . $request->image	->hashName()));
             $request_data['image'] = $request->image->hashName();
         }
 
@@ -96,7 +96,7 @@ class Home_sliderController extends Controller
         if($request->hasFile('image'))
         {
             //delete old
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
+            $fileName=public_path('uploads/home_sliders/'.$home_slider->image);
             File::delete($fileName);
            $fileDoc=$request->file('image');
            $home_slider->image= $this->UplaodFile($fileDoc);
@@ -123,7 +123,7 @@ class Home_sliderController extends Controller
         $home_slider = Home_slider::find($id);
 
         if ($home_slider->image != 'default.png') {
-            $fileName=public_path('uploads/home_slider/'.$home_slider->image);
+            $fileName=public_path('uploads/home_sliders/'.$home_slider->image);
             File::delete($fileName);
         }//end of if
 
@@ -145,7 +145,7 @@ class Home_sliderController extends Controller
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/home_slider');
+		$uploadPath = public_path('uploads/home_sliders');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

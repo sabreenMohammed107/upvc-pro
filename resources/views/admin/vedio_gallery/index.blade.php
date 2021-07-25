@@ -77,7 +77,7 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $vedio_gallery->vedio }}</td>
-                                            <td><img src="{{ asset('uploads/vedio_gallery/'.$vedio_gallery->image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{ asset('uploads/galleries/')}}/{{$vedio_gallery->image}}" style="width: 200px;height:100px"></td>
                                             <td>{{ $vedio_gallery->order }}</td>
                                             <td>{{ $vedio_gallery->active }}</td>
                                             <td>
