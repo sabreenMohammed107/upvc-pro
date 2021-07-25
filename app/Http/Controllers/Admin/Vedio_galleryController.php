@@ -48,7 +48,7 @@ class Vedio_galleryController extends Controller
                 ->resize(300, null, function ($constraint) {
                     $constraint->aspectRatio();
                 })
-                ->save(public_path('uploads/vedio_gallery/' . $request->image->hashName()));
+                ->save(public_path('uploads/galleries/' . $request->image->hashName()));
                 $request_data['image'] = $request->image->hashName();
         }
 
@@ -95,7 +95,7 @@ class Vedio_galleryController extends Controller
         if($request->hasFile('image'))
         {
             //delete old
-$fileName=public_path('uploads/vedio_gallery/'.$vedio_gallery->image);
+$fileName=public_path('uploads/galleries/'.$vedio_gallery->image);
 File::delete($fileName);
            $fileDoc=$request->file('image');
            $vedio_gallery->image= $this->UplaodFile($fileDoc);
@@ -122,7 +122,7 @@ File::delete($fileName);
         $vedio_gallery = Vedio_gallery::find($id);
 
         if ($vedio_gallery->image != 'default.png') {
-            $fileName=public_path('uploads/vedio_gallery/'.$vedio_gallery->image);
+            $fileName=public_path('uploads/galleries/'.$vedio_gallery->image);
             File::delete($fileName);
         }//end of if
 
@@ -144,7 +144,7 @@ File::delete($fileName);
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/vedio_gallery');
+		$uploadPath = public_path('uploads/galleries');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

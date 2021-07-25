@@ -75,7 +75,7 @@
                                         <tr>
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
-                                            <td><img src="{{ asset('uploads/image_gallery/'.$image_gallery->image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/galleries')}}/{{$image_gallery->image }}" style="width: 200px;height:100px"></td>
                                             <td>{{ $image_gallery->order }}</td>
                                             <td>{{ $image_gallery->active }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
