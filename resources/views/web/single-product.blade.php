@@ -24,7 +24,7 @@
 	  								<div class="swiper-wrapper">
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
-	  										<a href="#">
+	  										<a >
 	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>
@@ -38,7 +38,7 @@
 	  								<div class="swiper-wrapper">
                                       @foreach($images as $img)
                                       <div class="swiper-slide">
-	  										<a href="#">
+	  										<a >
 	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>

@@ -5,7 +5,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
      {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
-	Route::get('/home', 'HomeController@index')->name('home');
+	Route::get('/admin', 'HomeController@index')->name('admin');
    
 // Route::get('/Admin', function(){
 //     return redirect ("login");
