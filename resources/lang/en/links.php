@@ -47,6 +47,10 @@ return [
 'materials'=>'Materials',
 'best_materials'=>'Best Materials',
 'show_more'=>'Show More',
+'color_collection'=>'Color Collection',
+'color_text'=>'PREMIER UPVC Profile’s material has great toughness and rigidity, good chemical resistance and thermal stability, outstanding resistance to weather, and ultraviolet resistance
+
+PREMIER UPVC comes in a different color based on the market and customer needs for any project',
 /*-----contact page -----------------*/
 'contact_text'=>'We aim to reach you anytime & everywhere.. Your satisfaction is our mission. For any inquiries or complaints please contact us:',
 'central_office'=>'Central Office',

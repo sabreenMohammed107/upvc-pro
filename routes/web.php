@@ -21,6 +21,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('/', 'Web\IndexController@index');
+	
+	Route::post('/send-letter', 'Web\IndexController@sendLetter');
 	//contact us
 	Route::get('/contact-us', 'Web\ContactController@index')->name('contact-us');
 	Route::post('/contact-message', 'Web\ContactController@sendMessage');

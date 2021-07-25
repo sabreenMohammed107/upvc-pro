@@ -18,7 +18,7 @@
 				<div class="row {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'dir-rtl' : ''}}">
 					<div class="col-lg-8 ftco-animate">
 						<p>
-							<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid">
+							<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid w-100">
 						</p>
 						<div> 
                         <?php
@@ -39,7 +39,7 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
                                 href="https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}" target="popup" onclick="window.open('https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}','popup','width=600,height=600'); return false;"
                                  class="border-white"><span class="icon-instagram"></span></a></li>
 							</ul>
-							<p class="ftco-footer-social ftco-blog-social list-unstyled  pt-1 mr-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}"> نشر  </p>
+							<p class="ftco-footer-social ftco-blog-social list-unstyled  pt-1 mr-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">   </p>
 						</div>
 						<br /><br />
 						<div>
@@ -69,8 +69,8 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 						<h3>{{ __('links.popular_blog') }}</h3>
                         @foreach($blogs as $blog)
 						<div class="block-21 mb-4 d-flex">
-							<a class="blog-img ml-4" style="background-image: url({{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}});"></a>
-							<div class="text">
+							<a class="blog-img ml-4 " style="background-image: url({{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}});"></a>
+							<div class="text px-2">
 								<h3 class="heading"><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
