@@ -41,7 +41,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Client</h3>
+                            <h3>Edit Product</h3>
                             <br />
                             <form action="{{ route('AdminProduct.update',$product->id) }}" method="POST"  enctype="multipart/form-data">
 
