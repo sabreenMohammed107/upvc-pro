@@ -67,11 +67,11 @@
                                         <th>  En Name </th>
                                         <th> Ar Name </th>
                                         <th>Category </th>
-                                        <th>Master Img</th>
+                                        {{-- <th>Master Img</th> --}}
                                         <th>Details Img	</th>
                                         <th>Profile Img</th>
-                                        <th>Add Imgs</th>
-                                        <th>Add Keys</th>
+                                        <th>Product Imgs</th>
+                                        <th>Product Keys</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -82,13 +82,15 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $product->en_name }}</td>
                                             <td>{{ $product->ar_name }}</td>
-                                            <td>{{ $product->Category->en_name }}</td>
-                                            <td><img src="{{ asset('uploads/products/'.$product->master_image) }}" style="width: 200px;height:100px"></td>
+                                            <td>{{ $product->Category->en_name ?? ""}}</td>
+                                            {{-- <td><img src="{{ asset('uploads/products/'.$product->master_image) }}" style="width: 200px;height:100px"></td> --}}
                                             <td><img src="{{ asset('uploads/products/'.$product->product_details_img) }}" style="width: 200px;height:100px"></td>
                                             <td><img src="{{ asset('uploads/products/'.$product->product_profile_img) }}" style="width: 200px;height:100px"></td>
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                     <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-imgs{{$product->id}}"><i class="fa fa-edit"></i> Add Product Images  </a>
+                                                    <br>
+                                                    <a class="btn btn-primary mb-1"  href="/AdminProductImages/{{$product->id}}/edit"><i class="fa fa-eye"></i> Show Product Images  </a>
                                                 @else
                                                     <a href="" class="btn btn-primary mb-1" disabled><i class="fa fa-edit"></i> Add Product Images </a>
                                                @endif
@@ -130,7 +132,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form action="{{ route('AdminProductImages.store') }}" method="POST">
+                                                        <form action="{{ route('AdminProductImages.store') }}" method="POST" enctype="multipart/form-data">
                                         
                                                             {{ csrf_field() }}
                                                             @method('POST')
@@ -170,56 +172,6 @@
                                         </div>
                                         <!--/Add Product Images-->
 
-                                        <!--Show Product Images-->
-                                        <div id="show-imgs{{$product->id}}" class="modal modal-edu-general fullwidth-popup-InformationproModal fade" role="dialog">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header header-color-modal bg-color-2">
-                                                        <h4 class="modal-title">Add Product Images</h4>
-                                                        <div class="modal-close-area modal-close-df">
-                                                            <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form action="{{ route('AdminProductImages.store') }}" method="POST">
-                                        
-                                                            {{ csrf_field() }}
-                                                            @method('POST')
-                                        
-                                                            <div class="form-group col-md-12" style="display: none">
-                                                                <input type="text" class="form-control" value="{{$product->id}}" name="product_id">
-                                                            </div>
-
-                                                            <div class="form-group col-md-12">
-                                                                <label>Product Images</label>
-                                                                <div class="file-upload-inner file-upload-inner-right ts-forms">
-                                                                    <div class="input append-small-btn">
-                                                                        <div class="file-button">
-                                                                            Browse
-                                                                            <input type="file" onchange="document.getElementById('append-small-btn1').value = this.value;" name="image" >
-                                                                        </div>
-                                                                        <input type="text" id="append-small-btn1"  name="image">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="form-group col-md-12">
-                                                                <label>Order</label>
-                                                                <input type="number" class="form-control" name="order">
-                                                            </div>
-                                        
-                                                            <div class="form-group col-md-12">
-                                                                <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
-                                                            </div>
-                                        
-                                                        </form>
-                                                    </div>
-                                                    <div class="modal-footer info-md">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--/Show Product Images-->
 
                                         <!--Add Key Features-->
                                         <div id="add-keys{{$product->id}}" class="modal modal-edu-general fullwidth-popup-InformationproModal fade" role="dialog">

@@ -67,7 +67,7 @@
                                 <div class="form-group col-md-6">
                                     <label>Product Category</label>
                                     <div class="form-select-list">
-                                        <select class="form-control custom-select-value" name="account">
+                                        <select class="form-control custom-select-value" name="category_id">
                                             <option value="">Select Category ...</option>
                                             @foreach ($category as $cat)
                                             <option value="{{$cat->id}}">{{$cat->en_name}}</option>
@@ -96,7 +96,7 @@
                                     <input type="text" class="form-control" name="ar_description">
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     <label>Master Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -107,7 +107,7 @@
                                             <input type="text" id="append-small-btn1"  name="master_image"  >
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6">
                                     <label>Details Image</label>

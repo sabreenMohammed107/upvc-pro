@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use App\Models\Product_img;
 use Illuminate\Http\Request;
 
@@ -47,15 +48,6 @@ class Product_imgController extends Controller
                 $request_data['image']  = $this->UplaodFile($image);
         }
 
-        // if ($request->image) {
-        //     Image::make($request->image)
-        //         ->resize(300, null, function ($constraint) {
-        //             $constraint->aspectRatio();
-        //         })
-        //         ->save(public_path('uploads/products/' . $request->image->hashName()));
-        //     $request_data['image'] = $request->image->hashName();
-        // }
-
         $imgs = Product_img::create($request_data);
         session()->flash('success', 'Product Images Added Succsessfuly');
         return redirect('/AdminProduct');
@@ -78,9 +70,11 @@ class Product_imgController extends Controller
      * @param  \App\Models\Product_img  $product_img
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product_img $product_img)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $imgs = Product_img::where('product_id',$id)->get();
+        return view("admin.product_img.index", ["product"=>$product ,"imgs"=>$imgs]);
     }
 
     /**
@@ -90,9 +84,22 @@ class Product_imgController extends Controller
      * @param  \App\Models\Product_img  $product_img
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product_img $product_img)
+    public function update(Request $request, $id)
     {
-        //
+        $imgs = Product_img::find($id);
+
+        if($request->hasFile('image'))
+        {
+            //delete old
+            $fileName=public_path('uploads/products/'.$imgs->image);
+            File::delete($fileName);
+           $fileDoc=$request->file('image');
+           $imgs->image= $this->UplaodFile($fileDoc);
+        }
+
+        $imgs->update($request->except(['image','thumbnail']));
+        session()->flash('success', 'Product Image Updated Succsessfuly');
+        return back();
     }
 
     /**
@@ -101,9 +108,27 @@ class Product_imgController extends Controller
      * @param  \App\Models\Product_img  $product_img
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product_img $product_img)
+    public function destroy($id)
     {
-        //
+        try {
+            $imgs = Product_img::find($id);
+
+        if ($imgs->image != 'default.png') {
+            $fileName=public_path('uploads/products/'.$imgs->image);
+            File::delete($fileName);
+        }//end of if
+
+        $imgs->delete();
+        session()->flash('success', 'Product Image Deleted Successfully');
+        return back();
+
+        } catch (QueryException $q) {
+
+            session()->flash('success', 'Product Image Not Deleted');
+            return back();
+
+        }
+        
     }
 
     public function UplaodFile($file_request)

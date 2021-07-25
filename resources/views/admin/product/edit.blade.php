@@ -79,7 +79,7 @@
                                     <input type="text" class="form-control" name="ar_description" value="ar_description">
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     <label>Master Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -90,7 +90,7 @@
                                             <input type="text" id="append-small-btn1"  name="master_image" value="master_image" >
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6">
                                     <label>Details Image</label>
