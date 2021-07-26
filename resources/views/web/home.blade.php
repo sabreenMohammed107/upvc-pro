@@ -99,7 +99,7 @@
 						 {{$product->en_description}}
 								  @else
 {{$product->ar_description}}						  @endif</p>
-							    <p><a href="#" class="btn btn-primary2">{{ __('links.show_more') }}</a></p>
+							    <p><a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$product->id) }}" class="btn btn-primary2">{{ __('links.show_more') }}</a></p>
 			  				</div>
 			  			</div>
 			  		</div>

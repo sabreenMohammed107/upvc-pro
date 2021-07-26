@@ -69,7 +69,7 @@
                         @foreach($blogs as $blog)
 						<div class="block-21 mb-4 d-flex">
 							<a class="blog-img ml-4" style="background-image: url({{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}});"></a>
-							<div class="text">
+							<div class="text px-2">
 								<h3 class="heading"><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
