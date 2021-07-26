@@ -12,11 +12,11 @@
 						  @else
 						  <ul class="ftco-footer-social list-unstyled float-md-right mt-3">
 						  @endif
-  							<li class="ftco-animate"><a href="#" class="border-white"><span class="icon-twitter"></span></a></li>
-  							<li class="ftco-animate"><a href="https://www.facebook.com/Premierupvcsections" class="border-white"><span class="icon-facebook"></span></a></li>
-  							<li class="ftco-animate"><a href="https://www.instagram.com/premierupvceg/" class="border-white"><span class="icon-instagram"></span></a></li>
-  							<li class="ftco-animate"><a href="#" class="border-white"><span class="icon-google-plus"></span></a></li>
-  							<li class="ftco-animate"><a href="#" class="border-white"><span class="icon-map-marker"></span></a></li>
+  							<li class="ftco-animate"><a href="{{$company->linkedin_url ?? ''}}"  target="_blank" class="border-white"><span class="icon-linkedin"></span></a></li>
+  							<li class="ftco-animate"><a href="https://www.facebook.com/Premierupvcsections" target="_blank" class="border-white"><span class="icon-facebook"></span></a></li>
+  							<li class="ftco-animate"><a href="https://www.instagram.com/premierupvceg/" target="_blank" class="border-white"><span class="icon-instagram"></span></a></li>
+							  <li class="ftco-animate"><a href="{{$company->whatsapp ?? ''}}" target="_blank" class="border-white"><span class="icon-whatsapp"></span></a></li>
+  							<li class="ftco-animate"><a href="https://www.google.com/maps/@30.122806,31.762889,16z?hl=en" target="_blank" class="border-white"><span class="icon-map-marker"></span></a></li>
   						</ul>
   					</div>
   				</div>
@@ -37,10 +37,10 @@
   					<div class="ftco-footer-widget">
   						<h2 class="ftco-heading-2"> {{ __('links.blog') }}</h2>
   						<ul class="list-unstyled">
-  							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>UPVC {{ __('links.windows') }}</a></li>
-  							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>{{ __('links.noise_reduction') }}</a></li>
-  							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>{{ __('links.energy_solution') }}</a></li>
-  							<li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>UPVC {{ __('links.advantages') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/single-blog/1') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>UPVC {{ __('links.windows') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/single-blog/2') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>{{ __('links.noise_reduction') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/single-blog/3') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>{{ __('links.energy_solution') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/products') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>UPVC {{ __('links.advantages') }}</a></li>
   						</ul>
   					</div>
   				</div>

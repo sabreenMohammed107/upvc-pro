@@ -108,7 +108,7 @@
 						<h4 class="ftco-heading-2">{{ __('links.location') }}</h4>
 						<div class="mapouter">
 							<div class="gmap_canvas">
-								<iframe width="300" height="300" id="gmap_canvas" src=" {{$company->map_location ?? ''}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies</a><br>
+								<iframe width="300" height="300" id="gmap_canvas" src="{{$company->map_location ?? ''}}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies2.org">fmovies</a><br>
 							</div>
 						</div>
 					</div>
