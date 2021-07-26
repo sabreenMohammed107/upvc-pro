@@ -35,12 +35,12 @@
 	  					<div class="sidebar-box ftco-animate">
 	  						<div class="product__carousel">
 	  							<!-- Swiper and EasyZoom plugins start -->
-	  							<div class="swiper-container gallery-top">
+	  							<div class="swiper-container gallery-top " style="width: 100% !important;">
 	  								<div class="swiper-wrapper">
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
 	  										<a >
-	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
+	  											<img   src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -181,7 +181,7 @@
 						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</section>
 
