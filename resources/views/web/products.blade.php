@@ -79,7 +79,12 @@
 		  				<p> @if( LaravelLocalization::getCurrentLocale() === "en")
 						  PREMIER UPVC always considers the importance of good external appearances as well as making a healthy and comfortable living space. You can feel a more beautiful scene and fresh air through the PREMIER
 						  @else
-						  تعتبر PREMIER UPVC دائمًا أهمية المظهر الخارجي الجيد بالإضافة إلى توفير مساحة معيشة صحية ومريحة. يمكنك أن تشعر بمشهد أكثر جمالا وهواء نقي من خلال PREMIER
+						  تهتم بريميير يو بي في سي دائما
+بالمنظر الخارجي الجيد باإلضافة الى
+توفير حياة مريحة وصحية. يمكنك
+دائما ان تستمتع بمشهد أكثر جماال
+وهواء نقي من خالل نافذة بريميير
+يو بي في سي
 						  @endif</p>
 		  			</div>
 		  		</div>
