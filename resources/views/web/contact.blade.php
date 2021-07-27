@@ -73,23 +73,23 @@
 							<tbody>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.sunday') }}</td>
-									<td class="clr-mgreen">{{ __('links.close') }}</td>
+									<td class="clr-mgreen">09:00 - 05:00</td>
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.monday') }}</td>
-									<td class="clr-mgreen">10:00 - 06:00</td>
+									<td class="clr-mgreen">09:00 - 05:00</td>
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.tuesday') }}</td>
-									<td class="clr-mgreen">10:00 - 06:00</td>
+									<td class="clr-mgreen">09:00 - 05:00</td>
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.wednesday') }}</td>
-									<td class="clr-mgreen">10:00 - 06:00</td>
+									<td class="clr-mgreen">09:00 - 05:00</td>
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.thursday') }}</td>
-									<td class="clr-mgreen">10:00 - 06:00</td>
+									<td class="clr-mgreen">09:00 - 05:00</td>
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.friday') }}</td>
@@ -97,7 +97,7 @@
 								</tr>
 								<tr class="table-light">
 									<td class="clr-green">{{ __('links.saturday') }}</td>
-									<td class="clr-mgreen">10:00 - 06:00</td>
+									<td class="clr-mgreen">{{ __('links.close') }}</td>
 								</tr>
 							</tbody>
 						</table>

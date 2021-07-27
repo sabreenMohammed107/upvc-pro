@@ -89,7 +89,11 @@
 		  				
 							
             <li class="nav-item" class="active">
-			<a class="nav-link" id="#home" data-toggle="tab" href="#home" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i>  All
+			<a class="nav-link" id="#home" data-toggle="tab" href="#home" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i> @if( LaravelLocalization::getCurrentLocale() === "en")
+						All
+								  @else
+الكل	
+				  @endif
 			</a>
 			@foreach ($categories as $item)
                <a class="nav-link" id="#home{{ $item->id }}" data-toggle="tab" href="#home{{ $item->id }}" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i>  @if( LaravelLocalization::getCurrentLocale() === "en")

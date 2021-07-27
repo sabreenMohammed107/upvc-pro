@@ -31,7 +31,7 @@ return [
 'Subscribe'=>'Subscribe',
 'enter_email'=>'Enter Your Email',
 'dawnload_catalog'=>'Dawnload Catalog',
-'dawnload_profile'=>'Dawnload Profile',
+'dawnload_profile'=>'Dawnload TDS',
 'tade_mark'=>'Copyright ©',
 'copy_right'=>'All rights reserved To Senior Steps',
 'windows'=>'Windows',

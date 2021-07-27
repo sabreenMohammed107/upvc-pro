@@ -65,8 +65,8 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 						  @endif
                         </h5></h5>
 							<br />
-							<p>
-                            >@if( LaravelLocalization::getCurrentLocale() === "en")
+							<p style="line-height: 1.5;">
+                            @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_text ?? ''}}
 						  @else
 						  {{$blog->ar_text ?? ''}}

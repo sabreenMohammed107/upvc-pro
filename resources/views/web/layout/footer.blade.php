@@ -56,7 +56,12 @@
   								</div>
   							</div>
   						</form>
-  						<a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
+						  @if( LaravelLocalization::getCurrentLocale() === "en")
+  						<a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf}}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
+						  @else
+						  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf}}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
+
+						  @endif	
   						<a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_profile') }}</a>
   					</div>
   				</div>
