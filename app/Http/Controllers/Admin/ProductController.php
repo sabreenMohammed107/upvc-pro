@@ -51,31 +51,45 @@ class ProductController extends Controller
     {
         $request_data = $request->all();
 
+        // if ($request->master_image) {
+        //     Image::make($request->master_image)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/products/' . $request->master_image->hashName()));
+        //     $request_data['master_image'] = $request->master_image->hashName();
+        // }
+
+        // if ($request->product_details_img) {
+        //     Image::make($request->product_details_img)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/products/' . $request->product_details_img->hashName()));
+        //     $request_data['product_details_img'] = $request->product_details_img->hashName();
+        // }
+
+        // if ($request->product_profile_img) {
+        //     Image::make($request->product_profile_img)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/products/' . $request->product_profile_img->hashName()));
+        //     $request_data['product_profile_img'] = $request->product_profile_img->hashName();
+        // }
+
+
         if ($request->master_image) {
-            Image::make($request->master_image)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/products/' . $request->master_image->hashName()));
-            $request_data['master_image'] = $request->master_image->hashName();
+            $master_image=$request->file('master_image');
+            $request_data['master_image']  = $this->UplaodFile($master_image);
         }
-
         if ($request->product_details_img) {
-            Image::make($request->product_details_img)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/products/' . $request->product_details_img->hashName()));
-            $request_data['product_details_img'] = $request->product_details_img->hashName();
+            $product_details_img=$request->file('product_details_img');
+            $request_data['product_details_img']  = $this->UplaodFile($product_details_img);
         }
-
         if ($request->product_profile_img) {
-            Image::make($request->product_profile_img)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/products/' . $request->product_profile_img->hashName()));
-            $request_data['product_profile_img'] = $request->product_profile_img->hashName();
+            $product_profile_img=$request->file('product_profile_img');
+            $request_data['product_profile_img']  = $this->UplaodFile($product_profile_img);
         }
 
         $product = Product::create($request_data);

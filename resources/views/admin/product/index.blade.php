@@ -84,8 +84,10 @@
                                             <td>{{ $product->ar_name }}</td>
                                             <td>{{ $product->Category->en_name ?? ""}}</td>
                                             {{-- <td><img src="{{ asset('uploads/products/'.$product->master_image) }}" style="width: 200px;height:100px"></td> --}}
-                                            <td><img src="{{ asset('uploads/products/'.$product->product_details_img) }}" style="width: 200px;height:100px"></td>
-                                            <td><img src="{{ asset('uploads/products/'.$product->product_profile_img) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/products')}}/{{ $product->product_details_img }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/products')}}/{{ $product->product_profile_img }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/products/'.$product->product_details_img) }}" style="width: 200px;height:100px"></td> --}}
+                                            {{-- <td><img src="{{ asset('uploads/products/'.$product->product_profile_img) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                     <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-imgs{{$product->id}}"><i class="fa fa-edit"></i> Add Product Images  </a>

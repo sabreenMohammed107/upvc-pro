@@ -77,7 +77,7 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $material->name }}</td>
-                                            <td>{{ $material->logo }}</td>
+                                            <td><img src="{{asset('uploads/materials')}}/{{ $material->logo }}" style="width: 200px;height:100px"></td>
                                             <td>{{ $material->website_url }}</td>
                                             <td>{{ $material->active }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}

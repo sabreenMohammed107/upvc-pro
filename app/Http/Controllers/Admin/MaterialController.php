@@ -43,18 +43,20 @@ class MaterialController extends Controller
     {
         $request_data = $request->all();
 
-        if ($request->logo) {
-            Image::make($request->logo)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/materials/' . $request->logo->hashName()));
-
-            $request_data['logo'] = $request->logo->hashName();
-
-            
-        }//end of if
+        // if ($request->logo) {
+        //     Image::make($request->logo)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/materials/' . $request->logo->hashName()));
+        //     $request_data['logo'] = $request->logo->hashName();
+        // }//end of if
         
+        if ($request->logo) {
+            $logo=$request->file('logo');
+            $request_data['logo']  = $this->UplaodFile($logo);
+        }
+
         $material = Material::create($request_data);
         session()->flash('success', 'Material Data Added Succsessfuly');
         return redirect('/AdminMaterial');

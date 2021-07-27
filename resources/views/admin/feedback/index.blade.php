@@ -80,7 +80,8 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $feedback->en_name }}</td>
                                             <td>{{ $feedback->ar_name }}</td>
-                                            <td><img src="{{ asset('uploads/feedback/'.$feedback->image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/feedback')}}/{{ $feedback->image }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/feedback/'.$feedback->image) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>{{ $feedback->en_review }}</td>
                                             <td>{{ $feedback->ar_review }}</td>
                                             <td>{{ $feedback->active }}</td>

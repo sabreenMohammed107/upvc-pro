@@ -27,7 +27,7 @@ Route::group(
      /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     
         //-------------------------User Screen
-        Route::resource('/AdminUser', UserController::class);
+     //    Route::resource('/AdminUser', UserController::class);
        //-------------------------Client Screen
         Route::resource('/AdminClient', ClientController::class);
         //-------------------------Company Screen

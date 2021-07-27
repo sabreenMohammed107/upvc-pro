@@ -86,23 +86,23 @@
 
                                 <div class="form-group col-md-6">
                                     <label>En Name</label>
-                                    <input type="text" class="form-control" id="en_name" name="en_name">
+                                    <input type="text" class="form-control"name="en_name">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Ar Name	</label>
-                                    <input type="text" class="form-control" id="ar_name" name="ar_name">
+                                    <input type="text" class="form-control"  name="ar_name">
                                 </div>
 
 
                                 <div class="form-group col-md-6">
                                     <label>En Review</label>
-                                    <textarea id="message" name="en_review" ></textarea>
+                                    <textarea  name="en_review" ></textarea>
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Ar Review</label>
-                                    <textarea id="message" name="ar_review" > </textarea>
+                                    <textarea  name="ar_review" > </textarea>
                                 </div>
 
                                 <div class="form-group col-md-12">

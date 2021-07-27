@@ -77,7 +77,7 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $supplier->name }}</td>
-                                            <td>{{ $supplier->logo }}</td>
+                                            <td><img src="{{asset('uploads/suppliers')}}/{{ $supplier->logo }}" style="width: 200px;height:100px"></td>
                                             <td>{{ $supplier->website_url }}</td>
                                             <td>{{ $supplier->active }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}

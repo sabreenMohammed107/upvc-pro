@@ -69,7 +69,8 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $imgs->order }}</td>
-                                            <td><img src="{{ asset('uploads/products/'.$imgs->image) }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/products/'.$imgs->image) }}" style="width: 200px;height:100px"></td> --}}
+                                            <td><img src="{{asset('uploads/products')}}/{{ $imgs->image }}" style="width: 200px;height:100px"></td>
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                     <a data-toggle="modal" data-target="#edit-imgs{{$imgs->id}}" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
@@ -109,7 +110,7 @@
                                                                 <input type="text" class="form-control" value="{{$imgs->product_id}}" name="product_id">
                                                             </div>
 
-                                                            <div class="form-group col-md-12">
+                                                            <div class="form-group col-md-7">
                                                                 <label>Product Images</label>
                                                                 <div class="file-upload-inner file-upload-inner-right ts-forms">
                                                                     <div class="input append-small-btn">
@@ -122,9 +123,13 @@
                                                                 </div>
                                                             </div>
 
+                                                            <div class="form-group col-md-5">
+                                                                <img src="{{ asset('uploads/products/'.$imgs->image) }}" style="width: 200px;height:100px"></td>
+                                                            </div>
+
                                                             <div class="form-group col-md-12">
                                                                 <label>Order</label>
-                                                                <input type="number" class="form-control" name="order">
+                                                                <input type="number" class="form-control" name="order" value="{{$imgs->order}}">
                                                             </div>
                                         
                                                             <div class="form-group col-md-12">

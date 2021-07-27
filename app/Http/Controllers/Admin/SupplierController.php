@@ -43,17 +43,19 @@ class SupplierController extends Controller
     {
         $request_data = $request->all();
 
+        // if ($request->logo) {
+        //     Image::make($request->logo)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/suppliers/' . $request->logo->hashName()));
+        //     $request_data['logo'] = $request->logo->hashName();
+        // }
         if ($request->logo) {
-            Image::make($request->logo)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/suppliers/' . $request->logo->hashName()));
-
-            $request_data['logo'] = $request->logo->hashName();
-
-            
+            $logo=$request->file('logo');
+            $request_data['logo']  = $this->UplaodFile($logo);
         }
+
         $supplier = Supplier::create($request_data);
         session()->flash('success', 'Supplier Added Succsessfuly');
         return redirect('/AdminSupplier');

@@ -79,7 +79,8 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $company_performance->en_title }}</td>
                                             <td>{{ $company_performance->ar_title }}</td>
-                                            <td><img src="{{ asset('uploads/company_performances/'.$company_performance->image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/company_performances')}}/{{ $company_performance->image }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/company_performances/'.$company_performance->image) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>{{ $company_performance->en_subTitle }}</td>
                                             <td>{{ $company_performance->ar_subTitle }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}

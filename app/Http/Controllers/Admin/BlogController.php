@@ -46,23 +46,38 @@ class BlogController extends Controller
     {
         $request_data = $request->all();
 
-        if ($request->image	) {
-            Image::make($request->image	)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/blogs/' . $request->image	->hashName()));
-            $request_data['image'] = $request->image->hashName();
-        }
+        // if ($request->image	) {
+        //     Image::make($request->image	)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/blogs/' . $request->image	->hashName()));
+        //     $request_data['image'] = $request->image->hashName();
+        // }
 
-        if ($request->thumbnail	) {
-            Image::make($request->thumbnail	)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/blogs/' . $request->thumbnail	->hashName()));
-            $request_data['thumbnail'] = $request->thumbnail->hashName();
-        }
+        // if ($request->thumbnail	) {
+        //     Image::make($request->thumbnail	)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/blogs/' . $request->thumbnail	->hashName()));
+        //     $request_data['thumbnail'] = $request->thumbnail->hashName();
+        // }
+
+        if ($request->image) {
+            $image=$request->file('image');
+            $request_data['image']  = $this->UplaodFile($image);
+    }
+
+        if ($request->thumbnail) {
+            $thumbnail=$request->file('thumbnail');
+            $request_data['thumbnail']  = $this->UplaodFile($thumbnail);
+    }
+
+   
+
+
+
         $blog = Blog::create($request_data);
         // $tag = [$request->tag];
         // $blog->Tags()->sync($tag);

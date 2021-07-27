@@ -43,13 +43,18 @@ class Vedio_galleryController extends Controller
     {
         $request_data = $request->all();
 
+        // if ($request->image) {
+        //     Image::make($request->image)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/galleries/' . $request->image->hashName()));
+        //         $request_data['image'] = $request->image->hashName();
+        // }
+
         if ($request->image) {
-            Image::make($request->image)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/galleries/' . $request->image->hashName()));
-                $request_data['image'] = $request->image->hashName();
+            $image=$request->file('image');
+            $request_data['image']  = $this->UplaodFile($image);
         }
 
         $vedio_gallery = Vedio_gallery::create($request_data);

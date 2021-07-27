@@ -43,13 +43,18 @@ class FeedbackController extends Controller
     {
         $request_data = $request->all();
 
-        if ($request->image	) {
-            Image::make($request->image	)
-                ->resize(300, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                })
-                ->save(public_path('uploads/feedback/' . $request->image	->hashName()));
-            $request_data['image'] = $request->image->hashName();
+        // if ($request->image	) {
+        //     Image::make($request->image	)
+        //         ->resize(300, null, function ($constraint) {
+        //             $constraint->aspectRatio();
+        //         })
+        //         ->save(public_path('uploads/feedback/' . $request->image	->hashName()));
+        //     $request_data['image'] = $request->image->hashName();
+        // }
+
+        if ($request->image) {
+            $image=$request->file('image');
+            $request_data['image']  = $this->UplaodFile($image);
         }
 
         $feedback = Feedback::create($request_data);

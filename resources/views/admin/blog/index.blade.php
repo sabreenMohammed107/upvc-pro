@@ -87,8 +87,10 @@
                                             <td>{{ $blog->ar_title }}</td>
                                             <td>{{ $blog->en_text }}</td>
                                             <td>{{ $blog->ar_text }}</td>
-                                            <td><img src="{{ asset('uploads/blogs/'.$blog->image) }}" style="width: 200px;height:100px"></td>
-                                            <td><img src="{{ asset('uploads/blogs/'.$blog->thumbnail) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/blogs')}}/{{ $blog->image }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/blogs')}}/{{ $blog->thumbnail }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/blogs/'.$blog->image) }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{ asset('uploads/blogs/'.$blog->thumbnail) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>{{ $blog->order }}</td>
                                             <td>{{ $blog->active }}</td>
                                             <td>

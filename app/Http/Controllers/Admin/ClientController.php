@@ -63,14 +63,10 @@ class ClientController extends Controller
         $request_data = $request->all();
 
         if ($request->logo) {
-           
                 $logo=$request->file('logo');
-  
                 $request_data['logo']  = $this->UplaodFile($logo);
-           
-
-            
         }
+        
         $client = Client::create($request_data);
         session()->flash('success', 'Client Added Succsessfuly');
         return redirect('/AdminClient');
