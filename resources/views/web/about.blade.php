@@ -4,7 +4,7 @@
 	  		<div class="overlay"></div>
 	  		<div class="container">
 	  			<div class="row no-gutters slider-text align-items-center justify-content-center">
-	  				<div class="col-md-9 ftco-animate text-center">
+	  				<div class="col-md-9  text-center">
 	  					<div class="bg-text"></div>
 	  					<h1 class="mb-2 bread">{{ __('links.about_premier') }}</h1>
 	  				</div>
@@ -39,7 +39,7 @@
   						<img class="img-layer" src="{{asset('uploads/companies')}}/{{$company->about_image }}" alt="">
   					</div>
   				</div>
-  				<div class="col-md-8 pr-md-4 ftco-animate  mt-4 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+  				<div class="col-md-8 pr-md-4   mt-4 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
   					<p>
                       @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$company->about_en_company}}
@@ -57,12 +57,12 @@
 <section class="ftco-section pt-4 ftc-no-pb mb-4 mt-3">
 	<div class="container">
 		<div class="row justify-content-center mb-4 pb-2">
-			<div class="col-md-8 text-center heading-section ftco-animate">
+			<div class="col-md-8 text-center heading-section ">
 				<h3>{{ __('links.story') }}</h3>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-8 ftco-animate  mt-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+			<div class="col-md-8   mt-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
 			 
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
@@ -72,7 +72,7 @@
 						  @endif				</p>
 				
 			</div>
-			<div class="col-md-4 ftco-animate">
+			<div class="col-md-4 ">
 				<div style="width:290px;">
 					<div class="layer-3" style="">
 						<div class="layer-4" style=""></div>
@@ -95,7 +95,7 @@
 					<img class="img-layer" src="{{asset('uploads/companies')}}/{{$company->mission_image }}" alt="">
 				</div>
 			</div>
-			<div class="col-md-8 pr-md-4 ftco-animate {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+			<div class="col-md-8 pr-md-4  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
 				<h2 class="mb-4">{{ __('links.mission') }}</h2>
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
@@ -113,12 +113,12 @@
   	<section class="ftco-section pt-4 ftc-no-pb mb-4 mt-3">
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
-		  		<div class="col-md-8 text-center heading-section ftco-animate">
+		  		<div class="col-md-8 text-center heading-section ">
 		  			<h3>{{ __('links.vision') }}</h3>
 		  		</div>
 		  	</div>
   			<div class="row">
-  				<div class="col-md-8 ftco-animate {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+  				<div class="col-md-8  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
 					
   					<p>
                       @if( LaravelLocalization::getCurrentLocale() === "en")
@@ -128,7 +128,7 @@
 						  @endif  					</p>
 				  
   				</div>
-			  	<div class="col-md-4 ftco-animate">
+			  	<div class="col-md-4 ">
 			  		<div style="width:290px;">
 			  			<div class="layer-3" style="">
 			  				<div class="layer-4" style=""></div>
@@ -144,7 +144,7 @@
 		<div style="background-color:#8FCDA0;height:300px"></div>
   		<div class="container"style="margin-top:-250px">
   			<div class="row justify-content-center pb-2">
-  				<div class="col-md-8 text-center heading-section ftco-animate">
+  				<div class="col-md-8 text-center heading-section ">
   					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h1>
   					<h3 class="text-white">{{ __('links.why_us') }}</h3>
   				</div>
