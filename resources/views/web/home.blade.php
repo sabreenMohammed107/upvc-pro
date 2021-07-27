@@ -61,7 +61,13 @@
 						  @else
 						  {{$company->about_ar_company}}
 						  @endif					</p>
-  					<p><a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a></p>
+  					<p>
+					  @if( LaravelLocalization::getCurrentLocale() === "en")
+					  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a>
+						  @else
+						  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a>
+						  @endif			
+						</p>
   				</div>
   			</div>
   		</div>
@@ -99,7 +105,7 @@
 						 {{$product->en_description}}
 								  @else
 {{$product->ar_description}}						  @endif</p>
-							    <p><a href="#" class="btn btn-primary2">{{ __('links.show_more') }}</a></p>
+							    <p><a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$product->id) }}" class="btn btn-primary2">{{ __('links.show_more') }}</a></p>
 			  				</div>
 			  			</div>
 			  		</div>
@@ -320,9 +326,9 @@
 						  {{$blog->ar_title ?? ''}}
 						  @endif</h4>
 				  			<p class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$blog->en_text ?? ''}}
+							  {{ str_limit($blog->en_text ?? '', $limit = 100, $end = '...') }}
 						  @else
-						  {{$blog->ar_text ?? ''}}
+						  {{ str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') }}
 						  @endif</p>
 				  		</div>
 				  		<div class="product-overlay hvr-sweep-to-bottom">
@@ -336,7 +342,7 @@
 								  @if( LaravelLocalization::getCurrentLocale() === "en")
                           {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
 						  @else
-						  {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  {{ str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') }}
 						  @endif
 										  				</p>
 														  @if($blog)
@@ -370,7 +376,7 @@
 						  		<p class="pr-3">@if( LaravelLocalization::getCurrentLocale() === "en")
                           {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
 						  @else
-						  {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+						  {{ str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') }}
 						  @endif</p>
 						  	</div>
   						</div>

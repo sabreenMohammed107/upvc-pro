@@ -2,8 +2,8 @@
 <div class="left-sidebar-pro">
   <nav id="sidebar" class="">
       <div class="sidebar-header">
-          <a href="index.html"><img class="main-logo mg-t-10" src="{{ asset('dashboard/img/logo/logo.png') }}" alt="" /></a>
-          <strong><a href="index.html"><img src="{{ asset('dashboard/img/logo/logosn.png') }}" alt="" /></a></strong>
+          <a href="{{ url('/admin') }}"><img class="main-logo mg-t-10" src="{{ asset('dashboard/img/logo/logo.png') }}" alt="" /></a>
+          <strong><a href="{{ url('/admin') }}"><img src="{{ asset('dashboard/img/logo/logosn.png') }}" alt="" /></a></strong>
       </div>
       <div class="left-custom-menu-adp-wrap comment-scrollbar">
           <nav class="sidebar-nav left-sidebar-menu-pro">

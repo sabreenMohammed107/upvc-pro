@@ -31,7 +31,7 @@ return [
 'Subscribe'=>'Subscribe',
 'enter_email'=>'Enter Your Email',
 'dawnload_catalog'=>'Dawnload Catalog',
-'dawnload_profile'=>'Dawnload Profile',
+'dawnload_profile'=>'Dawnload TDS',
 'tade_mark'=>'Copyright ©',
 'copy_right'=>'All rights reserved To Senior Steps',
 'windows'=>'Windows',
@@ -81,7 +81,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'why_us'=>'Why Us',
 /*-----------------blogs-----------------*/
 'popular_blog'=>'Popular Blogs',
-'tags'=>'Tages',
+'tags'=>'Key Words',
 /*-------------------Products-----------------------*/
 'advanced_performance'=>'Advanced Performance',
 'information'=>'Information',

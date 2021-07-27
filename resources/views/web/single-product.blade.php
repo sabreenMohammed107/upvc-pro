@@ -35,12 +35,12 @@
 	  					<div class="sidebar-box ftco-animate">
 	  						<div class="product__carousel">
 	  							<!-- Swiper and EasyZoom plugins start -->
-	  							<div class="swiper-container gallery-top">
+	  							<div class="swiper-container gallery-top " style="width: 100% !important;">
 	  								<div class="swiper-wrapper">
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
 	  										<a >
-	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
+	  											<img   src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -160,7 +160,7 @@
 				<div class="row justify-content-center ">
 					<div class="col-md-12 text-center heading-section ftco-animate ">
 						<div class="py-5 pr-md-4 ftco-animate ">
-							<img class="pro-img " src="{{asset('uploads/product_imgs')}}/{{$product->product_details_img ?? ''}}" />
+							<img class="pro-img " src="{{asset('uploads/products')}}/{{$product->product_details_img ?? ''}}" />
 						</div>
 					</div>
 				</div>
@@ -177,10 +177,11 @@
 				<div class="row justify-content-center ">
 					<div class="col-md-12 text-center heading-section ftco-animate ">
 						<div class="py-5 pr-md-4 ftco-animate ">
-							<img class="pro-img " src="{{asset('uploads/product_imgs')}}/{{$product->product_details_img ?? ''}} " />
+							<img class="pro-img " src="{{asset('uploads/products')}}/{{$product->product_details_img ?? ''}} " />
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</section>
 
@@ -199,7 +200,7 @@
                                         @if( LaravelLocalization::getCurrentLocale() === "en")
                                         <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download ><span class="icon-download pt-2 "></span></a>
 								  @else
-                                  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download ><span class="icon-download pt-2 "></span></a>					  @endif
+                                  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
                                           
                                             </p>
 									</div>

@@ -33,7 +33,7 @@
 	  		<div class="container">
 	  			<div class="row justify-content-center mb-2 pb-2">
 	  				<div class="col-md-8 text-center heading-section ftco-animate">
-						<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.advanced_performance') }}</h1>
+						<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;">{{ __('links.advanced_performance') }}</h1>
 						<h3>{{ __('links.advanced_performance') }}</h3>
 	  					<p>
 						  @if( LaravelLocalization::getCurrentLocale() === "en")
@@ -44,7 +44,7 @@
 						  </p>
 	  				</div>
 	  			</div>
-	  			<div class="row dir-rtl">
+	  			<div class="row dir-rtl ">
 					  @foreach($performances as $performance)
 	  				<div class="col-md-6 col-lg-4 ftco-animate">
 	  					<div class="blog-entry">
@@ -89,7 +89,11 @@
 		  				
 							
             <li class="nav-item" class="active">
-			<a class="nav-link" id="#home" data-toggle="tab" href="#home" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i>  All
+			<a class="nav-link" id="#home" data-toggle="tab" href="#home" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i> @if( LaravelLocalization::getCurrentLocale() === "en")
+						All
+								  @else
+الكل	
+				  @endif
 			</a>
 			@foreach ($categories as $item)
                <a class="nav-link" id="#home{{ $item->id }}" data-toggle="tab" href="#home{{ $item->id }}" aria-controls="home" aria-selected="false"><i class="ion-ios-arrow-round-forward"></i>  @if( LaravelLocalization::getCurrentLocale() === "en")
