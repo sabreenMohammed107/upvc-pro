@@ -61,22 +61,22 @@
                                 <div class="form-group col-md-12"></div>
                                 <div class="form-group col-md-6">
                                     <label>En Name</label>
-                                    <input type="text" class="form-control" name="en_name" value="en_name">
+                                    <input type="text" class="form-control" name="en_name" value="{{$product->en_name}}">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Ar Name	</label>
-                                    <input type="text" class="form-control" name="ar_name" value="ar_name">
+                                    <input type="text" class="form-control" name="ar_name" value="{{$product->ar_name}}">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>En Description	</label>
-                                    <input type="text" class="form-control" name="en_description" value="en_description">
+                                    <input type="text" class="form-control" name="en_description" value="{{$product->en_description}}">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Ar Description</label>
-                                    <input type="text" class="form-control" name="ar_description" value="ar_description">
+                                    <input type="text" class="form-control" name="ar_description" value="{{$product->ar_description}}">
                                 </div>
 
                                 {{-- <div class="form-group col-md-6">
@@ -120,17 +120,17 @@
 
                                 <div class="form-group col-md-6">
                                     <label>Thickness</label>
-                                    <input type="text" class="form-control" name="thickness" value="thickness">
+                                    <input type="text" class="form-control" name="thickness" value="{{$product->thickness}}">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Chambers</label>
-                                    <input type="text" class="form-control" name="chambers" value="chambers">
+                                    <input type="text" class="form-control" name="chambers" value="{{$product->chambers}}">
                                 </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Glass</label>
-                                    <input type="text" class="form-control"name="glass" value="glass">
+                                    <input type="text" class="form-control"name="glass" value="{{$product->glass}}">
                                 </div>
 
                                 <div class="form-group col-md-12">
