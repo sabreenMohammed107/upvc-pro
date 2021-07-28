@@ -35,7 +35,7 @@
 						<p>
 							<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid w-100">
 						</p>
-						<div> 
+						<div>
                         <?php
 
 $blogId = $blog->id;
@@ -44,7 +44,7 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 }else{
     $url = 'http://premierupvc.senior-consultingco.com/ar/single-blog/'.$blogId;
 }
-						 
+
 
 ?>
 							<ul class="ftco-footer-social ftco-blog-social list-unstyled {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">
@@ -67,13 +67,13 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 							<br />
 							<p style="line-height: 1.5;">
                             @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$blog->en_text ?? ''}}
+                            {!! $blog->en_text !!}
 						  @else
-						  {{$blog->ar_text ?? ''}}
+                          {!! $blog->ar_text !!}
 						  @endif							<p>
-								
-							
-							
+
+
+
 </div>
 					</div>
 				 <!-- .col-md-8 -->
@@ -94,7 +94,7 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 							</div>
 						</div>
                         @endforeach
-						
+
 					</div>
 
 					<div class="sidebar-box ftco-animate">
