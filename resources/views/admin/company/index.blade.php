@@ -140,6 +140,66 @@
                                 <span class="text-danger" id="instgram_url-error"> </span>
                                 <input type="tel" class="form-control" id="instgram_url" name="instgram_url" value="" placeholder="{{$company->instgram_url}}" disabled>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label>about_en_company</label>
+                                <textarea type="text" id="about_en_company" name="about_en_company"  disabled > {{$company->about_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>about_ar_company</label>
+                                <textarea type="text" id="about_ar_company" name="about_ar_company"  disabled > {{$company->about_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>story_en_company</label>
+                                <textarea type="text" id="story_en_company" name="story_en_company"  disabled > {{$company->story_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>story_ar_company</label>
+                                <textarea type="text" id="story_ar_company" name="story_ar_company"  disabled > {{$company->story_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>mission_en_company</label>
+                                <textarea type="text" id="mission_en_company" name="mission_en_company"  disabled > {{$company->mission_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>mission_ar_company</label>
+                                <textarea type="text" id="mission_ar_company" name="mission_ar_company"  disabled > {{$company->mission_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>vision_en_company</label>
+                                <textarea type="text" id="vision_en_company" name="vision_en_company"  disabled > {{$company->vision_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>vision_ar_company</label>
+                                <textarea type="text" id="vision_ar_company" name="vision_ar_company"  disabled > {{$company->vision_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>about_image</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->about_image }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>story_image</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->story_image }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>mission_image</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->mission_image }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>vision_image</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->vision_image }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>company_catalogue_pdf</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->company_catalogue_pdf }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>ar_catalogue_pdf</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->ar_catalogue_pdf }}" style="width: 300px;height:150px">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <div>company_profile_pdf</div>
+                                <img src="{{asset('uploads/companies')}}/{{ $company->company_profile_pdf }}" style="width: 300px;height:150px">
+                            </div>
                             
                         </form>
                     </div>

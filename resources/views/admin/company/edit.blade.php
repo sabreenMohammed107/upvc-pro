@@ -40,7 +40,7 @@
                     <div class="comment_form_area"@if (app()->getLocale()=='ar') style="direction: rtl" @endif>
                         <h3>Edit Company Data</h3>
                         <br />
-                        <form action="{{ route('AdminCompany.update',$company->id) }}" method="POST">
+                        <form action="{{ route('AdminCompany.update',$company->id) }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             @method('PUT')
 
@@ -188,6 +188,155 @@
                                 </span>
                                  @enderror
                                 <input type="tel" class="form-control" id="instgram_url" name="instgram_url" value="{{$company->instgram_url}}" >
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label>about_en_company</label>
+                                <textarea type="text" id="about_en_company" name="about_en_company"  > {{$company->about_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>about_ar_company</label>
+                                <textarea type="text" id="about_ar_company" name="about_ar_company"  > {{$company->about_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>story_en_company</label>
+                                <textarea type="text" id="story_en_company" name="story_en_company"  > {{$company->story_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>story_ar_company</label>
+                                <textarea type="text" id="story_ar_company" name="story_ar_company"  > {{$company->story_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>mission_en_company</label>
+                                <textarea type="text" id="mission_en_company" name="mission_en_company"  > {{$company->mission_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>mission_ar_company</label>
+                                <textarea type="text" id="mission_ar_company" name="mission_ar_company"  > {{$company->mission_ar_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>vision_en_company</label>
+                                <textarea type="text" id="vision_en_company" name="vision_en_company"  > {{$company->vision_en_company}} </textarea>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>vision_ar_company</label>
+                                <textarea type="text" id="vision_ar_company" name="vision_ar_company"  > {{$company->vision_ar_company}} </textarea>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>about_image</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn1">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn1').value = this.value;" id="about_image" name="about_image"  value="{{ $company->about_image }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn1" placeholder="{{ $company->about_image  }}" id="about_image" name="about_image"  value="{{ $company->about_image }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->about_image }}" style="width: 150px;height:100px">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>story_image</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn2">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn2').value = this.value;" id="story_image" name="story_image"  value="{{ $company->story_image }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn2" placeholder="{{ $company->story_image }}" id="story_image" name="story_image"  value="{{ $company->story_image }}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->story_image }}" style="width: 150px;height:100px">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>mission_image</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn3">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn3').value = this.value;" id="mission_image" name="mission_image"  value="{{ $company->mission_image }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn3" placeholder="{{ $company->mission_image }}" id="mission_image" name="mission_image"  value="{{ $company->mission_image }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->mission_image }}" style="width: 150px;height:100px">
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <label>vision_image</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn4">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn4').value = this.value;" id="vision_image" name="vision_image"  value="{{ $company->vision_image }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn4" placeholder="{{ $company->vision_image }}" id="vision_image" name="vision_image"  value="{{ $company->vision_image }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->vision_image }}" style="width: 150px;height:100px">
+                            </div>
+
+
+                            <div class="form-group col-md-4">
+                                <label>company_catalogue_pdf</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn5">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn5').value = this.value;" id="company_catalogue_pdf" name="company_catalogue_pdf"  value="{{ $company->company_catalogue_pdf }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn5" placeholder="{{ $company->company_catalogue_pdf }}" id="company_catalogue_pdf" name="company_catalogue_pdf"  value="{{ $company->company_catalogue_pdf }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->company_catalogue_pdf }}" style="width: 150px;height:100px">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>ar_catalogue_pdf</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn6">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn6').value = this.value;" id="ar_catalogue_pdf" name="ar_catalogue_pdf"  value="{{ $company->ar_catalogue_pdf }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn6" placeholder="{{ $company->ar_catalogue_pdf }}" id="ar_catalogue_pdf" name="ar_catalogue_pdf"  value="{{ $company->ar_catalogue_pdf }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->ar_catalogue_pdf }}" style="width: 150px;height:100px">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>company_profile_pdf</label>
+                                <div class="file-upload-inner file-upload-inner-right ts-forms">
+                                    <div class="input append-small-btn7">
+                                        <div class="file-button">
+                                            Browse
+                                            <input type="file" onchange="document.getElementById('append-small-btn7').value = this.value;" id="company_profile_pdf" name="company_profile_pdf"  value="{{ $company->company_profile_pdf }}">
+                                        </div>
+                                        <input type="text" id="append-small-btn7" placeholder="{{ $company->company_profile_pdf }}" id="company_profile_pdf" name="company_profile_pdf"  value="{{ $company->company_profile_pdf }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-2">
+                                <img src="{{asset('uploads/companies')}}/{{ $company->company_profile_pdf }}" style="width: 150px;height:100px">
                             </div>
 
                             <div class="form-group col-md-12">

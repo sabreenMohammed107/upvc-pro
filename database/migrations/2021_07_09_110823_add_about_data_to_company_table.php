@@ -29,6 +29,10 @@ class AddAboutDataToCompanyTable extends Migration
             $table->string('vision_image')->nullable(); 
             $table->string('company_catalogue_pdf')->nullable();
              $table->string('company_profile_pdf')->nullable();
+             $table->string('ar_catalogue_pdf')->nullable();
+
+
+
         });
     }
 

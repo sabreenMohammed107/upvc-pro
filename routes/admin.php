@@ -7,9 +7,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Auth::routes();
 	Route::get('/admin', 'HomeController@index')->name('admin');
      
-     Route::get('/logout', function(){
-          return redirect ("login");
-      });
+     // Route::get('/logout', function(){
+     //      \Auth::logout();
+     //      return redirect ("login");
+     //  });
       
      });/** End group**/
 

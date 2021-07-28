@@ -38,9 +38,11 @@
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd" @if (app()->getLocale()=='ar') style="direction: rtl" @endif>
+                            <br>
+                            <a href="/AdminProduct" class="btn btn-primary mb-1"> Back  </a>
+                            <br>
                             <h1>Product Images List</h1>
-                            
-                            <br/>
+                            <br>
                         </div>
                     </div>
                     <div class="sparkline13-graph">
@@ -116,9 +118,9 @@
                                                                     <div class="input append-small-btn">
                                                                         <div class="file-button">
                                                                             Browse
-                                                                            <input type="file" onchange="document.getElementById('append-small-btn1').value = this.value;" name="image" >
+                                                                            <input type="file" onchange="document.getElementById('append-small-btn1').value = this.value;" value="{{$imgs->image}}" name="image" >
                                                                         </div>
-                                                                        <input type="text" id="append-small-btn1"  name="image">
+                                                                        <input type="text" id="append-small-btn1"  name="image"  value="{{$imgs->image}}">
                                                                     </div>
                                                                 </div>
                                                             </div>
