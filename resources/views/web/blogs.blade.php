@@ -40,11 +40,12 @@
 						<div>
 						</div>
 						<div class="mt-5">
+                            <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}">
 							<h5 class="clr-green mt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
 						  {{$blog->ar_title ?? ''}}
-						  @endif</h5>
+						  @endif</h5></a>
 							<br />
 							<p>
 							@if( LaravelLocalization::getCurrentLocale() === "en")

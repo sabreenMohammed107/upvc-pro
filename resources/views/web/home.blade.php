@@ -66,7 +66,7 @@
 					  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a>
 						  @else
 						  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a>
-						  @endif			
+						  @endif
 						</p>
   				</div>
   			</div>
@@ -110,7 +110,7 @@
 			  			</div>
 			  		</div>
 			  	</div>
-			
+
 			  @endforeach
   			</div>
   		</div>
@@ -151,7 +151,7 @@
 			  		<p>
 					  {{ __('links.color_text') }}
 													 </p>
-			  		
+
 				<div>
 					<img class="pt-4" src="{{ asset('webassets/img/7.png')}}" alt="">
 					<img class="pt-4" src="{{ asset('webassets/img/8.png')}}" alt="">
@@ -196,7 +196,7 @@
 						  {{$whyRow->en_subTitle}}
 						  @else
 						  {{$whyRow->ar_subTitle}}
-						  @endif 
+						  @endif
 														  	</p>
   								</div>
   							</div>
@@ -212,8 +212,8 @@
 			  	</div>
 			  	<div class="col-md-4 wrap-about py-5 pr-md-4 ftco-animate">
 			  		<div class="row mt-5">
-						  
-						
+
+
 					  @foreach($whyRows as $index=>$whyRow)
 					  @if($index >= 3)
   						<div class="col-lg-12">
@@ -230,7 +230,7 @@
 						  {{$whyRow->en_subTitle}}
 						  @else
 						  {{$whyRow->ar_subTitle}}
-						  @endif 
+						  @endif
 														  	</p>
   								</div>
   							</div>
@@ -260,7 +260,7 @@
 						  @else
 						  {{$homeVedio->ar_text}}
 						  @endif 				  	</p>
-				  
+
   				</div>
 			  	<div class="col-md-6 align-items-stretch d-flex">
 			  		<div class="img img-video d-flex align-items-center" style="background-image: url('{{asset('uploads/home_vedios')}}/{{$homeVedio->image ?? ''}}');width:700px;height:400px">
@@ -367,21 +367,21 @@
 						  			</div>
 						  		</div>
 						  	</div>
-						  	<div class="text pt-2 pl-2">
+						  	<div class="text pt-2 px-2">
 						  		<h3 class="heading pr-3"><a href="#">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
 						  {{$blog->ar_title ?? ''}}
 						  @endif</a></h3>
 						  		<p class="pr-3">@if( LaravelLocalization::getCurrentLocale() === "en")
-                          {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+                          {{ str_limit($blog->en_text ?? '', $limit = 100, $end = '...') }}
 						  @else
-						  {{ str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') }}
+						  {{ str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') }}
 						  @endif</p>
 						  	</div>
   						</div>
 						  @endforeach
-  					
+
   					</div>
   				</div><!-- END COL -->
   			</div>

@@ -7,7 +7,7 @@
   						<div class="block-23 mb-3">
   							<p>{{ __('links.footer_text') }}</p>
   						</div>
-						  @if( LaravelLocalization::getCurrentLocale() === "en") 
+						  @if( LaravelLocalization::getCurrentLocale() === "en")
   						<ul class="ftco-footer-social list-unstyled float-md-left mt-3">
 						  @else
 						  <ul class="ftco-footer-social list-unstyled float-md-right mt-3">
@@ -20,12 +20,12 @@
   						</ul>
   					</div>
   				</div>
-  				
+
   				<div class="col-md-6 col-lg-2">
   					<div class="ftco-footer-widget ml-md-4">
   						<h2 class="ftco-heading-2">{{ __('links.site_map') }}</h2>
   						<ul class="list-unstyled">
-  							<li><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.home') }}</a></li>
+  							<li><a href="{{ LaravelLocalization::localizeUrl('/') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.home') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/about_us') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>  {{ __('links.about_us') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/products') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.products') }}</a></li>
   							<li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}"><span class="ion-ios-arrow-round-forward mr-2"></span> {{ __('links.gallery') }}</a></li>
@@ -61,7 +61,7 @@
 						  @else
 						  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf}}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_catalog') }}</a>
 
-						  @endif	
+						  @endif
   						<a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download class="btn btn2 btn-primary mt-2 p-5"> {{ __('links.dawnload_profile') }}</a>
   					</div>
   				</div>
@@ -75,8 +75,8 @@
 			  @if( LaravelLocalization::getCurrentLocale() === "en")
 			 {{ __('links.tade_mark') }}<script>document.write(new Date().getFullYear());</script>  {{ __('links.copy_right') }}
   @else
- 
-    {{ __('links.tade_mark') }} <script>document.write(new Date().getFullYear());</script> 
+
+    {{ __('links.tade_mark') }} <script>document.write(new Date().getFullYear());</script>
 	{{ __('links.copy_right') }}
 
   @endif
