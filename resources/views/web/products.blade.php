@@ -48,7 +48,7 @@
 					  @foreach($performances as $performance)
 	  				<div class="col-md-6 col-lg-4 ftco-animate">
 	  					<div class="blog-entry">
-	  						<a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('{{asset('uploads/company_performances')}}/{{$performance->image ?? ''}}');">
+	  						<a href="#" class="block-20 d-flex align-items-end" style="background-image: url('{{asset('uploads/company_performances')}}/{{$performance->image ?? ''}}');">
 
 	  						</a>
 	  						<div class="text bg-white p-4">
@@ -79,7 +79,12 @@
 		  				<p> @if( LaravelLocalization::getCurrentLocale() === "en")
 						  PREMIER UPVC always considers the importance of good external appearances as well as making a healthy and comfortable living space. You can feel a more beautiful scene and fresh air through the PREMIER
 						  @else
-						  تعتبر PREMIER UPVC دائمًا أهمية المظهر الخارجي الجيد بالإضافة إلى توفير مساحة معيشة صحية ومريحة. يمكنك أن تشعر بمشهد أكثر جمالا وهواء نقي من خلال PREMIER
+						  تهتم بريميير يو بي في سي دائما
+بالمنظر الخارجي الجيد باإلضافة الى
+توفير حياة مريحة وصحية. يمكنك
+دائما ان تستمتع بمشهد أكثر جماال
+وهواء نقي من خالل نافذة بريميير
+يو بي في سي
 						  @endif</p>
 		  			</div>
 		  		</div>

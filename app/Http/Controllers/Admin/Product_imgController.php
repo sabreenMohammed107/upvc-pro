@@ -91,7 +91,7 @@ class Product_imgController extends Controller
         if($request->hasFile('image'))
         {
             //delete old
-            $fileName=public_path('uploads/products/'.$imgs->image);
+            $fileName=public_path('uploads/product_imgs/'.$imgs->image);
             File::delete($fileName);
            $fileDoc=$request->file('image');
            $imgs->image= $this->UplaodFile($fileDoc);
@@ -114,7 +114,7 @@ class Product_imgController extends Controller
             $imgs = Product_img::find($id);
 
         if ($imgs->image != 'default.png') {
-            $fileName=public_path('uploads/products/'.$imgs->image);
+            $fileName=public_path('uploads/product_imgs/'.$imgs->image);
             File::delete($fileName);
         }//end of if
 
@@ -145,7 +145,7 @@ class Product_imgController extends Controller
 		// Rename The Image ..
         $imageName = $name;
       
-		$uploadPath = public_path('uploads/products');
+		$uploadPath = public_path('uploads/product_imgs');
 		
 		// Move The image..
 		  $file->move($uploadPath, $imageName);

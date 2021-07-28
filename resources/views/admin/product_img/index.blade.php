@@ -71,8 +71,8 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $imgs->order }}</td>
-                                            {{-- <td><img src="{{ asset('uploads/products/'.$imgs->image) }}" style="width: 200px;height:100px"></td> --}}
-                                            <td><img src="{{asset('uploads/products')}}/{{ $imgs->image }}" style="width: 200px;height:100px"></td>
+                                            {{-- <td><img src="{{ asset('uploads/product_imgs/'.$imgs->image) }}" style="width: 200px;height:100px"></td> --}}
+                                            <td><img src="{{asset('uploads/product_imgs')}}/{{ $imgs->image }}" style="width: 200px;height:100px"></td>
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                     <a data-toggle="modal" data-target="#edit-imgs{{$imgs->id}}" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
