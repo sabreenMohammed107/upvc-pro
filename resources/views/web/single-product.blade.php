@@ -192,7 +192,7 @@
 						<!--<h2 class="mb-4 ">What We Offer</h2>-->
 						<!--<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>-->
 						<div class="row mt-5  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'dir-rtl' : ''}}">
-							<div class="col-lg-12 ">
+							<div class="col-lg-6 ">
 								<div class="services-3 d-flex ">
 									<div class="icon mt-2 d-flex justify-content-center align-items-center "><span class="icon-file "></span></div>
 									<div class="text px-3 pt-2 pdf ">
@@ -211,6 +211,20 @@
 								</div>
 							</div>
 
+                            <div class="col-lg-6 ">
+								<div class="services-3 d-flex ">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center "><span class="icon-file "></span></div>
+									<div class="text px-3 pt-2 pdf ">
+										<p>
+                                            <a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download >{{ __('links.dawnload_profile') }}</a>
+
+
+                                        <a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download ><span class="icon-download pt-2 "></span></a>
+
+                                            </p>
+									</div>
+								</div>
+							</div>
 
 						</div>
 					</div>
