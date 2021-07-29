@@ -96,7 +96,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'key_features'=>'Key Features',
 'product_details'=>'Product Details',
 'profile_information'=>'Profile Information',
-'other_product'=>'Other Product',
+'other_product'=>'Other Products',
 'catalogue_pdf'=>'2021 uPVC Window Catalogue.pdf'
 
 ];

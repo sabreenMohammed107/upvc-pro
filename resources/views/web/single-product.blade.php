@@ -196,8 +196,12 @@
 								<div class="services-3 d-flex ">
 									<div class="icon mt-2 d-flex justify-content-center align-items-center "><span class="icon-file "></span></div>
 									<div class="text px-3 pt-2 pdf ">
-										<p>{{ __('links.catalogue_pdf') }}
-                                        @if( LaravelLocalization::getCurrentLocale() === "en")
+										<p>  @if( LaravelLocalization::getCurrentLocale() === "en")
+                                            <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download >{{ __('links.catalogue_pdf') }}</a>
+                                            @else
+                                            <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf }}" download >{{ __('links.catalogue_pdf') }}</a>
+                                            @endif
+                                            @if( LaravelLocalization::getCurrentLocale() === "en")
                                         <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download ><span class="icon-download pt-2 "></span></a>
 								  @else
                                   <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
