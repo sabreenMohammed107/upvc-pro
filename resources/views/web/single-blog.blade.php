@@ -50,9 +50,9 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 							<ul class="ftco-footer-social ftco-blog-social list-unstyled {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">
 								<li class="ftco-animate"><a <a href="https://twitter.com/intent/tweet?url={{ urlencode($url) }}"  target="popup" onclick="window.open('https://twitter.com/intent/tweet?url={{ urlencode($url) }}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-twitter"></span></a></li>
 								<li class="ftco-animate"><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($url) }}" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{urlencode($url)}}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-facebook"></span></a></li>
-								<li class="ftco-animate"><a
-                                href="https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}" target="popup" onclick="window.open('https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}','popup','width=600,height=600'); return false;"
-                                 class="border-white"><span class="icon-instagram"></span></a></li>
+
+                                <li class="ftco-animate"> <a href="https://wa.me/?text={{ urlencode($url) }}"  target="popup" onclick="window.open('https://wa.me/?text={{ urlencode($url) }}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-whatsapp"></span></a>
+                                </li>
 							</ul>
 							<p class="ftco-footer-social ftco-blog-social list-unstyled  pt-1 mr-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">   </p>
 						</div>
