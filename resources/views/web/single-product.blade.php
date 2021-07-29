@@ -200,7 +200,7 @@
                                         @if( LaravelLocalization::getCurrentLocale() === "en")
                                         <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download ><span class="icon-download pt-2 "></span></a>
 								  @else
-                                  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
+                                  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
 
                                             </p>
 									</div>
