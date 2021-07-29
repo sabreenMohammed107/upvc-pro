@@ -321,18 +321,18 @@
 				  		</div>
 				  		<div class="mt-n5 pr-3 text">
 				  			<h4 class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$blog->en_title ?? ''}}
+                                {!! $blog->en_title ?? ''!!}
 						  @else
-						  {{$blog->ar_title ?? ''}}
+						  {!! $blog->ar_title ?? '' !!}
 						  @endif</h4>
-				  			<p class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
-							  {{ str_limit($blog->en_text ?? '', $limit = 100, $end = '...') }}
+				  			<p class="text-white px-2">@if( LaravelLocalization::getCurrentLocale() === "en")
+                                {!! str_limit($blog->en_text ?? '', $limit = 100, $end = '...') !!}
 						  @else
-						  {{ str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') }}
+						  {!! str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') !!}
 						  @endif</p>
 				  		</div>
 				  		<div class="product-overlay hvr-sweep-to-bottom">
-				  			<div class="product-overlay-text">
+				  			<div class="product-overlay-text px-2">
 				  				<h3>@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
@@ -340,9 +340,9 @@
 						  @endif</h3>
 				  				<p>
 								  @if( LaravelLocalization::getCurrentLocale() === "en")
-                          {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+                          {!! str_limit($blog->en_text ?? '', $limit = 150, $end = '...') !!}
 						  @else
-						  {{ str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') }}
+						  {!! str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') !!}
 						  @endif
 										  				</p>
 														  @if($blog)
@@ -373,10 +373,10 @@
 						  @else
 						  {{$blog->ar_title ?? ''}}
 						  @endif</a></h3>
-						  		<p class="pr-3">@if( LaravelLocalization::getCurrentLocale() === "en")
-                          {{ str_limit($blog->en_text ?? '', $limit = 100, $end = '...') }}
+						  		<p class="px-3">@if( LaravelLocalization::getCurrentLocale() === "en")
+                          {!! str_limit($blog->en_text ?? '', $limit = 100, $end = '...') !!}
 						  @else
-						  {{ str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') }}
+						  {!! str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') !!}
 						  @endif</p>
 						  	</div>
   						</div>
