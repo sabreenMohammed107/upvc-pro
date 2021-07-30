@@ -42,12 +42,10 @@ class Product_imgController extends Controller
     public function store(Request $request)
     {
         $request_data = $request->all();
-
         if ($request->image) {
                 $image=$request->file('image');
                 $request_data['image']  = $this->UplaodFile($image);
         }
-
         $imgs = Product_img::create($request_data);
         session()->flash('success', 'Product Images Added Succsessfuly');
         return redirect('/AdminProduct');

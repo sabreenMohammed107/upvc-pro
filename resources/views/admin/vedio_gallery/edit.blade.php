@@ -53,7 +53,7 @@
                                 </div>
 
                                 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                     <label>Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -64,6 +64,9 @@
                                             <input type="text" id="append-small-btn"  name="image" placeholder="{{$vedio_gallery->image}}" >
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <img src="{{ asset('uploads/galleries/')}}/{{$vedio_gallery->image}}" style="width: 200px;height:100px">
                                 </div>
 
                                 <div class="form-group col-md-12">

@@ -100,6 +100,8 @@
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                 <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-keys{{$product->id}}"><i class="fa fa-edit"></i> Add Key Features  </a>
+                                                <br>
+                                                    <a class="btn btn-primary mb-1"  href="/AdminProductKeyFeature/{{$product->id}}/edit"><i class="fa fa-eye"></i> Show Key Features  </a>
                                             @else
                                                 <a href="" class="btn btn-primary mb-1" disabled><i class="fa fa-edit"></i> Add Key Features </a>
                                            @endif

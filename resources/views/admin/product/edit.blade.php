@@ -92,7 +92,7 @@
                                     </div>
                                 </div> --}}
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Details Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -104,8 +104,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/products')}}/{{ $product->product_details_img }}" style="width: 200px;height:100px">
+                                </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Profile Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -116,6 +119,9 @@
                                             <input type="text" id="append-small-btn3"  name="product_profile_img" value="product_profile_img" >
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/products')}}/{{ $product->product_profile_img }}" style="width: 200px;height:100px">
                                 </div>
 
                                 <div class="form-group col-md-6">

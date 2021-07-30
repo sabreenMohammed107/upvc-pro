@@ -41,7 +41,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Client</h3>
+                            <h3>Edit Blog</h3>
                             <br />
                             <form action="{{ route('AdminBlog.update',$blog->id) }}" method="POST"  enctype="multipart/form-data">
 
@@ -84,7 +84,7 @@
                                     <textarea id="message" name="ar_text"  value=""  >{{$blog->ar_text}}</textarea>
                                 </div>
                                 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -96,9 +96,11 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/blogs')}}/{{ $blog->image }}" style="width: 200px;height:100px">
+                                </div>
                                 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Thumbnail</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -110,7 +112,9 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/blogs')}}/{{ $blog->thumbnail }}" style="width: 200px;height:100px">
+                                </div>
                                 
                                 
                                 <div class="form-group col-md-12">

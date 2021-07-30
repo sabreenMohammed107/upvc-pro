@@ -41,7 +41,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Client</h3>
+                            <h3>Edit Image Gallery</h3>
                             <br />
                             <form action="{{ route('AdminImageGallery.update',$image_gallery->id) }}" method="POST"  enctype="multipart/form-data">
 
@@ -53,7 +53,7 @@
                                 </div>
 
                                 
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-6">
                                     <label>Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -65,7 +65,9 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="form-group col-md-6">
+                                    <img src="{{asset('uploads/galleries')}}/{{$image_gallery->image }}" style="width: 200px;height:100px">
+                                </div>
                                 <div class="form-group col-md-12">
                                     <label>Order</label>
                                     <input type="number" class="form-control" name="order"  value="{{$image_gallery->order}}"  />

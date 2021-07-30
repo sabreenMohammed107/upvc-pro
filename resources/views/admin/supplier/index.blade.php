@@ -41,9 +41,9 @@
                             <h1>Suppliers List</h1>
                             <div>
                                 @if (Auth::user()->hasPermission('users-create'))
-                                <a href="/AdminSupplier/create" class="btn btn-primary">Add New Client</a>
+                                <a href="/AdminSupplier/create" class="btn btn-primary">Add New Supplier</a>
                                 @else
-                                <a href="" class="btn btn-primary" disabled>Add New Client</a>
+                                <a href="" class="btn btn-primary" disabled>Add New Supplier</a>
                                 @endif
                             </div>
                             <br/>

@@ -62,7 +62,7 @@
                                     <input type="text" class="form-control" id="ar_title" name="ar_title"  value="{{$home_slider->ar_title}}">
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -74,11 +74,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/home_sliders')}}/{{$home_slider->image }}" style="width: 200px;height:80px"></td>
+                                </div>
 
                                 <div class="form-group col-md-6">
                                     <label>Order</label>
                                     <input type="number" class="form-control" name="order"  value="{{$home_slider->order}}"  />
                                 </div>
+                                <div class="form-group col-md-6"></div>
 
                                 <div class="form-group col-md-6">
                                     <label>En Text	</label>

@@ -41,14 +41,14 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Feedback</h3>
+                            <h3>Edit Company Performance</h3>
                             <br />
                             <form action="{{ route('AdminCompanyPerformance.update',$company_performance->id) }}" method="POST"  enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
                                  @method('PUT')
                                
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Image</label>
                                     <div class="file-upload-inner file-upload-inner-right ts-forms">
                                         <div class="input append-small-btn">
@@ -59,6 +59,9 @@
                                             <input type="text" id="append-small-btn"  name="image" placeholder="{{$company_performance->image}}" >
                                         </div>
                                     </div>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <img src="{{asset('uploads/company_performances')}}/{{ $company_performance->image }}" style="width: 200px;height:100px">
                                 </div>
                                 <div class="form-group col-lg-12"></div>
                                 <div class="form-group col-md-6">

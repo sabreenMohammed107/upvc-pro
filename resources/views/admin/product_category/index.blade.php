@@ -116,12 +116,12 @@
                                     
                                                         <div class="form-group col-md-12">
                                                             <label>En Name</label>
-                                                            <input type="text" class="form-control" name="en_name">
+                                                            <input type="text" class="form-control" name="en_name" value="{{$category->en_name}}">
                                                         </div>
 
                                                         <div class="form-group col-md-12">
                                                             <label>Ar Name</label>
-                                                            <input type="text" class="form-control" name="ar_name">
+                                                            <input type="text" class="form-control" name="ar_name" value="{{$category->ar_name}}">
                                                         </div>
                                     
                                                         <div class="form-group col-md-12">

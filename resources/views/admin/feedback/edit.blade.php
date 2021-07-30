@@ -64,8 +64,12 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="form-group col-lg-12"></div>
+                                <div class="form-group col-lg-6">
+                                    <img src="{{asset('uploads/feedback')}}/{{ $feedback->image }}" style="width: 200px;height:100px">
+                                </div>
+                                
+                                <div class="form-group col-lg-12">
+                                </div>
                                 
                                 <div class="form-group col-md-6">
                                     <label>En Title</label>

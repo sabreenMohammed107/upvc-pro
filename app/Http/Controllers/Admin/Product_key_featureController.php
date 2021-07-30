@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product_key_feature;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class Product_key_featureController extends Controller
@@ -60,9 +61,11 @@ class Product_key_featureController extends Controller
      * @param  \App\Models\Product_key_feature  $product_key_feature
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product_key_feature $product_key_feature)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $keys = Product_key_feature::where('product_id',$id)->get();
+        return view("admin.product_key.index", ["product"=>$product ,"keys"=>$keys]);
     }
 
     /**
@@ -72,9 +75,12 @@ class Product_key_featureController extends Controller
      * @param  \App\Models\Product_key_feature  $product_key_feature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product_key_feature $product_key_feature)
+    public function update(Request $request, $id)
     {
-        //
+        $keys = Product_key_feature::find($id);
+        $keys->update($request->all());
+        session()->flash('success', 'Product Keys Updated Succsessfuly');
+        return back();
     }
 
     /**
@@ -83,8 +89,22 @@ class Product_key_featureController extends Controller
      * @param  \App\Models\Product_key_feature  $product_key_feature
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product_key_feature $product_key_feature)
+    public function destroy($id)
     {
-        //
+        try {
+        $keys = Product_key_feature::find($id);
+        $keys->delete();
+        session()->flash('success', 'Product Keys Deleted Successfully');
+        return back();
+
+        } catch (QueryException $q) {
+
+            session()->flash('success', 'Product Keys Not Deleted');
+            return back();
+
+        }
+        
     }
+
+    
 }

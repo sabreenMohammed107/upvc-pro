@@ -41,7 +41,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Client</h3>
+                            <h3>Edit Supplier</h3>
                             <br />
                             <form action="{{ route('AdminSupplier.update',$supplier->id) }}" method="POST"  enctype="multipart/form-data">
 
@@ -49,7 +49,7 @@
                                  @method('PUT')
 
                                 <div class="form-group col-md-12">
-                                    <label>Client Name</label>
+                                    <label>Supplier Name</label>
                                     <input type="text" class="form-control" id="name" name="name" value="{{ $supplier->name }}" >
                                     <span class="text-danger d-block" id="name-error"> </span>
                                 </div>
