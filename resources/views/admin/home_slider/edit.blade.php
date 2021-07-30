@@ -41,13 +41,13 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-payment-inner-st">
                         <div class="comment_form_area">
-                            <h3>Edit Client</h3>
+                            <h3>Edit Slider</h3>
                             <br />
                             <form action="{{ route('AdminHomeSlider.update',$home_slider->id) }}" method="POST"  enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
                                  @method('PUT')
-                               
+
                                  <div class="form-group col-md-12">
                                     <label><input type="checkbox"  id="active" name="active"  value="1"  {{ ($home_slider->active == 1 ? 'checked' : '')}}   /> Is Active </label>
                                 </div>
@@ -68,14 +68,14 @@
                                         <div class="input append-small-btn">
                                             <div class="file-button">
                                                 Browse
-                                                <input type="file" onchange="document.getElementById('append-small-btn').value = this.value;" name="image"  > 
+                                                <input type="file" onchange="document.getElementById('append-small-btn').value = this.value;" name="image"  >
                                             </div>
                                             <input type="text" id="append-small-btn"  name="image" placeholder="{{$home_slider->image}}" >
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <img src="{{asset('uploads/home_sliders')}}/{{$home_slider->image }}" style="width: 200px;height:80px"></td>
+                                    <img src="{{asset('uploads/home-sliders')}}/{{$home_slider->image }}" style="width: 200px;height:80px"></td>
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -93,8 +93,8 @@
                                     <label>Ar Text</label>
                                     <textarea id="message" name="ar_text"  value=""  >{{$home_slider->ar_text}}</textarea>
                                 </div>
-                                
-                                
+
+
                                 <div class="form-group col-md-12">
                                     <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
                                 </div>
