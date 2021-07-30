@@ -43,7 +43,7 @@
                                 @if (Auth::user()->hasPermission('users-create'))
                                 <a href="/AdminMaterial/create" class="btn btn-primary">Add New Client</a>
                                 @else
-                                <a href="" class="btn btn-primary" disabled>Add New Client</a>
+                                <a href="" class="btn btn-primary" disabled>Add New Material</a>
                                 @endif
                             </div>
                             <br/>
@@ -98,10 +98,10 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    
+
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>
