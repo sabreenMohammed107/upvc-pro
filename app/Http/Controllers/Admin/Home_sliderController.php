@@ -101,7 +101,7 @@ class Home_sliderController extends Controller
         if($request->hasFile('image'))
         {
             //delete old
-            $fileName=public_path('uploads/home_sliders/'.$home_slider->image);
+            $fileName=public_path('uploads/home-sliders/'.$home_slider->image);
             File::delete($fileName);
            $fileDoc=$request->file('image');
            $home_slider->image= $this->UplaodFile($fileDoc);
@@ -128,7 +128,7 @@ class Home_sliderController extends Controller
         $home_slider = Home_slider::find($id);
 
         if ($home_slider->image != 'default.png') {
-            $fileName=public_path('uploads/home_sliders/'.$home_slider->image);
+            $fileName=public_path('uploads/home-sliders/'.$home_slider->image);
             File::delete($fileName);
         }//end of if
 
@@ -149,12 +149,12 @@ class Home_sliderController extends Controller
 
 		// Rename The Image ..
         $imageName = $name;
-      
-		$uploadPath = public_path('uploads/home_sliders');
-		
+
+		$uploadPath = public_path('uploads/home-sliders');
+
 		// Move The image..
 		  $file->move($uploadPath, $imageName);
-     
+
         return $imageName;
     }
 }

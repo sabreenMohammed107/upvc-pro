@@ -81,7 +81,7 @@
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $home_slider->en_title }}</td>
                                             <td>{{ $home_slider->ar_title }}</td>
-                                            <td><img src="{{asset('uploads/home_sliders')}}/{{$home_slider->image }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/home-sliders')}}/{{$home_slider->image }}" style="width: 200px;height:100px"></td>
                                             <td>{{ $home_slider->en_text }}</td>
                                             <td>{{ $home_slider->ar_text }}</td>
                                             <td>{{ $home_slider->order }}</td>
@@ -104,10 +104,10 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    
+
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>

@@ -77,7 +77,7 @@
                                             <td></td>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{ $client->name }}</td>
-                                            <td><img src="{{asset('uploads/clients')}}/{{ $client->logo }}" style="width: 200px;height:100px"></td>
+                                            <td><img src="{{asset('uploads/clients')}}/{{$client->logo}}" style="width: 200px;height:100px"></td>
                                             <td>{{ $client->website_url }}</td>
                                             <td>{{ $client->active }}</td>
                                             {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
@@ -98,10 +98,10 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    
+
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>
