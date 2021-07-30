@@ -21,8 +21,8 @@ class Image_galleryController extends Controller
     {
         //
         $image_gallery = image_gallery::all();
-
-        return view("admin.image_gallery.index")->with("image_gallery",$image_gallery);
+return view ("admin.image_gallery.create");
+        // return view("admin.image_gallery.index")->with("image_gallery",$image_gallery);
     }
 
     /**
