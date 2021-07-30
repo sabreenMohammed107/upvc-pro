@@ -3,7 +3,7 @@
   <head>
     <title>Premier UPVC</title>
     <meta charset="utf-8">
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -30,4 +30,13 @@
 @else
 <link rel="stylesheet" href="{{ asset('webassets/css/style.css')}}">
         @endif
+
+        <style>
+            .mylivechat_collapsed ,.mylivechat_closebtn ,.mylivechat_expanded_title{
+                background: green !important;
+            }
+            .mylivechat_prechat_submit_button, .mylivechat_offline_submit_button, .mylivechat_prechat_survey_button{
+                background: green !important;
+            }
+        </style>
   </head>

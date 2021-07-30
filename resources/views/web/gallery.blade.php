@@ -32,19 +32,19 @@
 	  			<div class="row no-gutters dir-rtl">
                   @foreach($images as $image)
 	  				<div class="col-md-4 ftco-animate p-4">
-	  					<a href="img/gallary/1.jpg" class="gallery image-popup img d-flex align-items-center height-2" style="background-image: url({{asset('uploads/galleries')}}/{{$image->image }});">
+	  					<a href="{{asset('uploads/galleries')}}/{{$image->image }}" class="gallery image-popup img d-flex align-items-center height-2" style="background-image: url({{asset('uploads/galleries')}}/{{$image->image }});">
 	  						<div class="icon mb-4 d-flex align-items-center justify-content-center">
 	  							<span class="icon-instagram"></span>
 	  						</div>
 	  					</a>
 	  				</div>
-	  				
+
 	  			@endforeach
-	  				
-				
-					
+
+
+
 	  			</div>
-				
+
 	  		</div>
 	  	</section>
 
@@ -68,7 +68,7 @@
 	  					</div>
 	  				</div>
 					@endforeach
-				
+
 	  			</div>
 
 	  		</div>

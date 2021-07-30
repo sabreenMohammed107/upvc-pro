@@ -40,17 +40,18 @@
 						<div>
 						</div>
 						<div class="mt-5">
+                            <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}">
 							<h5 class="clr-green mt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
 						  {{$blog->ar_title ?? ''}}
-						  @endif</h5>
+						  @endif</h5></a>
 							<br />
 							<p>
 							@if( LaravelLocalization::getCurrentLocale() === "en")
-                          {{ str_limit($blog->en_text ?? '', $limit = 150, $end = '...') }}
+                            {!! str_limit($blog->en_text ?? '', $limit = 150, $end = '...') !!}
 						  @else
-						  {{ str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') }}
+                          {!! str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') !!}
 						  @endif
 							</p>
 							<a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}" class="clr-green">{{ __('links.show_more') }}</a>

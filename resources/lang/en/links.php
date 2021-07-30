@@ -2,13 +2,13 @@
 
 return [
   /*----header*/
-  
+
   'address' => 'Address',
   'phone' => 'Phone',
   'email' => 'Email',
   'en' => 'English',
   'ar' => 'عربى',
-  
+
   /*---end----*/
 
 
@@ -30,8 +30,8 @@ return [
 'site_map'=>'Site Map',
 'Subscribe'=>'Subscribe',
 'enter_email'=>'Enter Your Email',
-'dawnload_catalog'=>'Dawnload Catalog',
-'dawnload_profile'=>'Dawnload TDS',
+'dawnload_catalog'=>'Download Catalog',
+'dawnload_profile'=>'Download TDS',
 'tade_mark'=>'Copyright ©',
 'copy_right'=>'All rights reserved To Senior Steps',
 'windows'=>'Windows',
@@ -69,7 +69,8 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'message'=>'Message',
 'subject'=>'Subject',
 'send_msg'=>'Send Message',
-'controller_message'=>'Message Send Successfully',
+'controller_message_sub'=>'Email Subscribtion Confirmed',
+'controller_message'=>'Thanks for your message, we will call you soon',
 /*-----Gallery page -----------------*/
 'gallery_title'=>'Gallery',
 'our_vedios'=>'Our Video',
@@ -88,11 +89,14 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'total_thickness'=>'Total thickness',
 'chambers'=>'Chambers',
 'glass'=>'Glass',
+'galss_mm'=>'mm',
+'chamber_no'=>'chamber',
+'thick_mm'=>'mm',
 'description'=>'Description',
 'key_features'=>'Key Features',
 'product_details'=>'Product Details',
 'profile_information'=>'Profile Information',
-'other_product'=>'Other Product',
+'other_product'=>'Other Products',
 'catalogue_pdf'=>'2021 uPVC Window Catalogue.pdf'
 
 ];

@@ -35,7 +35,7 @@
 						<p>
 							<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid w-100">
 						</p>
-						<div> 
+						<div>
                         <?php
 
 $blogId = $blog->id;
@@ -44,15 +44,15 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 }else{
     $url = 'http://premierupvc.senior-consultingco.com/ar/single-blog/'.$blogId;
 }
-						 
+
 
 ?>
 							<ul class="ftco-footer-social ftco-blog-social list-unstyled {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">
 								<li class="ftco-animate"><a <a href="https://twitter.com/intent/tweet?url={{ urlencode($url) }}"  target="popup" onclick="window.open('https://twitter.com/intent/tweet?url={{ urlencode($url) }}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-twitter"></span></a></li>
 								<li class="ftco-animate"><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode($url) }}" target="popup" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{urlencode($url)}}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-facebook"></span></a></li>
-								<li class="ftco-animate"><a
-                                href="https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}" target="popup" onclick="window.open('https://www.instagram.com/sharer/sharer.php?u={{ urlencode($url) }}','popup','width=600,height=600'); return false;"
-                                 class="border-white"><span class="icon-instagram"></span></a></li>
+
+                                <li class="ftco-animate"> <a href="https://wa.me/?text={{ urlencode($url) }}"  target="popup" onclick="window.open('https://wa.me/?text={{ urlencode($url) }}','popup','width=600,height=600'); return false;" class="border-white"><span class="icon-whatsapp"></span></a>
+                                </li>
 							</ul>
 							<p class="ftco-footer-social ftco-blog-social list-unstyled  pt-1 mr-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'float-md-right float-rtl' : ''}}">   </p>
 						</div>
@@ -67,13 +67,13 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 							<br />
 							<p style="line-height: 1.5;">
                             @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$blog->en_text ?? ''}}
+                            {!! $blog->en_text !!}
 						  @else
-						  {{$blog->ar_text ?? ''}}
+                          {!! $blog->ar_text !!}
 						  @endif							<p>
-								
-							
-							
+
+
+
 </div>
 					</div>
 				 <!-- .col-md-8 -->
@@ -94,7 +94,7 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 							</div>
 						</div>
                         @endforeach
-						
+
 					</div>
 
 					<div class="sidebar-box ftco-animate">

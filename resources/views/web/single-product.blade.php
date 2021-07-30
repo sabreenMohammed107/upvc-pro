@@ -62,9 +62,9 @@
 	  							</div>
 	  							<!-- Swiper and EasyZoom plugins end -->
 	  						</div>
-							
+
 	  					</div>
-						
+
 	  				</div><!-- END COL -->
                       <div class="col-lg-6 sidebar ftco-animate ">
 					  <div class="sidebar-box ftco-animate pt-2 ">
@@ -83,24 +83,24 @@
 							  <tbody>
 								  <tr class="table-light ">
 									  <td>{{ __('links.total_thickness') }}</td>
-									  <td>2 {{$product->thickness}}</td>
+									  <td>2 {{$product->thickness}} {{ __('links.thick_mm') }}</td>
 								  </tr>
 								  <tr class="table-light ">
 									  <td>{{ __('links.chambers') }}</td>
-									  <td>3 {{$product->chambers}}</td>
+									  <td>3 {{$product->chambers}} {{ __('links.chamber_no') }}</td>
 								  </tr>
 								  <tr class="table-light ">
 									  <td>{{ __('links.glass') }}</td>
-									  <td>5{{$product->glass}}</td>
+									  <td>5{{$product->glass}} {{ __('links.galss_mm') }}</td>
 								  </tr>
-								
+
 							  </tbody>
 						  </table>
 					  </div>
-					  
+
 				  </div>
 					<!-- .col-md-8 -->
-				  
+
 				</div>
 			</div>
 		</section>
@@ -111,7 +111,7 @@
 					<div class="col-md-4 text-center heading-section ftco-animate ">
 						<h4 class="features-active ">{{ __('links.description') }}</h4>
 					</div>
-				
+
 				</div>
 			</div>
 		</section>
@@ -125,7 +125,7 @@
 			  </div>
 				<div class="row ">
                     @foreach($features as $key)
-				  <div class="col-md-6 ftco-animate ">
+				  <div class="col-md-6 ftco-animate text-center">
 					  <div  class="py-5 pr-md-4 ftco-animate ">
 						  <h6 class="mb-4 "><strong>@if( LaravelLocalization::getCurrentLocale() === "en")
 						 {{$key->en_title}}
@@ -141,7 +141,7 @@
 					  <!-- <div>
 						  <h6 class="mb-4 "><strong>Easy and high-quality installation performance</strong></h6>
 						  <p>
-							Fully welded angles, Rail – integrated frame 
+							Fully welded angles, Rail – integrated frame
 						  </p>
 					  </div> -->
 				  </div>
@@ -192,22 +192,40 @@
 						<!--<h2 class="mb-4 ">What We Offer</h2>-->
 						<!--<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word.</p>-->
 						<div class="row mt-5  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'dir-rtl' : ''}}">
-							<div class="col-lg-12 ">
+							<div class="col-lg-6 ">
 								<div class="services-3 d-flex ">
 									<div class="icon mt-2 d-flex justify-content-center align-items-center "><span class="icon-file "></span></div>
 									<div class="text px-3 pt-2 pdf ">
-										<p>{{ __('links.catalogue_pdf') }}
-                                        @if( LaravelLocalization::getCurrentLocale() === "en")
+										<p>  @if( LaravelLocalization::getCurrentLocale() === "en")
+                                            <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download >{{ __('links.catalogue_pdf') }}</a>
+                                            @else
+                                            <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf }}" download >{{ __('links.catalogue_pdf') }}</a>
+                                            @endif
+                                            @if( LaravelLocalization::getCurrentLocale() === "en")
                                         <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download ><span class="icon-download pt-2 "></span></a>
 								  @else
-                                  <a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
-                                          
+                                  <a href="{{asset('uploads/companies')}}/{{$company->ar_catalogue_pdf}}" download ><span class="icon-download pt-2 "></span></a>					  @endif
+
                                             </p>
 									</div>
 								</div>
 							</div>
-							
-						
+
+                            <div class="col-lg-6 ">
+								<div class="services-3 d-flex ">
+									<div class="icon mt-2 d-flex justify-content-center align-items-center "><span class="icon-file "></span></div>
+									<div class="text px-3 pt-2 pdf ">
+										<p>
+                                            <a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download >{{ __('links.dawnload_profile') }}</a>
+
+
+                                        <a href="{{asset('uploads/companies')}}/{{$company->company_profile_pdf }}" download ><span class="icon-download pt-2 "></span></a>
+
+                                            </p>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -225,7 +243,7 @@
 								<div class="blog-entry ">
 									<a  class="block-20 d-flex align-items-end related-img " style="background-image: url( '{{asset('uploads/products')}}/{{$other->master_image ?? ''}}'); "></a>
 									<div class="text bg-white p-4 ">
-										<h3 class="heading text-center "><a  class="text-center font-18 "> @if( LaravelLocalization::getCurrentLocale() === "en")
+										<h3 class="heading text-center "><a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$other->id) }}"  class="text-center font-18 "> @if( LaravelLocalization::getCurrentLocale() === "en")
 						 {{$other->en_name}}
 								  @else
 {{$other->ar_name}}						  @endif</a></h3>
@@ -233,13 +251,13 @@
 								</div>
 							</div>
 						@endforeach
-						
+
 					</div>
 				</div>
 			</div>
 		</section>
           @endsection
-      
+
           @section('scripts')
           <script src="https://k1ngzed.com/dist/swiper/swiper.min.js"></script>
 	  	<script src="https://k1ngzed.com/dist/EasyZoom/easyzoom.js"></script>
