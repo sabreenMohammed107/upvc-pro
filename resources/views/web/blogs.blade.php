@@ -37,8 +37,7 @@
 						<p>
 							<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="w-100 img-fluid">
 						</p>
-						<div>
-						</div>
+
 						<div class="mt-5">
                             <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}">
 							<h5 class="clr-green mt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
@@ -49,9 +48,9 @@
 							<br />
 							<p>
 							@if( LaravelLocalization::getCurrentLocale() === "en")
-                            {!! str_limit($blog->en_text ?? '', $limit = 150, $end = '...') !!}
+                            {!! str_limit($blog->en_text ?? '', $limit = 100, $end = '...') !!}
 						  @else
-                          {!! str_limit($blog->ar_text ?? '', $limit = 150, $end = '...') !!}
+                          {!! str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') !!}
 						  @endif
 							</p>
 							<a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id) }}" class="clr-green">{{ __('links.show_more') }}</a>
