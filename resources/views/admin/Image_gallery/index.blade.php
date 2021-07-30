@@ -71,6 +71,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     @foreach ($image_gallery as $index=>$image_gallery)
                                         <tr>
                                             <td></td>
@@ -96,10 +97,10 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    
+
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>
