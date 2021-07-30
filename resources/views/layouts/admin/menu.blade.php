@@ -36,17 +36,17 @@
                           @endforeach
                       </ul>
                   </li> --}}
-            
+
                   {{-- @if (Auth::user()->hasPermission('users-read'))
                   <li class="active">
                     <a  href="/AdminUser" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Users</span></a>
                 </li>
                 @endif --}}
-                @if (Auth::user()->hasPermission('users-read'))
+                {{-- @if (Auth::user()->hasPermission('users-read'))
                 <li class="active">
                   <a  href="/AdminClient" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Clients</span></a>
               </li>
-              @endif
+              @endif --}}
               @if (Auth::user()->hasPermission('users-read'))
               <li class="active">
                 <a  href="/AdminCompany" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Companies</span></a>
@@ -91,17 +91,17 @@
         <li class="active">
           <a  href="/AdminNewsLetter" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">News Letter</span></a>
       </li>
-      @endif 
-      @if (Auth::user()->hasPermission('users-read'))
+      @endif
+      {{-- @if (Auth::user()->hasPermission('users-read'))
         <li class="active">
           <a  href="/AdminSupplier" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Suppliers</span></a>
       </li>
-      @endif
+      @endif --}}
       @if (Auth::user()->hasPermission('users-read'))
         <li class="active">
           <a  href="/AdminUpvcNumber" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Upvc Number</span></a>
       </li>
-      @endif 
+      @endif
       @if (Auth::user()->hasPermission('users-read'))
       <li class="active">
         <a  href="/AdminWhyCompany" aria-expanded="false"><span class="educate-icon educate-department icon-wrap"></span> <span class="mini-click-non">Why Company</span></a>
@@ -188,4 +188,3 @@
       </div>
       <!--/ Mobile Menu end -->
 
-      
