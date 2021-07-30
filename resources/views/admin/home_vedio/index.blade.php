@@ -39,13 +39,13 @@
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd" @if (app()->getLocale()=='ar') style="direction: rtl" @endif>
                             <h1>Home vedio List</h1>
-                            <div>
+                            {{-- <div>
                                 @if (Auth::user()->hasPermission('users-create'))
                                 <a href="/AdminHomeVedio/create" class="btn btn-primary">Add New</a>
                                 @else
                                 <a href="" class="btn btn-primary" disabled>Add New</a>
                                 @endif
-                            </div>
+                            </div> --}}
                             <br/>
                         </div>
                     </div>
@@ -89,7 +89,7 @@
                                                 @else
                                                     <a href="" class="btn btn-warning mb-1" disabled><i class="fa fa-edit"></i> Edit </a>
                                                @endif
-                                                @if (Auth::user()->hasPermission('users-delete'))
+                                                {{-- @if (Auth::user()->hasPermission('users-delete'))
                                                     <form action="{{ route('AdminHomeVedio.destroy',$home_vedio->id) }}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}
                                                         @method('DELETE')
@@ -97,13 +97,13 @@
                                                     </form><!-- end of form -->
                                                 @else
                                                     <button class="btn btn-danger disabled mb-1"><i class="fa fa-trash"></i> Delete </button>
-                                                @endif
+                                                @endif --}}
                                             </td>
                                         </tr>
-                                    
+
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>
