@@ -21,8 +21,8 @@ class Image_galleryController extends Controller
     {
         //
         $image_gallery = image_gallery::all();
-return view ("admin.image_gallery.create");
-        // return view("admin.image_gallery.index")->with("image_gallery",$image_gallery);
+
+        return view("admin.Image_gallery.index")->with("image_gallery",$image_gallery);
     }
 
     /**
@@ -32,7 +32,7 @@ return view ("admin.image_gallery.create");
      */
     public function create()
     {
-        return view("admin.image_gallery.create");
+        return view("admin.Image_gallery.create");
     }
 
     /**
@@ -85,7 +85,7 @@ return view ("admin.image_gallery.create");
     {
         //
         $image_gallery = image_gallery::find($id);
-         return view("admin.image_gallery.edit")->with("image_gallery",$image_gallery);
+         return view("admin.Image_gallery.edit")->with("image_gallery",$image_gallery);
     }
 
     /**
