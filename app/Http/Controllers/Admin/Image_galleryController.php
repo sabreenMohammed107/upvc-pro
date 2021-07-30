@@ -21,6 +21,7 @@ class Image_galleryController extends Controller
     {
         //
         $image_gallery = image_gallery::all();
+
         return view("admin.image_gallery.index")->with("image_gallery",$image_gallery);
     }
 
@@ -52,7 +53,7 @@ class Image_galleryController extends Controller
         //         ->save(public_path('uploads/galleries/' . $request->image->hashName()));
         //     $request_data['image'] = $request->image->hashName();
         // }
-        
+
         if ($request->image) {
             $image=$request->file('image');
             $request_data['image']  = $this->UplaodFile($image);
@@ -149,12 +150,12 @@ File::delete($fileName);
 
 		// Rename The Image ..
         $imageName = $name;
-      
+
 		$uploadPath = public_path('uploads/galleries');
-		
+
 		// Move The image..
 		  $file->move($uploadPath, $imageName);
-     
+
         return $imageName;
     }
 }
