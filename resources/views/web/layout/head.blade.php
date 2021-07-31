@@ -6,7 +6,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://k1ngzed.com/dist/swiper/swiper.min.css">
 	<link rel="stylesheet" href="https://k1ngzed.com/dist/EasyZoom/easyzoom.css">
     <link rel="stylesheet" href="{{ asset('webassets/css/open-iconic-bootstrap.min.css')}}">
@@ -26,8 +25,13 @@
 
 
     @if( LaravelLocalization::getCurrentLocale() === "en")
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
         <link href="{{ asset('webassets/css/en_style.css')}}" rel="stylesheet">
 @else
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('webassets/css/style.css')}}">
         @endif
 
