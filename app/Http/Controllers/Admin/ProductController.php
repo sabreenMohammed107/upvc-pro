@@ -143,7 +143,7 @@ class ProductController extends Controller
            $product->master_image= $this->UplaodFile($fileDoc);
         }
 
-        if($request->hasFile('master_image'))
+        if($request->hasFile('product_details_img'))
         {
             //delete old
             $fileName=public_path('uploads/product/'.$product->product_details_img);
@@ -219,12 +219,12 @@ class ProductController extends Controller
 
 		// Rename The Image ..
         $imageName = $name;
-      
+
 		$uploadPath = public_path('uploads/products');
-		
+
 		// Move The image..
 		  $file->move($uploadPath, $imageName);
-     
+
         return $imageName;
     }
 }
