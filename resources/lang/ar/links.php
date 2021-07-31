@@ -77,8 +77,8 @@ return [
 'gallery_title'=>'مدونة الصور',
 'our_vedios'=>'الفديوهات',
 /*-----About page -----------------*/
-'about_premier'=>'عن بريمير',
-'story'=>'قصة بريمير',
+'about_premier'=>'عن بريميير',
+'story'=>'قصة بريميير',
 'mission'=>'هدفنا',
 'vision'=>'رؤية بريميير',
 'why_us'=>'لماذا بريميير',
@@ -87,7 +87,7 @@ return [
 'popular_blog'=>'أشهر المدونات',
 'tags'=>'علامات التواصل',
 /*-------------------Products-----------------------*/
-'advanced_performance'=>'الأداء المتطور لبريمير',
+'advanced_performance'=>'الأداء المتطور لبريميير',
 'information' =>'أهم المعلومات',
 'total_thickness'=>'السماكة',
 'chambers'=>'عدد الغرف',
@@ -100,6 +100,6 @@ return [
 'product_details'=>'تفاصيل المنتجات',
 'profile_information'=>'تفاصيل اخرى',
 'other_product'=>'منتجات ذات صلة',
-'catalogue_pdf'=>'كاتلوج بريمير 2021',
+'catalogue_pdf'=>'كاتلوج بريميير 2021',
 
 ];
