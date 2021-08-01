@@ -42,12 +42,12 @@
   				<div class="col-md-8 pr-md-4   mt-4 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
   					<p>
                       @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$company->about_en_company}}
+						  {!! $company->about_en_company !!}
 						  @else
-						  {{$company->about_ar_company}}
+						  {!! $company->about_ar_company !!}
 						  @endif
                           					</p>
-  					
+
                                               <p><a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a></p>
   				</div>
   			</div>
@@ -63,14 +63,14 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8   mt-2 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-			 
+
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$company->story_en_company}}
+						  {!! $company->story_en_company !!}
 						  @else
-						  {{$company->story_ar_company}}
+						  {!! $company->story_ar_company !!}
 						  @endif				</p>
-				
+
 			</div>
 			<div class="col-md-4 ">
 				<div style="width:290px;">
@@ -99,12 +99,12 @@
 				<h2 class="mb-4">{{ __('links.mission') }}</h2>
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$company->mission_en_company}}
+						  {!! $company->mission_en_company !!}
 						  @else
-						  {{$company->mission_ar_company}}
+						  {!! $company->mission_ar_company !!}
 						  @endif				</p>
-				
-			
+
+
 			</div>
 		</div>
 	</div>
@@ -119,14 +119,14 @@
 		  	</div>
   			<div class="row">
   				<div class="col-md-8  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-					
+
   					<p>
                       @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$company->vision_en_company}}
+						  {!! $company->vision_en_company !!}
 						  @else
-						  {{$company->vision_ar_company}}
+						  {!! $company->vision_ar_company !!}
 						  @endif  					</p>
-				  
+
   				</div>
 			  	<div class="col-md-4 ">
 			  		<div style="width:290px;">
@@ -139,7 +139,7 @@
   			</div>
   		</div>
   	</section>
-  	
+
 	<section class="ftco-section">
 		<div style="background-color:#8FCDA0;height:300px"></div>
   		<div class="container"style="margin-top:-250px">
@@ -165,8 +165,8 @@
 						  {{$whyRow->ar_subTitle}}
 						  @endif   					</div>
 						  @endforeach
-			
-					
+
+
   				</div>
   			</div>
   		</div>
