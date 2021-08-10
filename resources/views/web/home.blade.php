@@ -13,9 +13,9 @@
 						  {{$slider->ar_title}}
 						  @endif</h1>
   						<p class="pl-2">@if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$slider->en_text}}
+						  {!! $slider->en_text !!}
 						  @else
-						  {{$slider->ar_text}}
+						  {!! $slider->ar_text !!}
 						  @endif</p>
   						<p class="pl-2"><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}" class="btn btn-primary">{{ __('links.contact_us') }}</a></p>
   					</div>
