@@ -50,7 +50,7 @@
   						<div class="layer-1" style="">
   							<div class="layer-2" style=""></div>
   						</div>
-  						<img class="img-layer" src="{{asset('uploads/companies')}}/{{$company->about_image }}" alt="">
+  						<img class="img-layer" src="{{asset('uploads/companies')}}/{{$company->about_image }}" alt="no-image">
   					</div>
   				</div>
   				<div class="col-md-8 py-5 pr-md-4 ftco-animate {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
@@ -153,15 +153,15 @@
 													 </p>
 
 				<div>
-					<img class="pt-4" src="{{ asset('webassets/img/7.png')}}" alt="">
-					<img class="pt-4" src="{{ asset('webassets/img/8.png')}}" alt="">
-					<img class="pt-4" src="{{ asset('webassets/img/9.png')}}" alt="">
-					<img class="pt-4" src="{{ asset('webassets/img/10.png')}}" alt="">
+					<img class="pt-4" src="{{ asset('webassets/img/7.png')}}" alt="no-image">
+					<img class="pt-4" src="{{ asset('webassets/img/8.png')}}" alt="no-image">
+					<img class="pt-4" src="{{ asset('webassets/img/9.png')}}" alt="no-image">
+					<img class="pt-4" src="{{ asset('webassets/img/10.png')}}" alt="no-image">
 				</div>
 			  	</div>
   				<div class="col-md-4">
   					<div>
-  						<img class="pt-4 mt-4" src="{{ asset('webassets/img/6.png')}}" alt="">
+  						<img class="pt-4 mt-4" src="{{ asset('webassets/img/6.png')}}" alt="no-image">
   					</div>
   				</div>
   			</div>
@@ -208,7 +208,7 @@
   					</div>
   				</div>
 			  	<div class="col-md-4 wrap-about d-flex align-items-stretch">
-			  		<div class="img mt-5 pt-4"><img src="{{ asset('webassets/img/11.png')}}" /></div>
+			  		<div class="img mt-5 pt-4"><img src="{{ asset('webassets/img/11.png')}}" alt="no-image" /></div>
 			  	</div>
 			  	<div class="col-md-4 wrap-about py-5 pr-md-4 ftco-animate">
 			  		<div class="row mt-5">
@@ -317,7 +317,7 @@
   				<div class="col-lg-6 ftco-animate">
 				  	<div class="product" style="height:368px;">
 				  		<div>
-				  			<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="" class="img-fluid" style="height:368px;">
+				  			<img src="{{asset('uploads/blogs')}}/{{$blog->image ?? ''}}" alt="no-image" class="img-fluid" style="height:368px;">
 				  		</div>
 				  		<div class="mt-n5 pr-3 text">
 				  			<h4 class="text-white">@if( LaravelLocalization::getCurrentLocale() === "en")
@@ -358,7 +358,7 @@
   						<div class="block-21 mb-4 d-flex">
 						  	<div class="product" style="max-height:171px;">
 						  		<a>
-						  			<img src="{{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}}" class="img-article" />
+						  			<img src="{{asset('uploads/blogs')}}/{{$blog->thumbnail ?? ''}}" alt="no-image" class="img-article" />
 						  		</a>
 						  		<div class="product-overlay hvr-sweep-to-bottom">
 						  			<div class="product-overlay-text">
@@ -401,7 +401,7 @@
   					<div class="slider">
   						<div class="logos">
 							  @foreach($materials as $material)
-  							<img style="padding: 25px; height: 150px; width: 30%;display: inline-block;" src="{{asset('uploads/materials')}}/{{$material->logo }}" />
+  							<img style="padding: 25px; height: 150px; width: 30%;display: inline-block;" alt="no-image" src="{{asset('uploads/materials')}}/{{$material->logo }}" />
   							@endforeach
   						</div>
   					</div>
