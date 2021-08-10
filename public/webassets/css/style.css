@@ -12439,12 +12439,25 @@ textarea.form-control {
 
 .ftco-footer .ftco-footer-widget .btn-primary {
     background: #fff !important;
-    border: 2px solid #fff !important;
+    border: 2px solid #fff;
+}
+
+
+/* sabreen Edit */
+
+.input-group-text:hover {
+    background: #599B47 !important;
+    color: #fff !important;
+}
+
+.input-group-text:hover a {
+    color: #fff !important;
 }
 
 .ftco-footer .ftco-footer-widget .btn-primary:hover {
-    background: #fff;
-    border: 2px solid #fff !important;
+    background: #599B47 !important;
+    color: #fff !important;
+    /* border: 2px solid #fff !important; */
 }
 
 .ftco-footer p {
