@@ -96,7 +96,8 @@
 				</div>
 			</div>
 			<div class="col-md-8 pr-md-4  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-				<h2 class="mb-4">{{ __('links.mission') }}</h2>
+
+                <h2 class="mb-4 " style="color: #8FCDA0;font-weight: bold">{{ __('links.mission') }}</h2>
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $company->mission_en_company !!}
