@@ -7,11 +7,11 @@
   				<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
   					<div class="col-md-5 ftco-animate">
   						<div class="bg-text"></div>
-  						<h1 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
+  						<h2 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$slider->en_title}}
 						  @else
 						  {{$slider->ar_title}}
-						  @endif</h1>
+						  @endif</h2>
   						<p class="pl-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $slider->en_text !!}
 						  @else
