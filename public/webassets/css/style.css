@@ -13904,15 +13904,6 @@ div.row.testimonials {
     border: solid 3px #f8f9fa;
 }
 
-&:hover {
-    background-color: lighten(#6b4476, 10%);
-}
-
-.item h3,
-p {
-    /*color: #ffffff;*/
-}
-
 .img-slider {
     border: 3px solid white;
     box-sizing: border-box;
