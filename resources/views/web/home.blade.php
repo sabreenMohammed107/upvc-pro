@@ -8,9 +8,9 @@
   					<div class="col-md-5 ftco-animate">
   						<div class="bg-text"></div>
   						<h2 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$slider->en_title}} ff
+						  {{$slider->en_title}}
 						  @else
-						  {{$slider->ar_title}} ff
+						  {{$slider->ar_title}}
 						  @endif</h2>
   						<p class="pl-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $slider->en_text !!}
@@ -54,7 +54,7 @@
   					</div>
   				</div>
   				<div class="col-md-8 py-5 pr-md-4 ftco-animate {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-  					<h2 class="mb-4">{{ __('links.about_us') }}</h2>
+  					<h1 class="mb-4">{{ __('links.about_us') }}</h1>
   					<p>
 					  @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$company->about_en_company}}
