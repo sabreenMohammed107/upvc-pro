@@ -6,7 +6,7 @@
 	  			<div class="row no-gutters slider-text align-items-center justify-content-center">
 	  				<div class="col-md-9 ftco-animate text-center">
 	  					<div class="bg-text"></div>
-	  					<h2 class="mb-2 bread">{{ __('links.products') }}</h2>
+	  					<h1 class="mb-2 bread">{{ __('links.products') }}</h1>
 	  				</div>
 	  			</div>
 	  		</div>

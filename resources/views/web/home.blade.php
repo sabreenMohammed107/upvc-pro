@@ -76,7 +76,7 @@
   		<div class="container">
   			<div class="row justify-content-center mb-4 pb-2">
   				<div class="col-md-8 text-center heading-section ftco-animate">
-  					<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.products') }}</h2>
+  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.products') }}</h1>
 				  	<h3 >{{ __('links.products') }}</h3>
   				</div>
   			</div>
