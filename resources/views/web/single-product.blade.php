@@ -241,7 +241,7 @@
                             @foreach($others as $other)
 							<div class="col-md-6 col-lg-2 ftco-animate ">
 								<div class="blog-entry ">
-									<a  class="block-20 d-flex align-items-end related-img " style="background-image: url( '{{asset('uploads/products')}}/{{$other->master_image ?? ''}}'); "></a>
+									<a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$other->id) }}" class="block-20 d-flex align-items-end related-img " style="background-image: url( '{{asset('uploads/products')}}/{{$other->master_image ?? ''}}'); "></a>
 									<div class="text bg-white p-4 ">
 										<h3 class="heading text-center "><a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$other->id) }}"  class="text-center font-18 "> @if( LaravelLocalization::getCurrentLocale() === "en")
 						 {{$other->en_name}}

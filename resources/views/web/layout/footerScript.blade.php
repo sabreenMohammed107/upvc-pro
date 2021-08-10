@@ -12,6 +12,7 @@
   		<script src="{{ asset('webassets/js/scrollax.min.js')}}"></script>
   		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   		<script src="{{ asset('webassets/js/google-map.js')}}"></script>
+
   		<script src="{{ asset('webassets/js/main.js')}}"></script>
 		  <!--Add the following script at the bottom of the web page (before </body></html>)-->
 <script type="text/javascript">function add_chatinline(){var hccid=47139404;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
@@ -41,15 +42,15 @@ add_chatinline();</script>
 	  				}
 	  			}
 	  		});
-	
-	
-	
+
+
+
 
 	  		var setMinHeight = function(minheight = 0) {
 	  			jQuery('.owl-carousel').each(function(i,e){
 	  				var oldminheight = minheight;
 	  				jQuery(e).find('.owl-item').each(function(i,e){
-	  					minheight = jQuery(e).height() > minheight ? jQuery(e).height() : minheight;    
+	  					minheight = jQuery(e).height() > minheight ? jQuery(e).height() : minheight;
 	  				});
 	  				jQuery(e).find('.item').css("min-height",minheight + "px");
 	  				minheight = oldminheight;
@@ -63,6 +64,6 @@ add_chatinline();</script>
 	  			setMinHeight();
 	  		});
 	  </script>
-	 
+
   	</body>
 </html>
