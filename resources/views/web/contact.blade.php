@@ -6,7 +6,7 @@
   			<div class="row no-gutters slider-text align-items-center justify-content-center">
   				<div class="col-md-9 ftco-animate text-center">
   					<div class="bg-text"></div>
-  					<h1 class="mb-2 bread">{{ __('links.contact_us') }}</h1>
+  					<h2 class="mb-2 bread">{{ __('links.contact_us') }}</h2>
   				</div>
   			</div>
   		</div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             @endif
-        
+
 	<section class="ftco-section contact-section">
 		<div class="container">
 			<div class="row pt-2 pb-2 dir-rtl">
@@ -43,7 +43,7 @@
 							<div class="icon d-flex justify-content-center align-items-center"><span class="icon-map-marker"></span></div>
 							<div class="text mr-2">
 								<span>{{ __('links.address') }}</span>
-								<span>@if( LaravelLocalization::getCurrentLocale() === "en") 
+								<span>@if( LaravelLocalization::getCurrentLocale() === "en")
 								  {{$company->en_address ?? ''}}
 								  @else
 								  {{$company->ar_address ?? ''}}
@@ -120,8 +120,8 @@
 		</div>
 	</section>
 
-    
-		
+
+
 		<section class="ftco-section ftco-no-pt ftco-no-pb contact-section bg-light">
 			<div class="container">
 				<div class="row d-flex align-items-stretch no-gutters">
@@ -129,12 +129,12 @@
                     <form action="{{ LaravelLocalization::localizeUrl('/contact-message') }}" method="post">
 							@csrf
 						<div class="row dir-rtl">
-							
+
 							<div class="col-lg-6">
 								<div class="form-group">
 									<input type="text" name="name" class="form-control" placeholder="{{ __('links.name') }}">
 								</div>
-							
+
 								<div class="form-group">
 									<input type="text" name="email" class="form-control" placeholder="{{ __('links.email') }}">
 								</div>
@@ -150,7 +150,7 @@
 							<div class="form-group mr-3">
 								<input type="submit" value="{{ __('links.send_msg') }}" class="btn btn2 btn-primary">
 							</div>
-                          
+
 						</div>
                         </form>
 					</div>

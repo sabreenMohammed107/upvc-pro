@@ -6,7 +6,7 @@
 	  			<div class="row no-gutters slider-text align-items-center justify-content-center">
 	  				<div class="col-md-9 ftco-animate text-center">
 	  					<div class="bg-text"></div>
-	  					<h1 class="mb-2 bread">{{ __('links.gallery_title') }}</h1>
+	  					<h2 class="mb-2 bread">{{ __('links.gallery_title') }}</h2>
 	  				</div>
 	  			</div>
 	  		</div>
@@ -52,7 +52,7 @@
 	  		<div class="container">
 				<div class="row justify-content-center mb-4 pb-2">
 					<div class="col-md-8 text-center heading-section ftco-animate">
-						<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.our_vedios') }}</h1>
+						<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.our_vedios') }}</h2>
 						<h3>{{ __('links.our_vedios') }}</h3>
 					</div>
 				</div>

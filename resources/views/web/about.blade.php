@@ -6,7 +6,7 @@
 	  			<div class="row no-gutters slider-text align-items-center justify-content-center">
 	  				<div class="col-md-9  text-center">
 	  					<div class="bg-text"></div>
-	  					<h1 class="mb-2 bread">{{ __('links.about_premier') }}</h1>
+	  					<h2 class="mb-2 bread">{{ __('links.about_premier') }}</h2>
 	  				</div>
 	  			</div>
 	  		</div>
@@ -146,7 +146,7 @@
   		<div class="container"style="margin-top:-250px">
   			<div class="row justify-content-center pb-2">
   				<div class="col-md-8 text-center heading-section ">
-  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h1>
+  					<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h2>
   					<h3 class="text-white">{{ __('links.why_us') }}</h3>
   				</div>
   			</div>

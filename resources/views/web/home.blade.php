@@ -7,11 +7,11 @@
   				<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
   					<div class="col-md-5 ftco-animate">
   						<div class="bg-text"></div>
-  						<h1 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
+  						<h2 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$slider->en_title}}
 						  @else
 						  {{$slider->ar_title}}
-						  @endif</h1>
+						  @endif</h2>
   						<p class="pl-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $slider->en_text !!}
 						  @else
@@ -76,7 +76,7 @@
   		<div class="container">
   			<div class="row justify-content-center mb-4 pb-2">
   				<div class="col-md-8 text-center heading-section ftco-animate">
-  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.products') }}</h1>
+  					<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.products') }}</h2>
 				  	<h3 >{{ __('links.products') }}</h3>
   				</div>
   			</div>
@@ -146,7 +146,7 @@
   		<div class="container">
   			<div class="row dir-rtl">
 			  	<div class="col-md-8 py-5 pr-md-4 ftco-animate">
-				<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.color_collection') }}</h1>
+				<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.color_collection') }}</h2>
 			  		<h2 class="mb-4">{{ __('links.color_collection') }}</h2>
 			  		<p>
 					  {{ __('links.color_text') }}
@@ -172,7 +172,7 @@
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
 		  		<div class="col-md-8 text-center heading-section ftco-animate">
-		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h1>
+		  			<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.why_us') }}</h2>
 		  			<h3>{{ __('links.why_us') }}</h3>
 		  		</div>
 		  	</div>
@@ -279,7 +279,7 @@
   		<div class="container">
   			<div class="row justify-content-center pb-2">
   				<div class="col-md-8 text-center heading-section ftco-animate">
-  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.feedback') }}</h1>
+  					<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.feedback') }}</h2>
   					<h3 class="text-white">{{ __('links.customer_feedback') }}</h3>
   				</div>
   			</div>
@@ -309,7 +309,7 @@
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
 		  		<div class="col-md-8 text-center heading-section ftco-animate">
-		  			<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.blog') }}</h1>
+		  			<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.blog') }}</h2>
 		  			<h3>{{ __('links.blog') }}</h3>
 		  		</div>
 		  	</div>
@@ -392,7 +392,7 @@
   		<div class="container">
   			<div class="row justify-content-center mb-4 pb-2">
   				<div class="col-md-8 text-center heading-section ftco-animate">
-  					<h1 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.materials') }}</h1>
+  					<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.materials') }}</h2>
   					<h3>{{ __('links.best_materials') }}</h3>
   				</div>
   			</div>
