@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="Premier UPVC is a high quality UPVC Profile. Premier UPVC produced with an innovative designs with different colors. Premier UPVC is made of the best raw material and comes with the smartest hardware">
+    <meta name="description" content="Premier UPVC is a high quality UPVC Profile. Premier UPVC produced with an innovative designs with different colors">
     <meta name="keywords" content="Premier,UPVC,بريميير,يو بي في سي,قطاعات ,window,door,ابواب ,شبابيك">
     <meta name="author" content="sabreen mohammed & senior steps">
     <meta name="google-site-verification" content="Mf2WGa0YtfZiPyQO-NG5LPiCoLhIpspU2SsuxBLClNg" />
