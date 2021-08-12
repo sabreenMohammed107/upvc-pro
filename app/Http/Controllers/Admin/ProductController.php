@@ -220,7 +220,7 @@ class ProductController extends Controller
 		// Rename The Image ..
         $imageName = $name;
 
-		$uploadPath = public_path('uploads/products');
+		$uploadPath = public_path('uploads/products/');
 
 		// Move The image..
 		  $file->move($uploadPath, $imageName);
