@@ -156,7 +156,6 @@ class ProductController extends Controller
         }
 
         $product->update($request->except(['master_image','product_details_img','product_profile_img']));
-        dd($product);
         session()->flash('success', 'Product Data Updated Succsessfuly');
         return redirect('/AdminProduct');
 
