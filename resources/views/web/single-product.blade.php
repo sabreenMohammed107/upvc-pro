@@ -40,7 +40,7 @@
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
 	  										<a href="javascript:;" >
-	  											<img   src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
+	  											<img   src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -54,7 +54,7 @@
                                       @foreach($images as $img)
                                       <div class="swiper-slide">
 	  										<a href="javascript:;">
-	  											<img src="{{asset('uploads/product_imgs')}}/{{$img->image ?? ''}}" alt="" />
+	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -179,7 +179,7 @@
 					<div class="col-md-12 text-center heading-section ftco-animate ">
 						<div class="py-5 pr-md-4 ftco-animate ">
 						
-							<img class="pro-img w-100" src="{{asset('uploads/products')}}/{{$product->product_profile_img ?? ''}} " />
+							<img class="pro-img w-100" src="{{asset('uploads/products/'.$product->product_profile_img)}}" />
 						</div>
 					</div>
 				</div>
