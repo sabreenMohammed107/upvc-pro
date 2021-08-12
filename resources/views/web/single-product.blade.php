@@ -40,7 +40,7 @@
                                           @foreach($images as $img)
 	  									<div class="swiper-slide">
 	  										<a href="javascript:;" >
-	  											<img   src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="" />
+	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="test" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -54,7 +54,7 @@
                                       @foreach($images as $img)
                                       <div class="swiper-slide">
 	  										<a href="javascript:;">
-	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="" />
+	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="test" />
 	  										</a>
 	  									</div>
 										@endforeach
@@ -83,15 +83,15 @@
 							  <tbody>
 								  <tr class="table-light ">
 									  <td>{{ __('links.total_thickness') }}</td>
-									  <td>2 {{$product->thickness}} {{ __('links.thick_mm') }}</td>
+									  <td>{{$product->thickness}} {{ __('links.thick_mm') }}</td>
 								  </tr>
 								  <tr class="table-light ">
 									  <td>{{ __('links.chambers') }}</td>
-									  <td>3 {{$product->chambers}} {{ __('links.chamber_no') }}</td>
+									  <td>{{$product->chambers}} {{ __('links.chamber_no') }}</td>
 								  </tr>
 								  <tr class="table-light ">
 									  <td>{{ __('links.glass') }}</td>
-									  <td>5{{$product->glass}} {{ __('links.galss_mm') }}</td>
+									  <td>{{$product->glass}} {{ __('links.galss_mm') }}</td>
 								  </tr>
 
 							  </tbody>
@@ -160,7 +160,7 @@
 				<div class="row justify-content-center ">
 					<div class="col-md-12 text-center heading-section ftco-animate ">
 						<div class="py-5 pr-md-4 ftco-animate ">
-						
+
 							<img class="pro-img w-100" src="{{asset('uploads/products/'.$product->product_details_img)}}" />
 						</div>
 					</div>
@@ -178,7 +178,7 @@
 				<div class="row justify-content-center ">
 					<div class="col-md-12 text-center heading-section ftco-animate ">
 						<div class="py-5 pr-md-4 ftco-animate ">
-						
+
 							<img class="pro-img w-100" src="{{asset('uploads/products/'.$product->product_profile_img)}}" />
 						</div>
 					</div>
