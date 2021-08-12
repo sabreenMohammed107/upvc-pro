@@ -89,40 +89,32 @@
                                             {{-- <td><img src="{{ asset('uploads/products/'.$product->product_details_img) }}" style="width: 200px;height:100px"></td> --}}
                                             {{-- <td><img src="{{ asset('uploads/products/'.$product->product_profile_img) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>
-                                                @if (Auth::user()->hasPermission('users-update'))
+
                                                     <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-imgs{{$product->id}}"><i class="fa fa-edit"></i> Add Product Images  </a>
                                                     <br>
                                                     <a class="btn btn-primary mb-1"  href="/AdminProductImages/{{$product->id}}/edit"><i class="fa fa-eye"></i> Show Product Images  </a>
-                                                @else
-                                                    <a href="" class="btn btn-primary mb-1" disabled><i class="fa fa-edit"></i> Add Product Images </a>
-                                               @endif
+
                                             </td>
                                             <td>
-                                                @if (Auth::user()->hasPermission('users-update'))
+
                                                 <a href="" class="btn btn-primary mb-1" data-toggle="modal" data-target="#add-keys{{$product->id}}"><i class="fa fa-edit"></i> Add Key Features  </a>
                                                 <br>
                                                     <a class="btn btn-primary mb-1"  href="/AdminProductKeyFeature/{{$product->id}}/edit"><i class="fa fa-eye"></i> Show Key Features  </a>
-                                            @else
-                                                <a href="" class="btn btn-primary mb-1" disabled><i class="fa fa-edit"></i> Add Key Features </a>
-                                           @endif
+
                                             </td>
                                             <td>
-                                                @if (Auth::user()->hasPermission('users-update'))
+
                                                     <a href="/AdminProduct/{{$product->id}}/edit" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
-                                                @else
-                                                    <a href="" class="btn btn-warning mb-1" disabled><i class="fa fa-edit"></i> Edit </a>
-                                               @endif
-                                                @if (Auth::user()->hasPermission('users-delete'))
+
+
                                                     <form action="{{ route('AdminProduct.destroy',$product->id) }}" method="post" style="display: inline-block">
                                                         {{ csrf_field() }}
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger delete mb-1"><i class="fa fa-trash"></i> Delete </button>
                                                     </form><!-- end of form -->
-                                                @else
-                                                    <button class="btn btn-danger disabled mb-1"><i class="fa fa-trash"></i> Delete </button>
-                                                @endif
-                                                
-                                               
+
+
+
                                             </td>
                                         </tr>
                                         <!--Add Product Images-->
@@ -137,10 +129,10 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="{{ route('AdminProductImages.store') }}" method="POST" enctype="multipart/form-data">
-                                        
+
                                                             {{ csrf_field() }}
                                                             @method('POST')
-                                        
+
                                                             <div class="form-group col-md-12" style="display: none">
                                                                 <input type="text" class="form-control" value="{{$product->id}}" name="product_id">
                                                             </div>
@@ -162,11 +154,11 @@
                                                                 <label>Order</label>
                                                                 <input type="number" class="form-control" name="order">
                                                             </div>
-                                        
+
                                                             <div class="form-group col-md-12">
                                                                 <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
                                                             </div>
-                                        
+
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer info-md">
@@ -189,10 +181,10 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="{{ route('AdminProductKeyFeature.store') }}" method="POST">
-                                        
+
                                                             {{ csrf_field() }}
                                                             @method('POST')
-                                        
+
                                                             <div class="form-group col-md-12" style="display: none">
                                                                 <input type="text" class="form-control" value="{{$product->id}}" name="product_id">
                                                             </div>
@@ -221,11 +213,11 @@
                                                                 <label>Ar Feature</label>
                                                                 <textarea id="ar_feature" name="ar_feature" > </textarea>
                                                             </div>
-                                        
+
                                                             <div class="form-group col-md-12">
                                                                 <button type="submit"  value="submit" class="form-control mb-2 btn btn-primary">Submit</button>
                                                             </div>
-                                        
+
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer info-md">
@@ -236,7 +228,7 @@
                                         <!--/Add Product Images-->
                                     @endforeach
                                     </tbody>
-        
+
                                 </table><!-- end of table -->
                         </div>
                     </div>
