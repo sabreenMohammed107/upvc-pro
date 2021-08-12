@@ -136,32 +136,27 @@ class ProductController extends Controller
 
         if($request->hasFile('master_image'))
         {
-            //delete old
-            $fileName=public_path('uploads/product/'.$product->master_image);
-            File::delete($fileName);
+          
            $fileDoc=$request->file('master_image');
            $product->master_image= $this->UplaodFile($fileDoc);
         }
 
         if($request->hasFile('product_details_img'))
         {
-            //delete old
-            $fileName=public_path('uploads/product/'.$product->product_details_img);
-            File::delete($fileName);
+            
            $fileDoc=$request->file('product_details_img');
            $product->product_details_img= $this->UplaodFile($fileDoc);
         }
 
         if($request->hasFile('product_profile_img'))
         {
-            //delete old
-            $fileName=public_path('uploads/product/'.$product->product_profile_img);
-            File::delete($fileName);
+          
            $fileDoc=$request->file('product_profile_img');
            $product->product_profile_img= $this->UplaodFile($fileDoc);
         }
 
         $product->update($request->except(['master_image','product_details_img','product_profile_img']));
+        dd($product);
         session()->flash('success', 'Product Data Updated Succsessfuly');
         return redirect('/AdminProduct');
 
