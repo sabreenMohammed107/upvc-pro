@@ -120,7 +120,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/') }}"
                         class="nav-link">{{ __('links.home') }}</a></li>
-                <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/about_us') }}"
+                <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/about') }}"
                         class="nav-link">{{ __('links.about_us') }}</a></li>
                 <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/products') }}"
                         class="nav-link">{{ __('links.products') }}</a></li>
@@ -130,7 +130,7 @@
                         class="nav-link hvr">{{ __('links.blog') }}</a></li>
                {{-- <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/parteners') }}"
                         class="nav-link">{{ __('links.partenters') }}</a></li> --}}
-                <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}"
+                <li class="nav-item nav-hvr"><a href="{{ LaravelLocalization::localizeUrl('/contact') }}"
                         class="nav-link">{{ __('links.contact_us') }}</a></li>
             </ul>
         </div>

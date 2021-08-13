@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
-	
+
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('/', 'Web\IndexController@index');
-	
+
 	Route::post('/send-letter', 'Web\IndexController@sendLetter');
 	//contact us
-	Route::get('/contact-us', 'Web\ContactController@index')->name('contact-us');
+	Route::get('/contact', 'Web\ContactController@index')->name('contact');
 	Route::post('/contact-message', 'Web\ContactController@sendMessage');
 	//parteners
 	Route::get('/parteners', 'Web\PartenerController@index')->name('parteners');
@@ -32,12 +32,12 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	//gallery
 	Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
 	//about_us
-	Route::get('/about_us', 'Web\AboutUsController@index')->name('about_us');
+	Route::get('/about', 'Web\AboutUsController@index')->name('about');
 //blogs
 Route::get('/blogs', 'Web\BlogController@index')->name('blogs');
-Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');	
+Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');
 //product
 Route::get('/products', 'Web\ProductController@index')->name('products');
-Route::get('/single-product/{id}', 'Web\ProductController@singleProduct');	
+Route::get('/single-product/{id}', 'Web\ProductController@singleProduct');
 });
 

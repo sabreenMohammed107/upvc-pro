@@ -17,7 +17,7 @@
 						  @else
 						  {!! $slider->ar_text !!}
 						  @endif</p>
-  						<p class="pl-2"><a href="{{ LaravelLocalization::localizeUrl('/contact-us') }}" class="btn btn-primary">{{ __('links.contact_us') }}</a></p>
+  						<p class="pl-2"><a href="{{ LaravelLocalization::localizeUrl('/contact') }}" class="btn btn-primary">{{ __('links.contact_us') }}</a></p>
   					</div>
   				</div>
   			</div>
