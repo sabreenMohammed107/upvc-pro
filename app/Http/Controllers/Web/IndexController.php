@@ -32,10 +32,18 @@ class IndexController extends Controller
         $blogs=Blog::where('active', 1)->where('order',">", 1)->orderBy('order', 'asc')->get();
         $whyRows=Why_company::limit(6)->get();
         $categories=Product::distinct('category_id')->pluck('category_id');
+        $nums=Product::wherein('id',[1,4,7])->pluck('id');
 $products=Array();
-foreach ($categories as $category) {
+// foreach ($categories as $category) {
+//     $obj = new Collection();
+//     $obj->product = Product::where('category_id',$category)->first();;
+
+//     array_push($products,$obj->product);
+
+// }
+foreach ($nums as $num) {
     $obj = new Collection();
-    $obj->product = Product::where('category_id',$category)->first();;
+    $obj->product = Product::where('id',$num)->first();;
 
     array_push($products,$obj->product);
 
