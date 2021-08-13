@@ -47,5 +47,11 @@
             .mylivechat_prechat_submit_button, .mylivechat_offline_submit_button, .mylivechat_prechat_survey_button{
                 background: green !important;
             }
+            .mobile-social li a:hover i{
+color: #000 !important;
+            }
+            .ftco-footer .ftco-footer-widget ul li a span:hover{
+                color: #000 !important;
+            }
         </style>
   </head>
