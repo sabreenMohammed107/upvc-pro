@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/sitemap.xml', 'Web\PagesController@sitemap');
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {

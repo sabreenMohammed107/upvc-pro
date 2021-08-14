@@ -27,7 +27,9 @@
                     </div>
                 </div>
             @endif
-
+            <?php
+            header("Location: mailto:".$company->email);
+            ?>
 	<section class="ftco-section contact-section">
 		<div class="container">
 			<div class="row pt-2 pb-2 dir-rtl">
