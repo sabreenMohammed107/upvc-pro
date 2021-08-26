@@ -11,7 +11,7 @@
   		<script src="{{ asset('webassets/js/jquery.animateNumber.min.js')}}"></script>
   		<script src="{{ asset('webassets/js/scrollax.min.js')}}"></script>
   		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  		<script src="{{ asset('webassets/js/google-map.js')}}"></script>
+  		<!--<script src="{{ asset('webassets/js/google-map.js')}}"></script>-->
 
   		<script src="{{ asset('webassets/js/main.js')}}"></script>
 		  <!--Add the following script at the bottom of the web page (before </body></html>)-->
@@ -75,5 +75,6 @@ add_chatinline();</script>
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
+   
   	</body>
 </html>

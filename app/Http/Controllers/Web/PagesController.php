@@ -10,10 +10,12 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     //
+
     public function sitemap()
 {
     $products = Product::get();
     $blogs=Blog::get();
-    return response()->view('pages.sitemap', compact('products','blogs'))->header('Content-Type', 'text/xml');
+    return response()->view('web.pages.sitemap', compact('products','blogs'))->header('Content-Type', 'text/xml');
 }
+
 }

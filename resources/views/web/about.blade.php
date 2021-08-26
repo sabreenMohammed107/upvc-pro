@@ -58,7 +58,7 @@
 	<div class="container">
 		<div class="row justify-content-center mb-4 pb-2">
 			<div class="col-md-8 text-center heading-section ">
-				<h3>{{ __('links.story') }}</h3>
+				<h3 style="color: #8FCDA0;font-weight: bold">{{ __('links.story') }}</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -97,7 +97,7 @@
 			</div>
 			<div class="col-md-8 pr-md-4  {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
 
-                <h2 class="mb-4 " style="color: #8FCDA0;font-weight: bold">{{ __('links.mission') }}</h2>
+                <h3 class="mb-4 " style="color: #8FCDA0;font-weight: bold">{{ __('links.mission') }}</h3>
 				<p>
                 @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $company->mission_en_company !!}
@@ -115,7 +115,7 @@
   		<div class="container">
 		  	<div class="row justify-content-center mb-4 pb-2">
 		  		<div class="col-md-8 text-center heading-section ">
-		  			<h3>{{ __('links.vision') }}</h3>
+		  			<h3 style="color: #8FCDA0;font-weight: bold">{{ __('links.vision') }}</h3>
 		  		</div>
 		  	</div>
   			<div class="row">
@@ -154,16 +154,16 @@
   				<div class="owl-carousel owl-carousel2">
 					  @foreach($whyRows as $whyRow)
   					<div class="item">
-  						<h4 class="pb-2"> @if( LaravelLocalization::getCurrentLocale() === "en")
+  						<h4 class="pb-2" style="color: #8FCDA0;font-weight: bold"> @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$whyRow->en_title}}
 						  @else
 						  {{$whyRow->ar_title}}
 						  @endif </h4>
-  						<p>
+  						
 						  @if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$whyRow->en_subTitle}}
+						 <p class="text-left">{{$whyRow->en_subTitle}}</p>
 						  @else
-						  {{$whyRow->ar_subTitle}}
+						 <p class="text-right"> {{$whyRow->ar_subTitle}}</p>
 						  @endif   					</div>
 						  @endforeach
 

@@ -97,18 +97,7 @@ if( LaravelLocalization::getCurrentLocale() === "en"){
 
 					</div>
 
-					<div class="sidebar-box ftco-animate">
-						<h3>{{ __('links.tags') }}</h3>
-						<ul class="tagcloud m-0 p-0">
-                            @foreach($tags as $tag)
-							<a href="#" class="tag-cloud-link">@if( LaravelLocalization::getCurrentLocale() === "en")
-						  {{$tag->en_tag ?? ''}}
-						  @else
-						  {{$tag->ar_tag ?? ''}}
-						  @endif</a>
-							@endforeach
-						</ul>
-					</div>
+				
 
 				</div><!-- END COL -->
         </div>
