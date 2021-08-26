@@ -10,6 +10,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
 
+
      // Route::get('/logout', function(){
      //      \Auth::logout();
      //      return redirect ("login");
