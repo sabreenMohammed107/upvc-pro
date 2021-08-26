@@ -7,6 +7,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
      {
+
+
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
 
