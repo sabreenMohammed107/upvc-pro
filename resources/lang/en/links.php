@@ -47,9 +47,9 @@ return [
 'materials'=>'Materials',
 'best_materials'=>'Best Materials',
 'show_more'=>'Show More',
-'color_collection'=>'Color Collection',
+'color_collection'=>'Lamination Profiles',
 'color_text'=>'PREMIER UPVC Profile’s material has great toughness and rigidity, good chemical resistance and thermal stability, outstanding resistance to weather, and ultraviolet resistance
-
+<br>
 PREMIER UPVC comes in a different color based on the market and customer needs for any project',
 /*-----contact page -----------------*/
 'contact_text'=>'We aim to reach you anytime & everywhere.. Your satisfaction is our mission. For any inquiries or complaints please contact us:',
@@ -73,7 +73,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'controller_message'=>'Thanks for your message, we will call you soon',
 /*-----Gallery page -----------------*/
 'gallery_title'=>'Gallery',
-'our_vedios'=>'Our Video',
+'our_vedios'=>'Our Videos',
 /*-----About page -----------------*/
 'about_premier'=>'About Us',
 'story'=>'Story',
@@ -94,7 +94,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'thick_mm'=>'mm',
 'description'=>'Description',
 'key_features'=>'Key Features',
-'product_details'=>'Product Details',
+'product_details'=>'Technical Data',
 'profile_information'=>'Profile Information',
 'other_product'=>'Other Products',
 'catalogue_pdf'=>'2021 uPVC Window Catalogue.pdf'

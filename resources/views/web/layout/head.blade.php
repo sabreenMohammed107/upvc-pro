@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <title>Premier UPVC</title>
+     <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "Premier UPVC",
+      "author": {
+        "@type": "Person",
+        "name": "Senior steps"
+      },
+      "datePublished": "2021-08-10",
+      "description": "uPVC windows can dramatically improve the energy efficiency for your home. The low conductivity of uPVC as a material, the tight seals uPVC windows provide and the ease with which they can be fabricated for double and triple glazing, make uPVC an excellent choice in energy efficient buildings.",
+      "prepTime": "PT20M"
+    }
+    </script>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

@@ -32,38 +32,10 @@
 	  		<div class="container">
 	  			<div class="row dir-rtl">
 	  				<div class="col-lg-6 sidebar ftco-animate">
-	  					<div class="sidebar-box ftco-animate">
-	  						<div class="product__carousel">
-	  							<!-- Swiper and EasyZoom plugins start -->
-	  							<div class="swiper-container gallery-top " style="width: 100% !important;">
-	  								<div class="swiper-wrapper">
-                                          @foreach($images as $img)
-	  									<div class="swiper-slide">
-	  										<a href="javascript:;" >
-	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="test" />
-	  										</a>
-	  									</div>
-										@endforeach
-	  								</div>
-	  								<!-- Add Arrows -->
-	  								<div class="swiper-button-next swiper-button-white"></div>
-	  								<div class="swiper-button-prev swiper-button-white"></div>
-	  							</div>
-	  							<div class="swiper-container gallery-thumbs" style="">
-	  								<div class="swiper-wrapper">
-                                      @foreach($images as $img)
-                                      <div class="swiper-slide">
-	  										<a href="javascript:;">
-	  											<img src="{{asset('uploads/product_imgs/'.$img->image)}}" alt="test" />
-	  										</a>
-	  									</div>
-										@endforeach
-	  								</div>
-	  							</div>
-	  							<!-- Swiper and EasyZoom plugins end -->
-	  						</div>
+	  				    @if($images[0])
+	  				                            <img src="{{asset('uploads/product_imgs/'.$images[0]->image)}}" alt="test" class="w-100" height="400px" />
 
-	  					</div>
+	  				@endif
 
 	  				</div><!-- END COL -->
                       <div class="col-lg-6 sidebar ftco-animate ">
@@ -109,7 +81,7 @@
 			<div class="container ">
 				<div class="row justify-content-center ">
 					<div class="col-md-4 text-center heading-section ftco-animate ">
-						<h4 class="features-active ">{{ __('links.description') }}</h4>
+						<!--<h4 class="features-active ">{{ __('links.description') }}</h4>-->
 					</div>
 
 				</div>

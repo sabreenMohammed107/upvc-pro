@@ -7,11 +7,11 @@
   				<div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
   					<div class="col-md-5 ftco-animate">
   						<div class="bg-text"></div>
-  						<h2 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
+  						<h3 class="pl-2 pt-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$slider->en_title}}
 						  @else
 						  {{$slider->ar_title}}
-						  @endif</h2>
+						  @endif</h3>
   						<p class="pl-2">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $slider->en_text !!}
 						  @else
@@ -149,7 +149,7 @@
 				<h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.color_collection') }}</h2>
 			  		<h2 class="mb-4">{{ __('links.color_collection') }}</h2>
 			  		<p>
-					  {{ __('links.color_text') }}
+					  {!! __('links.color_text') !!}
 													 </p>
 
 				<div>
@@ -326,9 +326,9 @@
 						  {!! $blog->ar_title ?? '' !!}
 						  @endif</h4>
 				  			<p class="text-white px-2">@if( LaravelLocalization::getCurrentLocale() === "en")
-                                {!! str_limit($blog->en_text ?? '', $limit = 100, $end = '...') !!}
+                                {{ strip_tags(str_limit($blog->en_text ?? '', $limit = 100, $end = '...')) }}
 						  @else
-						  {!! str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') !!}
+						  {{ strip_tags(str_limit($blog->ar_text ?? '', $limit = 100, $end = '...')) }}
 						  @endif</p>
 				  		</div>
 				  		<div class="product-overlay hvr-sweep-to-bottom">
@@ -368,7 +368,7 @@
 						  		</div>
 						  	</div>
 						  	<div class="text pt-2 px-2">
-						  		<h3 class="heading pr-3"><a href="#">@if( LaravelLocalization::getCurrentLocale() === "en")
+						  		<h3 class="heading pr-3"><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id ) }}">@if( LaravelLocalization::getCurrentLocale() === "en")
 						  {{$blog->en_title ?? ''}}
 						  @else
 						  {{$blog->ar_title ?? ''}}
