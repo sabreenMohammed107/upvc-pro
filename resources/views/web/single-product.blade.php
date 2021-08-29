@@ -9,6 +9,7 @@
                     <div class="bg-text"></div>
                     <h1 class="mb-2 bread">{{ __('links.products') }}</h1>
                 </div>
+<<<<<<< HEAD
                 @endif
                 <section class="ftco-section">
                     <div class="container">
@@ -19,6 +20,24 @@
                                         class="w-100" height="400px" />
 
                                 @endif
+=======
+            @endif
+            @if(Session::has('flash_danger'))
+                <div class="col-lg-12">
+                    <div class="alert alert-danger alert-block {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
+                    <strong ><i class="fa fa-info-circle"></i> {!! session('flash_danger') !!}</strong>
+                    </div>
+
+                </div>
+            @endif
+          <section class="ftco-section">
+	  		<div class="container">
+	  			<div class="row dir-rtl">
+	  				<div class="col-lg-6 sidebar ftco-animate">
+	  				    @if($images[0])
+	  				                            <img src="{{asset('uploads/product_imgs/'.$images[0]->image)}}" alt="test" class="w-100" height="400px" />
+>>>>>>> 658f34c89a990c2eddcfd3cd059c36a1a382a762
 
                             </div>
 
