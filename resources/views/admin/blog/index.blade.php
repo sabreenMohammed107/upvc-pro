@@ -89,15 +89,12 @@
                                             <td>{{ $blog->ar_text }}</td>
                                             <td><img src="{{asset('uploads/blogs')}}/{{ $blog->image }}" style="width: 200px;height:100px"></td>
                                             <td><img src="{{asset('uploads/blogs')}}/{{ $blog->thumbnail }}" style="width: 200px;height:100px"></td>
-                                            {{-- <td><img src="{{ asset('uploads/blogs/'.$blog->image) }}" style="width: 200px;height:100px"></td>
-                                            <td><img src="{{ asset('uploads/blogs/'.$blog->thumbnail) }}" style="width: 200px;height:100px"></td> --}}
                                             <td>{{ $blog->order }}</td>
                                             <td>{{ $blog->active }}</td>
                                             <td>
                                             @foreach ($blog->Tags as $tag)
                                             <label style="display: block">{{$tag->tag}}</label>
                                             @endforeach</td>
-                                            {{-- <td><img src="{{ $user->image_path }}" style="width: 100px;" class="img-thumbnail" alt=""></td> --}}
                                             <td>
                                                 @if (Auth::user()->hasPermission('users-update'))
                                                     <a href="/AdminBlog/{{$blog->id}}/edit" class="btn btn-warning mb-1"><i class="fa fa-edit"></i> Edit </a>
@@ -158,9 +155,8 @@
                                         </div>
                                         <!--/Add Tags-->
                                     @endforeach
-                                    </tbody>
-        
-                                </table><!-- end of table -->
+                                </tbody>
+                            </table><!-- end of table -->
                         </div>
                     </div>
                 </div>
