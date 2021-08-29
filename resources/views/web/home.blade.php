@@ -8,15 +8,22 @@
                     <div class="row no-gutters slider-text align-items-center justify-content-start"
                         data-scrollax-parent="true">
                         <div class="col-md-5 ftco-animate">
-                            <div class="bg-text"></div>
-                            <h2 class="pl-2 pt-2">
+                            {{-- <div class="bg-text"></div> --}}
+                            <span class="pl-2 pt-1 pr-2 pb-1 text-white h3 bg-g">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                     {{ $slider->en_title }}
                                 @else
                                     {{ $slider->ar_title }}
                                 @endif
-                            </h2>
-                            <p class="pl-2">
+                            </span>
+                            {{-- <h3 class="pl-2 pt-2">
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    {{ $slider->en_title }}
+                                @else
+                                    {{ $slider->ar_title }}
+                                @endif
+                            </h3> --}}
+                            <p class="pl-2 pt-2">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                     {!! $slider->en_text !!}
                                 @else
@@ -35,7 +42,8 @@
     </section>
     @if (Session::has('flash_success'))
         <div class="col-lg-12">
-            <div class="alert alert-success alert-block {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
+            <div
+                class="alert alert-success alert-block {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
                 <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
                 <strong><i class="fa fa-check-circle"></i> {!! session('flash_success') !!}</strong>
             </div>
@@ -52,7 +60,7 @@
     @endif
     <section class="ftco-section pt-4 ftc-no-pb">
         <div class="container">
-			<div class="row justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-md-8 text-center heading-section ftco-animate">
                     <h3>{{ __('links.about_us') }}</h3>
                 </div>
@@ -183,7 +191,7 @@
                         {{ __('links.color_collection') }}</h2>
                     <h2 class="mb-4">{{ __('links.color_collection') }}</h2>
                     <p>
-                        {{ __('links.color_text') }}
+                        {!! __('links.color_text') !!}
                     </p>
 
                     <div>
@@ -389,9 +397,9 @@
                             </h4>
                             <p class="text-white px-2">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                    {!! str_limit($blog->en_text ?? '', $limit = 100, $end = '...') !!}
+                                    {{ strip_tags(str_limit($blog->en_text ?? '', $limit = 100, $end = '...')) }}
                                 @else
-                                    {!! str_limit($blog->ar_text ?? '', $limit = 100, $end = '...') !!}
+                                    {{ strip_tags(str_limit($blog->ar_text ?? '', $limit = 100, $end = '...')) }}
                                 @endif
                             </p>
                         </div>
@@ -438,7 +446,8 @@
                                     </div>
                                 </div>
                                 <div class="text pt-2 px-2">
-                                    <h3 class="heading pr-3"><a href="#">
+                                    <h3 class="heading pr-3"><a
+                                            href="{{ LaravelLocalization::localizeUrl('/single-blog/' . $blog->id) }}">
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {{ $blog->en_title ?? '' }}
                                             @else

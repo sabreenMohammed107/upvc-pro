@@ -9,112 +9,66 @@
                     <div class="bg-text"></div>
                     <h1 class="mb-2 bread">{{ __('links.products') }}</h1>
                 </div>
-            </div>
-        </div>
+                @endif
+                <section class="ftco-section">
+                    <div class="container">
+                        <div class="row dir-rtl">
+                            <div class="col-lg-6 sidebar ftco-animate">
+                                @if ($images[0])
+                                    <img src="{{ asset('uploads/product_imgs/' . $images[0]->image) }}" alt="test"
+                                        class="w-100" height="400px" />
 
-    </section>
-    @if (Session::has('flash_success'))
-        <div class="col-lg-12">
-            <div
-                class="alert alert-success alert-block {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
-                <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
-                <strong><i class="fa fa-check-circle"></i> {!! session('flash_success') !!}</strong>
-            </div>
-        </div>
-    @endif
-    @if (Session::has('flash_danger'))
-        <div class="col-lg-12">
-            <div
-                class="alert alert-danger alert-block {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
-                <button type="button" id="alertClose" class="close" data-dismiss="alert">×</button>
-                <strong><i class="fa fa-info-circle"></i> {!! session('flash_danger') !!}</strong>
-            </div>
-        </div>
-    @endif
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row dir-rtl">
-                <div class="col-lg-6 sidebar ftco-animate">
-                    <div class="sidebar-box ftco-animate">
-                        <div class="product__carousel">
-                            <!-- Swiper and EasyZoom plugins start -->
-                            <div class="swiper-container gallery-top " style="width: 100% !important;">
-                                <div class="swiper-wrapper">
-                                    @foreach ($images as $img)
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="{{ asset('uploads/product_imgs/' . $img->image) }}" alt="test" />
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <!-- Add Arrows -->
-                                <div class="swiper-button-next swiper-button-white"></div>
-                                <div class="swiper-button-prev swiper-button-white"></div>
+                                @endif
+
                             </div>
-                            <div class="swiper-container gallery-thumbs" style="">
-                                <div class="swiper-wrapper">
-                                    @foreach ($images as $img)
-                                        <div class="swiper-slide">
-                                            <a href="javascript:;">
-                                                <img src="{{ asset('uploads/product_imgs/' . $img->image) }}" alt="test" />
-                                            </a>
-                                        </div>
-                                    @endforeach
-                                </div>
+
+                        </div><!-- END COL -->
+                        <div class="col-lg-6 sidebar ftco-animate ">
+                            <div class="sidebar-box ftco-animate pt-2 ">
+                                <h3>
+                                    @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                        {{ $product->en_name }}
+                                    @else
+                                        {{ $product->ar_name }} @endif
+                                </h3>
+                                <p>
+                                    @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                        {{ $product->en_description }}
+                                    @else
+                                        {{ $product->ar_description }} @endif
+                                </p>
+                                <h3 class="mt-4 ">{{ __('links.information') }}</h3>
+                                <table class="table ">
+                                    <tbody>
+                                        <tr class="table-light ">
+                                            <td>{{ __('links.total_thickness') }}</td>
+                                            <td>{{ $product->thickness }} {{ __('links.thick_mm') }}</td>
+                                        </tr>
+                                        <tr class="table-light ">
+                                            <td>{{ __('links.chambers') }}</td>
+                                            <td>{{ $product->chambers }} {{ __('links.chamber_no') }}</td>
+                                        </tr>
+                                        <tr class="table-light ">
+                                            <td>{{ __('links.glass') }}</td>
+                                            <td>{{ $product->glass }} {{ __('links.galss_mm') }}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- Swiper and EasyZoom plugins end -->
+
                         </div>
+                        <!-- .col-md-8 -->
 
                     </div>
-
-                </div><!-- END COL -->
-                <div class="col-lg-6 sidebar ftco-animate ">
-                    <div class="sidebar-box ftco-animate pt-2 ">
-                        <h3>
-                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $product->en_name }}
-                            @else
-                                {{ $product->ar_name }} @endif
-                        </h3>
-                        <p>
-                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $product->en_description }}
-                            @else
-                                {{ $product->ar_description }} @endif
-                        </p>
-                        <h3 class="mt-4 ">{{ __('links.information') }}</h3>
-                        <table class="table ">
-                            <tbody>
-                                <tr class="table-light ">
-                                    <td>{{ __('links.total_thickness') }}</td>
-                                    <td>{{ $product->thickness }} {{ __('links.thick_mm') }}</td>
-                                </tr>
-                                <tr class="table-light ">
-                                    <td>{{ __('links.chambers') }}</td>
-                                    <td>{{ $product->chambers }} {{ __('links.chamber_no') }}</td>
-                                </tr>
-                                <tr class="table-light ">
-                                    <td>{{ __('links.glass') }}</td>
-                                    <td>{{ $product->glass }} {{ __('links.galss_mm') }}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-                <!-- .col-md-8 -->
-
             </div>
-        </div>
     </section>
 
-    {{-- <section class="ftco-section ">
+    <section class="ftco-section ">
         <div class="container ">
             <div class="row justify-content-center ">
                 <div class="col-md-4 text-center heading-section ftco-animate ">
-                    <h4 class="features-active ">{{ __('links.description') }}</h4>
+                    <!--<h4 class="features-active ">{{ __('links.description') }}</h4>-->
                 </div>
 
             </div>
@@ -146,11 +100,11 @@
                             </p>
                         </div>
                         <!-- <div>
-          <h6 class="mb-4 "><strong>Easy and high-quality installation performance</strong></h6>
-          <p>
-           Fully welded angles, Rail – integrated frame
-          </p>
-         </div> -->
+              <h6 class="mb-4 "><strong>Easy and high-quality installation performance</strong></h6>
+              <p>
+               Fully welded angles, Rail – integrated frame
+              </p>
+             </div> -->
                     </div>
                 @endforeach
             </div>
@@ -168,7 +122,8 @@
                 <div class="col-md-12 text-center heading-section ftco-animate ">
                     <div class="py-5 pr-md-4 ftco-animate ">
 
-                        <img class="pro-img w-100" src="{{ asset('uploads/products/' . $product->product_details_img) }}" />
+                        <img class="pro-img w-100"
+                            src="{{ asset('uploads/products/' . $product->product_details_img) }}" />
                     </div>
                 </div>
             </div>
@@ -186,7 +141,8 @@
                 <div class="col-md-12 text-center heading-section ftco-animate ">
                     <div class="py-5 pr-md-4 ftco-animate ">
 
-                        <img class="pro-img w-100" src="{{ asset('uploads/products/' . $product->product_profile_img) }}" />
+                        <img class="pro-img w-100"
+                            src="{{ asset('uploads/products/' . $product->product_profile_img) }}" />
                     </div>
                 </div>
             </div>

@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/sitemap.xml', 'Web\PagesController@sitemap');
+
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
-
+Route::get('/sitemap.xml', 'Web\PagesController@sitemap');
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('/', 'Web\IndexController@index');
 
@@ -32,7 +32,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	//gallery
 	Route::get('/gallery', 'Web\GalleryController@index')->name('gallery');
 	//about_us
-	Route::get('/about', 'Web\AboutUsController@index')->name('about');
+	Route::get('/about-us', 'Web\AboutUsController@index');
 //blogs
 Route::get('/blogs', 'Web\BlogController@index')->name('blogs');
 Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');
@@ -40,4 +40,3 @@ Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');
 Route::get('/products', 'Web\ProductController@index')->name('products');
 Route::get('/single-product/{id}', 'Web\ProductController@singleProduct');
 });
-
