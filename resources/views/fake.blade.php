@@ -1,0 +1,1 @@
+<h1>Fake Single Product</h1>

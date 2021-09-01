@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-{
+Route::group(['prefix' => LaravelLocalization::setLocale(),
+'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function (){
+
 Route::get('/sitemap.xml', 'Web\PagesController@sitemap');
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 	Route::get('/', 'Web\IndexController@index');
@@ -39,4 +40,9 @@ Route::get('/single-blog/{id}', 'Web\BlogController@singleBlog');
 //product
 Route::get('/products', 'Web\ProductController@index')->name('products');
 Route::get('/single-product/{id}', 'Web\ProductController@singleProduct');
+
+
+Route::view('/fake', 'welcome');
+
+
 });
