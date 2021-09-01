@@ -1,7 +1,7 @@
 @extends('web.layout.main')
 @section('content')
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('webassets/img/21.jpg')}}');margin-top:-20px">
-  		<div class="overlay"></div>
+  		{{-- <div class="overlay"></div> --}}
   		<div class="container">
   			<div class="row no-gutters slider-text align-items-center justify-content-center">
   				<div class="col-md-9 ftco-animate text-center">

@@ -20,7 +20,7 @@ return [
   'partenters'=>'Our Partenters',
   'gallery' => 'Gallery',
   'blog' => 'Blog',
-  'contact_us' => 'Contact Us',
+  'contact_us' => 'Contact',
 
 /*---End Menu--*/
 /*--footer ---*/
