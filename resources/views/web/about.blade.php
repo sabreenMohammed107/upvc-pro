@@ -40,7 +40,7 @@
   					</div>
   				</div>
   				<div class="col-md-8 pr-md-4   mt-4 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-  					<p>
+  					<p style="text-align: justify">
                       @if( LaravelLocalization::getCurrentLocale() === "en")
 						  {!! $company->about_en_company !!}
 						  @else
@@ -159,7 +159,7 @@
 						  @else
 						  {{$whyRow->ar_title}}
 						  @endif </h4>
-  						
+
 						  @if( LaravelLocalization::getCurrentLocale() === "en")
 						 <p class="text-left">{{$whyRow->en_subTitle}}</p>
 						  @else

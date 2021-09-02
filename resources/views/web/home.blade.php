@@ -297,35 +297,27 @@
             </div>
         </div>
     </section>
-
-    <section class="ftco-section ftco-counter ftco-no-pt img" id="section-counter" style="background-color:#8FCDA0"
-        data-stellar-background-ratio="0.5">
+	<section class="ftco-section ftco-counter ftco-no-pt img" id="section-counter" style="background-color:#8FCDA0" data-stellar-background-ratio="0.5">
         <div class="mb-5">
             <div class="row justify-content-center mb-5 pb-2 d-flex pl-3">
-                <div
-                    class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5  mt-5 {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
-                    <h3 class="mb-4 text-white">
-                        @if (LaravelLocalization::getCurrentLocale() === 'en')
-                            {{ $homeVedio->en_title }}
+                <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5  mt-5 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
+                    <h3 class="mb-4 text-white"> @if( LaravelLocalization::getCurrentLocale() === "en")
+                        {{$homeVedio->en_title}}
                         @else
-                            {{ $homeVedio->ar_title }}
-                        @endif
-                    </h3>
+                        {{$homeVedio->ar_title}}
+                        @endif </h3>
                     <p>
-                        @if (LaravelLocalization::getCurrentLocale() === 'en')
-                            {{ $homeVedio->en_text }}
+                    @if( LaravelLocalization::getCurrentLocale() === "en")
+                        {{$homeVedio->en_text}}
                         @else
-                            {{ $homeVedio->ar_text }}
-                        @endif
-                    </p>
+                        {{$homeVedio->ar_text}}
+                        @endif 				  	</p>
 
                 </div>
                 <div class="col-md-6 align-items-stretch d-flex">
-                    <div class="img img-video d-flex align-items-center"
-                        style="background-image: url('{{ asset('uploads/home_vedios') }}/{{ $homeVedio->image ?? '' }}');width:700px;height:400px">
+                    <div class="img img-video d-flex align-items-center" style="background-image: url('{{asset('uploads/home_vedios')}}/{{$homeVedio->image ?? ''}}');width:700px;height:400px">
                         <div class="video justify-content-center">
-                            <a href="{{ $homeVedio->vedio }}"
-                                class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                            <a href="{{$homeVedio->vedio}}" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                                 <span class="ion-ios-play"></span>
                             </a>
                         </div>
@@ -335,43 +327,35 @@
         </div>
     </section>
 
-    <section class="ftco-section" style="margin-top:-270px">
-        <!---->
+  <section class="ftco-section" style="margin-top:-270px" > <!---->
         <div class="container">
             <div class="row justify-content-center pb-2">
                 <div class="col-md-8 text-center heading-section ftco-animate">
-                    <h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.feedback') }}
-                    </h2>
+                    <h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.feedback') }}</h2>
                     <h3 class="text-white">{{ __('links.customer_feedback') }}</h3>
                 </div>
             </div>
             <div class="row testimonials">
                 <div class="owl-carousel owl-carousel2">
-                    @foreach ($feedBacks as $feedback)
-                        <div class="item">
-                            <h3>
-                                @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                    {{ $feedback->en_name }}
-                                @else
-                                    {{ $feedback->ar_name }}
-                                @endif
-                            </h3>
-                            <img class="img-slider" src="{{ asset('webassets/img/no-profile-img.gif') }}"
-                                alt="Testimonial" />
-                            <p>
-                                @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                    {{ $feedback->en_review }}
-                                @else
-                                    {{ $feedback->ar_review }}
-                                @endif
-                            </p>
-                        </div>
-                    @endforeach
+                    @foreach($feedBacks as $feedback)
+                    <div class="item">
+                        <h3>@if( LaravelLocalization::getCurrentLocale() === "en")
+                        {{$feedback->en_name}}
+                        @else
+                        {{$feedback->ar_name}}
+                        @endif</h3>
+                        <img class="img-slider" src="{{ asset('webassets/img/no-profile-img.gif')}}" alt="Testimonial" />
+                        <p>@if( LaravelLocalization::getCurrentLocale() === "en")
+                        {{$feedback->en_review}}
+                        @else
+                        {{$feedback->ar_review}}
+                        @endif</p>
+                    </div>
+                @endforeach
                 </div>
             </div>
         </div>
     </section>
-
     <section class="ftco-section" style="background-color:#FBF8F8;">
         <div class="container">
             <div class="row justify-content-center mb-4 pb-2">
