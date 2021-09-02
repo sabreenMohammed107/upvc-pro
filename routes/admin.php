@@ -7,7 +7,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),
-'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function (){
+function (){
 
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
@@ -32,7 +32,7 @@ Route::group(
     ], function(){
 
      /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-     Route::get('/admin', 'HomeController@index')->name('admin');
+    //  Route::get('/admin', 'HomeController@index')->name('admin');
 
         //-------------------------User Screen
      //    Route::resource('/AdminUser', UserController::class);
