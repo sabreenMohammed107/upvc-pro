@@ -146,8 +146,6 @@
                                 @foreach ($pro_cat as $cat)
                                     <div class="col-md-6 col-lg-4 ftco-animate">
                                         <div class="blog-entry">
-
-
                                             <a href="{{ LaravelLocalization::localizeUrl('/single-product/' . $cat->id) }}"
                                                 class="block-20 d-flex align-items-end"
                                                 style="background-image: url('{{ asset('uploads/products') }}/{{ $cat->master_image ?? '' }}');"></a>
