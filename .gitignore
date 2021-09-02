@@ -5,6 +5,9 @@
 /vendor
 .env
 .env.backup
+index.php
+public/error_log
+.htaccess
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
