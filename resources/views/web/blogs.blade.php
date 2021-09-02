@@ -1,5 +1,6 @@
 @extends('web.layout.main')
 @section('content')
+
 <section class="hero-wrap hero-wrap-2" style="background-image: url('{{ asset('webassets/img/21.jpg')}}');margin-top:-20px">
 	  		{{-- <div class="overlay"></div> --}}
 	  		<div class="container">

@@ -23,7 +23,7 @@
                                     {{ $slider->ar_title }}
                                 @endif
                             </h3> --}}
-                            <p class="pl-2 pt-2">
+                            <p class="pl-2 pt-2" style="text-align: justify">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                     {!! $slider->en_text !!}
                                 @else

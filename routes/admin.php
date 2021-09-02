@@ -5,9 +5,9 @@
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-     {
 
+Route::group(['prefix' => LaravelLocalization::setLocale(),
+'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function (){
 
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
