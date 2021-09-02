@@ -62,6 +62,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center heading-section ftco-animate">
+                    <h2 style="color:rgba(223,223,223,.3);margin-bottom:-50px;font-size:70px">{{ __('links.about_us') }}
+                    </h2>
                     <h3>{{ __('links.about_us') }}</h3>
                 </div>
             </div>
@@ -98,6 +100,7 @@
             </div>
         </div>
     </section>
+
     <section class="ftco-section" style="background-color:#F9F9F9">
         <div class="container">
             <div class="row justify-content-center mb-4 pb-2">
