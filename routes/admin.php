@@ -11,7 +11,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
 
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
-
+	Route::get('/admin', 'HomeController@index')->name('admin');
 
      // Route::get('/logout', function(){
      //      \Auth::logout();
@@ -32,7 +32,6 @@ Route::group(
     ], function(){
 
      /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    //  Route::get('/admin', 'HomeController@index')->name('admin');
 
         //-------------------------User Screen
      //    Route::resource('/AdminUser', UserController::class);
@@ -82,7 +81,14 @@ Route::group(
     }); /** End  **/
 
 
+    //this route without auth
+     Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+     {
+	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 
+
+
+     });/** End group**/
 
 
 
