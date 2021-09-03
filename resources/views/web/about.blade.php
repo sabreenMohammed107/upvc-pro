@@ -40,13 +40,18 @@
   					</div>
   				</div>
   				<div class="col-md-8 pr-md-4   mt-4 {{ LaravelLocalization::getCurrentLocale() === "ar" ? 'text-right' : ''}}">
-  					<p style="text-align: justify">
+
                       @if( LaravelLocalization::getCurrentLocale() === "en")
+                      <p style="text-align: justify">
 						  {!! $company->about_en_company !!}
+                      </p>
+
 						  @else
-						  {!! $company->about_ar_company !!}
+                          <p style="text-align: right">
+                            {!! $company->about_ar_company !!}
+                          </p>
 						  @endif
-                          					</p>
+
 
                                               <p><a href="{{asset('uploads/companies')}}/{{$company->company_catalogue_pdf }}" download class="btn btn2 btn-primary">{{ __('links.dawnload_catalog') }}</a></p>
   				</div>

@@ -238,7 +238,7 @@
             <div class="owl-carousel owl-carousel2">
                 @foreach($others as $other)
                 <div class="item item2">
-                    <img class="mb-2" src="{{ asset('uploads/product_imgs/3.PNG') }}" alt="" />
+                    <img class="mb-2" src="{{asset('uploads/products')}}/{{$other->master_image ?? ''}}" alt="" />
                     <h3> <a href="{{ LaravelLocalization::localizeUrl('/single-product/'.$other->id) }}" class="font-18"> @if( LaravelLocalization::getCurrentLocale() === "en")
                         {{$other->en_name}}
                                  @else
