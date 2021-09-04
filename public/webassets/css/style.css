@@ -1753,7 +1753,6 @@ pre code {
     }
 }
 
-
 .table {
     width: 100%;
     margin-bottom: 1rem;
@@ -14222,6 +14221,7 @@ div.row.testimonials {
 .item2 {
     border: none !important;
 }
+
 .item2 img {
     height: 250px !important;
- }
+}
