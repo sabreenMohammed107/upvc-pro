@@ -12791,6 +12791,7 @@ textarea.form-control {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left center;
+    background: round;
 }
 
 .testimony-section {
