@@ -1,17 +1,23 @@
 <?php
 
 // Auth Routes
-Route::group(['prefix' => LaravelLocalization::setLocale()], function()
-     {
+
+use Illuminate\Support\Facades\Auth;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
+
+Route::group(['prefix' => LaravelLocalization::setLocale(),
+'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],function (){
+
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
     Auth::routes();
 	Route::get('/admin', 'HomeController@index')->name('admin');
-     
+
      // Route::get('/logout', function(){
      //      \Auth::logout();
      //      return redirect ("login");
      //  });
-      
+
      });/** End group**/
 
 
@@ -23,10 +29,10 @@ Route::group(
     [
             'prefix' => LaravelLocalization::setLocale(),
             'middleware' => [ 'auth' ]
-    ], function(){ 
-    
+    ], function(){
+
      /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    
+
         //-------------------------User Screen
      //    Route::resource('/AdminUser', UserController::class);
        //-------------------------Client Screen
@@ -58,34 +64,34 @@ Route::group(
            //-------------------------Why Company Screen
            Route::resource('/AdminWhyCompany', Why_companyController::class);
            //-------------------------Blog Screen
-           Route::resource('/AdminBlog', BlogController::class); 
+           Route::resource('/AdminBlog', BlogController::class);
            //-------------------------BlogTag Screen
            Route::resource('/AdminBlogTag', Blogs_tagController::class);
            //-------------------------Product Screen
-           Route::resource('/AdminProduct', ProductController::class);    
+           Route::resource('/AdminProduct', ProductController::class);
            //-------------------------Product Category Screen
-           Route::resource('/AdminProductCategory', Product_categoryController::class); 
+           Route::resource('/AdminProductCategory', Product_categoryController::class);
             //-------------------------Company Performance Screen
-           Route::resource('/AdminCompanyPerformance', Company_performanceController::class);   
+           Route::resource('/AdminCompanyPerformance', Company_performanceController::class);
             //-------------------------Company Product Images Screen
-            Route::resource('/AdminProductImages', Product_imgController::class);   
+            Route::resource('/AdminProductImages', Product_imgController::class);
              //-------------------------Company Product Key Feature Screen
-           Route::resource('/AdminProductKeyFeature', Product_key_featureController::class);    
+           Route::resource('/AdminProductKeyFeature', Product_key_featureController::class);
 
     }); /** End  **/
 
-    
+
     //this route without auth
      Route::group(['prefix' => LaravelLocalization::setLocale()], function()
      {
 	/** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    
-     
+
+
 
      });/** End group**/
 
-    
-    
-   
+
+
+
 
 });/** End  Route**/

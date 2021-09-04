@@ -23,13 +23,17 @@
                                     {{ $slider->ar_title }}
                                 @endif
                             </h3> --}}
-                            <p class="pl-2 pt-2" style="text-align: justify">
+
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                <p class="pl-2 pt-2" style="text-align: justify">
                                     {!! $slider->en_text !!}
+                                </p>
                                 @else
+                                <p class="pl-2 pt-2">
                                     {!! $slider->ar_text !!}
+                                </p>
                                 @endif
-                            </p>
+
                             <p class="pl-2"><a href="{{ LaravelLocalization::localizeUrl('/contact') }}"
                                     class="btn btn-primary">{{ __('links.contact_us') }}</a></p>
                         </div>
@@ -80,13 +84,18 @@
                 <div
                     class="col-md-8 py-5 pr-md-4 ftco-animate {{ LaravelLocalization::getCurrentLocale() === 'ar' ? 'text-right' : '' }}">
                     {{-- <h1 class="mb-4">{{ __('links.about_us') }}</h1> --}}
-                    <p class="text-justify">
+
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
+                        <p class="text-justify">
                             {{ $company->about_en_company }}
+                        </p>
                         @else
+                        <p>
                             {{ $company->about_ar_company }}
+                        </p>
+
                         @endif
-                    </p>
+
                     <p>
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                             <a href="{{ asset('uploads/companies') }}/{{ $company->company_catalogue_pdf }}" download
