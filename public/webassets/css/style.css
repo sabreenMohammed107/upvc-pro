@@ -13747,6 +13747,9 @@ textarea.form-control {
         max-height: 130px;
         max-width: 100px
     }
+    .logos img {
+        height: 90px !important;
+    }
 }
 
 @media (min-width:150px) and (max-width:320px) {
