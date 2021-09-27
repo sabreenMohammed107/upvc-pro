@@ -13737,6 +13737,9 @@ textarea.form-control {
     .br-2 {
         border: #fff 1px solid!important
     }
+    .Img-Logo{
+        height: 50px !important;
+    }
 }
 
 @media (min-width:320px) and (max-width:480px) {
@@ -13750,6 +13753,9 @@ textarea.form-control {
     .logos img {
         height: 90px !important;
     }
+    .Img-Logo{
+        height: 50px !important;
+    }
 }
 
 @media (min-width:150px) and (max-width:320px) {
@@ -13759,6 +13765,9 @@ textarea.form-control {
     .img-article {
         max-height: 130px;
         max-width: 100px
+    }
+    .Img-Logo{
+        height: 50px !important;
     }
 }
 
@@ -14227,4 +14236,7 @@ div.row.testimonials {
 
 .item2 img {
     height: 250px !important;
+}
+.Img-Logo{
+    height: 50px !important;
 }
